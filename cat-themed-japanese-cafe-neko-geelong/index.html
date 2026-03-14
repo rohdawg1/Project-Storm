@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat-themed Japanese cafe | neko Geelong | Geelong</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ── CSS Custom Properties ─────────────────────────────────── */
+    :root {
+      --primary:    #c0392b;
+      --secondary:  #e67e22;
+      --bg:         #1a1a1a;
+      --text:       #f5f5f5;
+      --accent:     #f39c12;
+      --white:      #ffffff;
+      --dark:       #111827;
+      --mid:        #6b7280;
+      --light:      #f9fafb;
+      --border:     #e5e7eb;
+      --radius:     16px;
+      --radius-sm:  8px;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.08);
+      --shadow:     0 4px 16px rgba(0,0,0,0.10);
+      --shadow-md:  0 8px 32px rgba(0,0,0,0.14);
+      --shadow-lg:  0 20px 64px rgba(0,0,0,0.20);
+      --transition: all 0.28s cubic-bezier(0.4,0,0.2,1);
+      --max-w:      1200px;
+    }
+
+    /* ── Reset & Base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Typography Helpers ─────────────────────────────────────── */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--primary);
+      background: rgba(0,0,0,0.04); padding: 5px 14px;
+      border-radius: 100px; margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--mid);
+      line-height: 1.75; max-width: 560px;
+    }
+
+    /* ── Buttons ────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 28px; border-radius: 100px;
+      font-weight: 600; font-size: 0.95rem;
+      cursor: pointer; border: none; transition: var(--transition);
+      text-decoration: none; line-height: 1;
+    }
+    .btn-primary {
+      background: var(--primary); color: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.1); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,0.15); color: #fff;
+      backdrop-filter: blur(4px); border: 1.5px solid rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.25); transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent; color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    /* ── NAV ─────────────────────────────────────────────────────── */
+    #main-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s ease;
+    }
+    #main-nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+      height: 68px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .nav-brand {
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.05rem;
+      color: var(--primary); display: flex; align-items: center;
+      gap: 10px; white-space: nowrap;
+    }
+    .brand-emoji { font-size: 1.35rem; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 500; color: var(--text);
+      padding: 8px 14px; border-radius: 8px; transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--primary); background: rgba(0,0,0,0.04); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-nav-cta {
+      background: var(--primary); color: #fff; padding: 10px 22px;
+      border-radius: 100px; font-size: 0.88rem; font-weight: 600;
+      transition: var(--transition);
+    }
+    .btn-nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: var(--transition);
+    }
+    .mobile-nav {
+      display: none; position: absolute; top: 68px; left: 0; right: 0;
+      background: #fff; border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-md); padding: 12px 24px 20px;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block; padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-weight: 500; font-size: 0.95rem;
+    }
+    .mobile-nav a:last-child { border: none; color: var(--primary); font-weight: 700; }
+
+    /* ── HERO ─────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+      background-size: 36px 36px;
+    }
+    .hero-glow {
+      position: absolute; top: -160px; right: -160px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 88px 32px 0;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center; position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.95);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 20px; backdrop-filter: blur(4px);
+    }
+    .hero-headline {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900; line-height: 1.08; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 22px;
+    }
+    .hero-tagline {
+      font-size: 1.1rem; color: rgba(255,255,255,0.82);
+      line-height: 1.75; margin-bottom: 40px; max-width: 460px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+    .hero-visual { position: relative; }
+    .hero-card {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255,255,255,0.25); border-radius: 24px;
+      padding: 32px; color: #fff;
+    }
+    .hero-card-emoji { font-size: 4rem; line-height: 1; margin-bottom: 16px; display: block; }
+    .hero-card-name {
+      font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800;
+      color: #fff; margin-bottom: 6px;
+    }
+    .hero-card-loc {
+      font-size: 0.85rem; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; gap: 6px; margin-bottom: 24px;
+    }
+    .hero-card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-card-tag {
+      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
+      font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 100px;
+    }
+    .hero-stats {
+      position: relative; z-index: 1;
+      display: flex; align-items: center;
+      background: rgba(0,0,0,0.18); backdrop-filter: blur(10px);
+      padding: 24px 32px; margin: 0 -32px;
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; flex: 1;
+    }
+    .stat-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900; color: #fff; line-height: 1; margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.65);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .stat-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+
+    /* ── QUICK TRUST FEATURES ─────────────────────────────────────── */
+    .features-strip { background: var(--dark); padding: 20px 0; }
+    .features-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .feature-badge {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500;
+    }
+    .feature-badge i { color: var(--accent); font-size: 1rem; }
+
+    /* ── SERVICES ─────────────────────────────────────────────────── */
+    .section-services { padding: 96px 0; background: var(--bg); }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--mid);
+      line-height: 1.75; max-width: 560px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
+    }
+    .service-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 28px; border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(18px);
+    }
+    .service-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-card.visible { opacity: 1; transform: translateY(0); }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), color-mix(in srgb, var(--accent) 12%, transparent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--primary); transition: var(--transition);
+    }
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff;
+    }
+    .service-title {
+      font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--text); margin-bottom: 10px;
+    }
+    .service-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── TRUST STRIP ──────────────────────────────────────────────── */
+    .section-trust-strip {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); padding: 36px 0;
+    }
+    .trust-strip-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; flex: 1; min-width: 110px; padding: 8px 0;
+    }
+    .strip-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 900; color: #fff; line-height: 1;
+    }
+    .strip-label {
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.72);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px;
+    }
+    .strip-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.2); }
+
+    /* ── ABOUT ─────────────────────────────────────────────────────── */
+    .section-about { padding: 96px 0; background: var(--light); }
+    .about-grid {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--primary);
+      background: rgba(0,0,0,0.04); padding: 5px 14px;
+      border-radius: 100px; margin-bottom: 16px;
+    }
+    .about-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800; line-height: 1.18; color: var(--text);
+      margin-bottom: 18px; letter-spacing: -0.02em;
+    }
+    .about-body { font-size: 1rem; color: var(--mid); line-height: 1.8; margin-bottom: 32px; }
+    .about-checks {
+      list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px;
+    }
+    .about-checks li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.95rem; font-weight: 500; color: var(--text);
+    }
+    .about-checks li::before {
+      content: '¹3'; flex-shrink: 0; width: 24px; height: 24px;
+      border-radius: 50%; background: color-mix(in srgb, var(--primary) 12%, transparent);
+      color: var(--primary); font-weight: 800; font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-about-call {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--primary); color: #fff; padding: 14px 28px;
+      border-radius: 100px; font-weight: 600; font-size: 0.95rem; transition: var(--transition);
+    }
+    .btn-about-call:hover { filter: brightness(1.1); transform: translateY(-2px); }
+    .about-rating {
+      background: var(--white); border-radius: 20px; padding: 36px;
+      box-shadow: var(--shadow-md); border: 1.5px solid var(--border); text-align: center;
+    }
+    .rating-card { }
+    .rating-number {
+      font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 900;
+      color: var(--primary); line-height: 1;
+    }
+    .rating-stars { color: #F59E0B; font-size: 1.3rem; margin: 10px 0 6px; letter-spacing: 3px; }
+    .rating-label {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--mid);
+    }
+    .rating-count { font-size: 0.85rem; color: var(--mid); margin-top: 6px; }
+
+    /* ── TESTIMONIALS ──────────────────────────────────────────────── */
+    .section-testimonials { padding: 96px 0; background: var(--bg); }
+    .section-testimonials .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800;
+      line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 52px;
+      text-align: center; max-width: var(--max-w);
+      margin-left: auto; margin-right: auto; padding: 0 32px;
+    }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+    }
+    .review-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 28px; border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+      display: flex; flex-direction: column; gap: 12px; position: relative;
+    }
+    .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .review-quote {
+      font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 900;
+      color: var(--primary); line-height: 0.6; opacity: 0.2; margin-bottom: 4px;
+    }
+    .review-text {
+      font-size: 0.93rem; color: var(--mid); line-height: 1.75; font-style: italic; flex: 1;
+    }
+    .review-stars { color: #F59E0B; font-size: 0.9rem; letter-spacing: 2px; }
+    .review-source {
+      font-size: 0.75rem; font-weight: 600; color: var(--mid);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;
+    }
+
+    /* ── CONTACT ──────────────────────────────────────────────────── */
+    .section-contact {
+      padding: 96px 0; background: var(--dark); position: relative; overflow: hidden;
+    }
+    .section-contact::before {
+      content: ''; position: absolute; top: -120px; left: -120px;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    }
+    .contact-grid {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 80px; align-items: start; position: relative; z-index: 1;
+    }
+    .contact-info-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.2;
+    }
+    .contact-tagline {
+      font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 40px;
+    }
+    .contact-info-item {
+      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+    }
+    .icon-circle {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: rgba(255,255,255,0.08); display: flex; align-items: center;
+      justify-content: center; color: rgba(255,255,255,0.65); font-size: 1rem;
+    }
+    .info-text { display: flex; flex-direction: column; gap: 3px; }
+    .info-text strong {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: rgba(255,255,255,0.4);
+    }
+    .info-text span { font-size: 0.92rem; color: rgba(255,255,255,0.8); }
+    .btn-maps {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.12); padding: 11px 20px;
+      border-radius: 100px; font-size: 0.85rem; font-weight: 600;
+      margin-top: 8px; transition: var(--transition);
+    }
+    .btn-maps:hover { background: rgba(255,255,255,0.14); color: #fff; }
+    .contact-form {
+      background: var(--white); border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg);
+    }
+    .contact-form h3 {
+      font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 700;
+      margin-bottom: 28px; color: var(--text);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 700; color: var(--mid);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 7px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 13px 16px; border: 2px solid var(--border);
+      border-radius: 10px; font-size: 0.95rem; font-family: 'Inter', sans-serif;
+      color: var(--text); background: var(--bg); transition: border-color 0.2s ease; outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .btn-form-submit {
+      width: 100%; padding: 15px; background: var(--primary); color: #fff;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; font-family: 'Inter', sans-serif; transition: var(--transition);
+    }
+    .btn-form-submit:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── AGENCY CTA ────────────────────────────────────────────────── */
+    .section-agency-cta {
+      padding: 88px 0; text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      position: relative; overflow: hidden;
+    }
+    .section-agency-cta::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+    .agency-cta-heading {
+      font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; color: #fff; margin-bottom: 14px; position: relative;
+    }
+    .agency-cta-sub {
+      color: rgba(255,255,255,0.78); font-size: 1rem; margin-bottom: 36px;
+      line-height: 1.7; max-width: 520px;
+      margin-left: auto; margin-right: auto; position: relative;
+    }
+    .btn-agency-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--primary); padding: 16px 36px;
+      border-radius: 100px; font-weight: 700; font-size: 1rem;
+      transition: var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.18); position: relative;
+    }
+    .btn-agency-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,0.25); }
+
+    /* ── FOOTER ───────────────────────────────────────────────────── */
+    .site-footer { background: var(--dark); padding: 64px 0 0; color: rgba(255,255,255,0.5); }
+    .footer-grid {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 32px 48px;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px;
+    }
+    .footer-brand {
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .footer-details { font-size: 0.88rem; line-height: 1.9; margin-bottom: 24px; }
+    .footer-details a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-details a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.07); display: flex; align-items: center;
+      justify-content: center; color: rgba(255,255,255,0.45); font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    .footer-social-link:hover { background: var(--primary); color: #fff; }
+    .footer-links-title {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: rgba(255,255,255,0.3); margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bar {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      max-width: var(--max-w); margin: 0 auto; padding: 20px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .footer-bar span { font-size: 0.8rem; }
+    .site-by a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .site-by a:hover { color: #fff; }
+
+    /* ── MOBILE STICKY BAR ─────────────────────────────────────────── */
+    .mobile-sticky-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+      background: #fff; box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+      padding: 12px 16px;
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+    .mobile-sticky-bar a {
+      display: flex; align-items: center; justify-content: center;
+      gap: 9px; background: var(--primary); color: #fff;
+      padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.95rem;
+      max-width: 360px; margin: 0 auto;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 72px; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-inner { padding-top: 56px; }
+      .hero-headline { font-size: 2.4rem; }
+      .hero-stats { padding: 20px 24px; }
+      .stat-value { font-size: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .section-services, .section-about, .section-testimonials { padding: 64px 0; }
+      .section-contact { padding: 64px 0 100px; }
+      .about-grid, .contact-grid, .reviews-grid { padding: 0 24px; }
+      .about-grid { gap: 40px; }
+      .contact-form { padding: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 40px; }
+      .footer-bar { flex-direction: column; text-align: center; padding: 18px 24px; }
+      .mobile-sticky-bar { display: block; }
+    }
+    @media (max-width: 500px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 2rem; }
+      .hero-stats { flex-direction: column; gap: 16px; padding: 28px 24px; }
+      .stat-divider { width: 60px; height: 1px; }
+      .features-inner { gap: 20px; }
+      .container { padding: 0 20px; }
+    }
+
+    /* ── ANIMATION ─────────────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ STICKY NAV ══════════════════════════════════════════════════════ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">
+        <span class="brand-emoji">🍽️</span>
+        <span>Cat-themed Japanese cafe | neko Geelong</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn-nav-cta" href="#contact">Get a Quote</a>
+      </div>
+      <div class="nav-hamburger" id="nav-hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#services" onclick="closeMobileNav()">Services</a>
+      <a href="#about" onclick="closeMobileNav()">About</a>
+      <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
+      <a href="#contact" onclick="closeMobileNav()">Get a Free Quote &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-eyebrow">
+          <i class="fa-solid fa-location-dot"></i>
+          Geelong &bull; Trusted Local Experts
+        </span>
+        <h1 class="hero-headline">Geelong's Favourite Cat-Themed Japanese Cafe</h1>
+        <p class="hero-tagline">Adorable felines, authentic Japanese cuisine, and cosy vibes in the heart of Geelong</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">
+            <i class="fa-solid fa-paper-plane"></i> Get a Free Quote
+          </a>
+          <a class="btn btn-ghost" href="tel:tel:+61352213028">
+            <i class="fa-solid fa-phone"></i> +61 3 5221 3028
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <span class="hero-card-emoji">🍽️</span>
+          <div class="hero-card-name">Cat-themed Japanese cafe | neko Geelong</div>
+          <div class="hero-card-loc">
+            <i class="fa-solid fa-map-pin"></i> LEVEL 1/237 Ryrie St, Geelong VIC 3220
+          </div>
+          <div class="hero-card-tags">
+            <span class="hero-card-tag"><i class="fa-solid fa-star"></i> Highly Rated</span>
+            <span class="hero-card-tag"><i class="fa-solid fa-shield-halved"></i> Licensed</span>
+            <span class="hero-card-tag"><i class="fa-solid fa-clock"></i> Fast Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      
+            <div class="stat-item">
+              <span class="stat-value">4.8★</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">204+</span>
+              <span class="stat-label">Customer Reviews</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Resident Cats</span>
+            </div>
+            
+    </div>
+  </section>
+
+  <!-- ═══ QUICK TRUST FEATURES ════════════════════════════════════════════ -->
+  <div class="features-strip">
+    <div class="features-inner">
+      <div class="feature-badge">
+        <i class="fa-solid fa-certificate"></i> Licensed &amp; Insured
+      </div>
+      <div class="feature-badge">
+        <i class="fa-solid fa-star"></i> 5-Star Rated
+      </div>
+      <div class="feature-badge">
+        <i class="fa-solid fa-location-dot"></i> Locally Owned
+      </div>
+      <div class="feature-badge">
+        <i class="fa-solid fa-clock"></i> Fast Response
+      </div>
+      <div class="feature-badge">
+        <i class="fa-solid fa-thumbs-up"></i> 100% Satisfaction
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SERVICES ════════════════════════════════════════════════════════ -->
+  <section class="section-services" id="services">
+    <div class="container">
+      <div class="section-header center fade-in">
+        <div class="eyebrow"><i class="fa-solid fa-bolt"></i> What We Do</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">Professional, reliable service for every job &mdash; big or small.</p>
+      </div>
+      <div class="services-grid">
+        
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-bowl-food"></i>
+              </div>
+              <h3 class="service-title">Authentic Japanese Cuisine</h3>
+              <p class="service-desc">From fresh ramen and donburi bowls to delicate sushi platters, our menu celebrates traditional Japanese flavours with quality ingredients. Each dish is crafted to transport you straight to Japan without leaving Geelong.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-cat"></i>
+              </div>
+              <h3 class="service-title">Interactive Cat Lounge</h3>
+              <p class="service-desc">Meet our friendly rescue cats while you dine in our specially designed cat-friendly space. Spend quality time with our feline residents—a therapeutic experience that makes every visit memorable.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <h3 class="service-title">Perfect for Groups & Events</h3>
+              <p class="service-desc">Host your birthday, catch-up or celebration in our unique cat cafe atmosphere. We welcome group bookings and can accommodate various party sizes with custom menu options.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3 class="service-title">Award-Winning Experience</h3>
+              <p class="service-desc">Trusted by over 200 happy customers who rate us 4.8★ on Google. Our combination of quality food, exceptional service and adorable cats keeps locals coming back.</p>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST STRIP ══════════════════════════════════════════════════════ -->
+  <section class="section-trust-strip">
+    <div class="trust-strip-inner">
+      
+            <div class="strip-item">
+              <div class="strip-value">4.8★</div>
+              <div class="strip-label">Google Rating</div>
+            </div>
+            <div class="strip-item">
+              <div class="strip-value">204+</div>
+              <div class="strip-label">Customer Reviews</div>
+            </div>
+            <div class="strip-item">
+              <div class="strip-value">10+</div>
+              <div class="strip-label">Resident Cats</div>
+            </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ════════════════════════════════════════════════════════════ -->
+  <section class="section-about" id="about">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Who We Are</span>
+        <h2 class="about-title">About neko Geelong</h2>
+        <p class="about-body">neko Geelong is Geelong's premier destination for Japanese comfort food paired with the therapeutic presence of our resident cats. With a 4.8★ rating from over 200 Google reviews, we've perfected the art of blending exceptional cuisine with genuine feline companionship in a warm, welcoming environment.</p>
+        <ul class="about-checks">
+          <li>Locally owned and operated in Geelong</li>
+          <li>Licensed, insured &amp; fully certified</li>
+          <li>Fast response times &amp; upfront pricing</li>
+          <li>Hundreds of 5-star reviews from happy customers</li>
+        </ul>
+        <a class="btn-about-call" href="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au">
+          <i class="fa-solid fa-envelope"></i>
+          Send Us an Email
+        </a>
+      </div>
+      <div class="about-rating fade-in">
+        
+            <div class="rating-card">
+              <div class="rating-number">4.8</div>
+              <div class="rating-stars">★★★★½</div>
+              <div class="rating-label">on Google</div>
+              <div class="rating-count">204 Google reviews</div>
+            </div>
+        <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);text-align:left;">
+          <a href="https://www.google.com/maps/search/LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;font-size:0.9rem;text-decoration:none;">
+            <i class="fa-brands fa-google"></i> View our Google listing &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+  <!-- ═══ MENU / HOURS ══════════════════════════════════════════════════════ -->
+  <section class="section-cat" id="menu" style="background:#1a1a1a;padding:90px 0;">
+    <div class="container">
+      <h2 class="section-title">Menu Highlights</h2>
+      <div class="cat-food-grid">
+        <div class="cat-menu-list">
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Tonkotsu Ramen</span>
+                  <span class="cat-menu-desc">Rich, creamy pork bone broth with tender noodles and soft-boiled egg.</span>
+                </div>
+                <span class="cat-menu-price">$16.50</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Chicken Katsu Curry Donburi</span>
+                  <span class="cat-menu-desc">Crispy fried chicken breast over rice with fragrant Japanese curry sauce.</span>
+                </div>
+                <span class="cat-menu-price">$14.95</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Mixed Sushi Platter</span>
+                  <span class="cat-menu-desc">Fresh assorted nigiri, maki rolls and sashimi—perfect for sharing.</span>
+                </div>
+                <span class="cat-menu-price">$24.00</span>
+              </div>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends and for group visits—call +61 3 5221 3028 or walk in anytime. We're always happy to see you.</p>
+        </div>
+        
+            <div class="cat-hours-box">
+              <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
+              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+            </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .cat-food-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    @media(max-width:700px){.cat-food-grid{grid-template-columns:1fr;}}
+    .cat-menu-item{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+      padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
+    .cat-menu-item:last-child{border-bottom:none;}
+    .cat-menu-info{display:flex;flex-direction:column;gap:4px;}
+    .cat-menu-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#c0392b;}
+    .cat-menu-desc{font-size:0.9rem;color:#666;}
+    .cat-menu-price{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;
+      color:#f39c12;white-space:nowrap;}
+    .cat-hours-box{background:#c0392b;color:#fff;border-radius:14px;padding:32px 28px;}
+    .cat-hours-label{font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;
+      margin-bottom:14px;opacity:0.85;}
+    .cat-hours-text{font-size:1.05rem;line-height:1.9;white-space:pre-line;}
+    .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
+  </style>
+
+  <!-- ═══ CONTACT ═══════════════════════════════════════════════════════════ -->
+  <section class="section-contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h2 class="contact-info-title">Get in Touch</h2>
+        <p class="contact-tagline">Ready to experience Geelong's most unique Japanese cafe? Call us on +61 3 5221 3028 to book your table or simply walk in—we'd love to welcome you and introduce you to our furry friends.</p>
+        <div class="contact-info-item">
+          <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <strong>Our Address</strong>
+            <span>LEVEL 1/237 Ryrie St, Geelong VIC 3220</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <strong>Call Us</strong>
+            <span><a href="tel:tel:+61352213028" style="color:inherit;">+61 3 5221 3028</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-text">
+            <strong>Email Us</strong>
+            <span><a href="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au" style="color:inherit;">info@cat-themed-japanese-cafe-neko-geelong.com.au</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+          <div class="info-text">
+            <strong>Hours</strong>
+            <span>Open 7 Days &mdash; Call for availability</span>
+          </div>
+        </div>
+        <a class="btn-maps" href="https://www.google.com/maps/search/LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-map-location-dot"></i>&nbsp; View on Google Maps &rarr;
+        </a>
+      </div>
+      <div class="fade-in">
+        <form class="contact-form" action="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au" method="get" enctype="text/plain">
+          <h3>Send Us a Message</h3>
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="04XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="body" placeholder="Tell us about your project&#8230;" required></textarea>
+          </div>
+          <button type="submit" class="btn-form-submit">Send Message &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ AGENCY CTA BANNER ══════════════════════════════════════════════ -->
+  <section class="section-agency-cta">
+    <div class="container">
+      <h2 class="agency-cta-heading">&#10024; Want a professional website like this?</h2>
+      <p class="agency-cta-sub">We build custom sites for local businesses across Australia &mdash; fast, beautiful, and built to convert.</p>
+      <a class="btn-agency-cta" href="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au">Get Your Free Website &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">🍽️ Cat-themed Japanese cafe | neko Geelong</div>
+          <div class="footer-details">
+            LEVEL 1/237 Ryrie St, Geelong VIC 3220<br>
+            <a href="tel:tel:+61352213028">+61 3 5221 3028</a><br>
+            <a href="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au">info@cat-themed-japanese-cafe-neko-geelong.com.au</a>
+          </div>
+          <div class="footer-social">
+            <a class="footer-social-link" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="footer-social-link" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="footer-social-link" href="https://www.google.com/maps/search/LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220" target="_blank" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-links-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="tel:tel:+61352213028">+61 3 5221 3028</a></li>
+            <li><a href="mailto:info@cat-themed-japanese-cafe-neko-geelong.com.au">info@cat-themed-japanese-cafe-neko-geelong.com.au</a></li>
+            <li><a href="https://www.google.com/maps/search/LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220" target="_blank">Geelong</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <span>&copy; 2025 Cat-themed Japanese cafe | neko Geelong. All rights reserved.</span>
+        <span class="site-by">Site by <a href="#">ProjectStorm</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ MOBILE STICKY BAR ═══════════════════════════════════════════════ -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:tel:+61352213028">
+      <i class="fa-solid fa-phone"></i>
+      Call Cat-themed Japanese cafe | neko Geelong
+    </a>
+  </div>
+
+  <!-- ═══ JAVASCRIPT ═══════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      var nav = document.getElementById('main-nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    })();
+
+    var hamburger = document.getElementById('nav-hamburger');
+    var mobileNav  = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function () {
+      mobileNav.classList.toggle('open');
+    });
+    function closeMobileNav() { mobileNav.classList.remove('open'); }
+
+    (function () {
+      var els = document.querySelectorAll('.fade-in');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { obs.observe(el); });
+    })();
+
+    (function () {
+      var cards = document.querySelectorAll('.service-card');
+      if (!cards.length) return;
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('visible'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 0.08) + 's';
+        obs.observe(card);
+      });
+    })();
+
+    (function () {
+      function animateValue(el) {
+        var raw       = el.textContent.replace(/,/g, '');
+        var num       = parseFloat(raw);
+        var suffix    = raw.replace(/[0-9.]/g, '');
+        if (isNaN(num) || num === 0) return;
+        var start     = 0;
+        var duration  = 1400;
+        var t0        = null;
+        var isDecimal = (num % 1 !== 0);
+        function step(ts) {
+          if (!t0) t0 = ts;
+          var p    = Math.min((ts - t0) / duration, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          var cur  = isDecimal
+            ? (start + (num - start) * ease).toFixed(1)
+            : Math.round(start + (num - start) * ease);
+          el.textContent = cur + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var statEls = document.querySelectorAll('.stat-value, .strip-value');
+      if (!('IntersectionObserver' in window)) { statEls.forEach(animateValue); return; }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateValue(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      statEls.forEach(function (el) { obs.observe(el); });
+    })();
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          closeMobileNav();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

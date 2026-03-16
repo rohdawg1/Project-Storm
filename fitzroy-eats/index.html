@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitzroy Eats | Melbourne VIC</title>
-  <meta name="description" content="Vibrant dining, exceptional food, and genuine hospitality in the heart of Melbourne">
+  <meta name="description" content="Seasonal menus, local ingredients, and 4.6★ rated by over 200 guests">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6.5 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -44,7 +44,7 @@
       --max-w:        1200px;
       --nav-height:   72px;
       --section-pad:  clamp(64px, 8vw, 112px);
-      --font-display: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
     }
 
     /* ── Reset & Base ──────────────────────────────────────────────────── */
@@ -53,7 +53,7 @@
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'DM Sans', system-ui, sans-serif;
       font-size: 16px;
       line-height: 1.6;
       color: var(--dark);
@@ -1470,6 +1470,27 @@
       text-align: center;
       margin-bottom: 48px;
     }
+
+    /* ── Persona overrides (injected per category) ─────────────────────── */
+    
+/* ─ EDITORIAL PERSONA ──────────────────────────────── */
+:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+body { font-family: 'DM Sans', system-ui, sans-serif; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-title::after {
+  content: ''; display: block; width: 40px; height: 1.5px;
+  background: var(--primary); margin: 14px auto 0; opacity: 0.5;
+}
+.hero { background: radial-gradient(ellipse at 65% 50%,
+  color-mix(in srgb, var(--primary) 55%, #1a0a00) 0%, #0a0603 70%) !important; }
+.hero-headline { font-style: italic; font-weight: 600; }
+.service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
+.service-card::before { border-radius: 4px 4px 16px 16px !important; }
+.nav-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem; font-weight: 600; font-style: italic; letter-spacing: 0.03em;
+}
+
   </style>
 </head>
 
@@ -1523,8 +1544,8 @@
               <i class="fa-solid fa-location-dot"></i>
               Melbourne VIC &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Fitzroy's Best-Loved Local Restaurant</h1>
-            <p class="hero-tagline">Vibrant dining, exceptional food, and genuine hospitality in the heart of Melbourne</p>
+            <h1 class="hero-headline">Fitzroy's Favourite Neighbourhood Restaurant</h1>
+            <p class="hero-tagline">Seasonal menus, local ingredients, and 4.6★ rated by over 200 guests</p>
 
             <div class="hero-btns">
               <a href="tel:0395550303" class="btn-hero-primary">
@@ -1541,17 +1562,17 @@
               
             <div class="stat-item">
               <span class="stat-value">4.6★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (211 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">211+</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-value">Fitzroy</span>
+              <span class="stat-label">Melbourne's Creative Hub</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years in Fitzroy</span>
+              <span class="stat-value">Local</span>
+              <span class="stat-label">Seasonal Produce Focus</span>
             </div>
             
             </div>
@@ -1637,29 +1658,29 @@
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">À La Carte Dining</h3>
-              <p class="service-desc">Our rotating menu celebrates seasonal produce and showcases the best of contemporary Australian cooking. Every dish is thoughtfully crafted and prepared fresh to order.</p>
+              <h3 class="service-title">Dine In</h3>
+              <p class="service-desc">Experience our full menu in our intimate dining room, designed for both special occasions and casual meals with friends. Our knowledgeable staff are here to guide you through wine pairings and daily specials.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <h3 class="service-title">Takeaway Orders</h3>
+              <p class="service-desc">Craving Fitzroy Eats at home? Our takeaway menu features hand-packed mains and sides that travel beautifully. Order ahead by phone to skip the queue.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <h3 class="service-title">Private Events</h3>
+              <p class="service-desc">Host your next gathering in our private dining space, perfect for birthdays, anniversaries, and corporate events. We'll work with you to create a memorable menu.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wine-glass"></i>
               </div>
-              <h3 class="service-title">Curated Wine & Beverage List</h3>
-              <p class="service-desc">Discover carefully selected Australian wines, craft beers, and house cocktails that pair beautifully with our dishes. Our team is happy to recommend the perfect match for your meal.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-calendar-check"></i>
-              </div>
-              <h3 class="service-title">Private Bookings & Events</h3>
-              <p class="service-desc">Host your next gathering with us in an intimate, stylish setting perfect for celebrations, business dinners, or special occasions. We can tailor menus to suit your group.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-leaf"></i>
-              </div>
-              <h3 class="service-title">Dietary Accommodations</h3>
-              <p class="service-desc">We proudly cater to vegan, vegetarian, gluten-free, and other dietary requirements with the same creativity and care. Let us know in advance so we can prepare something special.</p>
+              <h3 class="service-title">Wine & Drinks</h3>
+              <p class="service-desc">Curated local and Australian wines, craft beers, and thoughtfully made cocktails complement every dish. Our team loves recommending the perfect pairing.</p>
             </div>
       </div>
     </div>
@@ -1672,15 +1693,15 @@
         
             <div class="strip-item">
               <div class="strip-value">4.6★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (211 reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">211+</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-value">Fitzroy</div>
+              <div class="strip-label">Melbourne's Creative Hub</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years in Fitzroy</div>
+              <div class="strip-value">Local</div>
+              <div class="strip-label">Seasonal Produce Focus</div>
             </div>
       </div>
     </div>
@@ -1694,7 +1715,7 @@
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Fitzroy Eats</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Fitzroy Eats is a celebrated neighbourhood restaurant serving innovative modern Australian cuisine with a focus on fresh, locally-sourced ingredients. With a 4.6★ rating from over 210 customers, we're known for our warm atmosphere, creative menus, and commitment to delivering memorable dining experiences.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Fitzroy Eats is a vibrant neighbourhood restaurant in Melbourne's creative heartland, serving contemporary Australian cuisine with a focus on seasonal produce and local suppliers. With over 211 five-star Google reviews, we've built a loyal following for our warm hospitality, carefully crafted menus, and welcoming atmosphere.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1749,30 +1770,30 @@
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Seared Kingfish</span>
-                  <span class="cat-menu-desc">Fresh daily catch with citrus beurre blanc and seasonal vegetables.</span>
+                  <span class="cat-menu-desc">Crispy skin, citrus beurre blanc, seasonal vegetables.</span>
                 </div>
                 <span class="cat-menu-price">$32</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Grass-Fed Beef Rib</span>
-                  <span class="cat-menu-desc">Slow-roasted with native pepper and served with burnt onion purée.</span>
+                  <span class="cat-menu-name">Grass-Fed Beef Sirloin</span>
+                  <span class="cat-menu-desc">Medium rare, chimichurri, truffle fries.</span>
                 </div>
-                <span class="cat-menu-price">$48</span>
+                <span class="cat-menu-price">$38</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Heirloom Beetroot Salad</span>
-                  <span class="cat-menu-desc">Local organic beets, goat's cheese, walnuts, and balsamic reduction.</span>
+                  <span class="cat-menu-name">Roasted Heirloom Vegetables</span>
+                  <span class="cat-menu-desc">Burnt butter, whipped ricotta, toasted nuts.</span>
                 </div>
                 <span class="cat-menu-price">$18</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call (03) 9555 0303 or walk in welcome</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended, especially Friday and Saturday evenings—call (03) 9555 0303 or walk in welcome</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Mon–Fri 11:30am–10pm  |  Sat–Sun 10am–11pm</div>
             </div>
       </div>
     </div>
@@ -1803,7 +1824,7 @@
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Let&rsquo;s talk about your project</h2>
-          <p class="contact-cta-line">Ready to join us for an unforgettable meal? Call (03) 9555 0303 to book your table, or simply walk in — we'd love to welcome you to Fitzroy Eats.</p>
+          <p class="contact-cta-line">Ready to discover why Fitzroy locals love us? Book your table or drop in today—we can't wait to welcome you.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1887,7 +1908,7 @@
             <span class="footer-brand-dot"></span>
             Fitzroy Eats
           </div>
-          <p class="footer-tagline">Vibrant dining, exceptional food, and genuine hospitality in the heart of Melbourne</p>
+          <p class="footer-tagline">Seasonal menus, local ingredients, and 4.6★ rated by over 200 guests</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

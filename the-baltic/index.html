@@ -4,719 +4,1654 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Baltic | Geelong</title>
+  <meta name="description" content="Exceptional coffee, fresh food, and genuine hospitality since day one">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6.5 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ── CSS Custom Properties ─────────────────────────────────── */
+    /* ── CSS Custom Properties ─────────────────────────────────────────── */
     :root {
-      --primary:    #6f4e37;
-      --secondary:  #c8a97e;
-      --bg:         #fdf6ec;
-      --text:       #2c1810;
-      --accent:     #e8c99a;
-      --white:      #ffffff;
-      --dark:       #111827;
-      --mid:        #6b7280;
-      --light:      #f9fafb;
-      --border:     #e5e7eb;
-      --radius:     16px;
-      --radius-sm:  8px;
-      --shadow-sm:  0 1px 3px rgba(0,0,0,0.08);
-      --shadow:     0 4px 16px rgba(0,0,0,0.10);
-      --shadow-md:  0 8px 32px rgba(0,0,0,0.14);
-      --shadow-lg:  0 20px 64px rgba(0,0,0,0.20);
-      --transition: all 0.28s cubic-bezier(0.4,0,0.2,1);
-      --max-w:      1200px;
+      --primary:      #6f4e37;
+      --secondary:    #c8a97e;
+      --bg:           #fdf6ec;
+      --text:         #2c1810;
+      --accent:       #e8c99a;
+      --white:        #ffffff;
+      --dark:         #111827;
+      --mid:          #6b7280;
+      --light:        #f9fafb;
+      --border:       #e5e7eb;
+      --border-strong:#d1d5db;
+      --text-muted:   #9ca3af;
+      --surface:      #ffffff;
+      --surface-2:    #f8fafc;
+      --radius:       16px;
+      --radius-sm:    8px;
+      --radius-lg:    24px;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-lg:    0 10px 40px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-xl:    0 24px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.10);
+      --transition:   all 0.28s cubic-bezier(0.4,0,0.2,1);
+      --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+      --max-w:        1200px;
+      --nav-height:   72px;
+      --section-pad:  clamp(64px, 8vw, 112px);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
     }
 
-    /* ── Reset & Base ──────────────────────────────────────────── */
+    /* ── Reset & Base ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--dark);
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+
+    a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
     .container {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
     }
 
-    /* ── Typography Helpers ─────────────────────────────────────── */
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--primary);
-      background: rgba(0,0,0,0.04); padding: 5px 14px;
-      border-radius: 100px; margin-bottom: 16px;
-    }
-    .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      font-weight: 800; line-height: 1.15;
+    /* ── Typography ────────────────────────────────────────────────────── */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      margin-bottom: 14px;
     }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: color-mix(in srgb, var(--primary) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
     .section-sub {
-      font-size: 1.05rem; color: var(--mid);
-      line-height: 1.75; max-width: 560px;
+      font-size: 1.05rem;
+      color: var(--mid);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
     }
 
-    /* ── Buttons ────────────────────────────────────────────────── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 14px 28px; border-radius: 100px;
-      font-weight: 600; font-size: 0.95rem;
-      cursor: pointer; border: none; transition: var(--transition);
-      text-decoration: none; line-height: 1;
+    /* ── Fade-in animation ─────────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
     }
-    .btn-primary {
-      background: var(--primary); color: #fff;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
     }
-    .btn-primary:hover {
-      filter: brightness(1.1); transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    }
-    .btn-ghost {
-      background: rgba(255,255,255,0.15); color: #fff;
-      backdrop-filter: blur(4px); border: 1.5px solid rgba(255,255,255,0.35);
-    }
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.25); transform: translateY(-2px);
-    }
-    .btn-outline {
-      background: transparent; color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-    .btn-outline:hover { background: var(--primary); color: #fff; }
 
-    /* ── NAV ─────────────────────────────────────────────────────── */
+    /* ══════════════════════════════════════════════════════════════════════
+       NAVIGATION
+    ══════════════════════════════════════════════════════════════════════ */
     #main-nav {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow 0.3s ease;
-    }
-    #main-nav.scrolled { box-shadow: var(--shadow-md); }
-    .nav-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-      height: 68px; display: flex; align-items: center;
-      justify-content: space-between; gap: 20px;
-    }
-    .nav-brand {
-      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.05rem;
-      color: var(--primary); display: flex; align-items: center;
-      gap: 10px; white-space: nowrap;
-    }
-    .brand-emoji { font-size: 1.35rem; }
-    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-    .nav-links a {
-      font-size: 0.88rem; font-weight: 500; color: var(--text);
-      padding: 8px 14px; border-radius: 8px; transition: var(--transition);
-    }
-    .nav-links a:hover { color: var(--primary); background: rgba(0,0,0,0.04); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .btn-nav-cta {
-      background: var(--primary); color: #fff; padding: 10px 22px;
-      border-radius: 100px; font-size: 0.88rem; font-weight: 600;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      height: var(--nav-height);
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
       transition: var(--transition);
     }
-    .btn-nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--text); border-radius: 2px; transition: var(--transition);
-    }
-    .mobile-nav {
-      display: none; position: absolute; top: 68px; left: 0; right: 0;
-      background: #fff; border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow-md); padding: 12px 24px 20px;
-    }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block; padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-weight: 500; font-size: 0.95rem;
-    }
-    .mobile-nav a:last-child { border: none; color: var(--primary); font-weight: 700; }
 
-    /* ── HERO ─────────────────────────────────────────────────────── */
+    #main-nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-height);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+
+    .nav-brand-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--mid);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s var(--ease-out);
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 35%, transparent);
+    }
+
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); color: #fff !important; }
+
+    /* Mobile hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .nav-hamburger:hover { background: var(--light); }
+
+    .nav-hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: var(--transition);
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      z-index: 998;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.38s var(--ease-out), opacity 0.28s ease;
+    }
+
+    .mobile-nav.open {
+      max-height: 320px;
+      opacity: 1;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 24px 24px;
+      gap: 4px;
+    }
+
+    .mobile-nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .mobile-nav-links a:last-child { border-bottom: none; }
+    .mobile-nav-links a:hover { color: var(--primary); }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════════════════════════ */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
-      position: relative; overflow: hidden;
+      min-height: 100svh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
+      background-size: 300% 300%;
+      animation: heroGradient 12s ease infinite;
+      overflow: hidden;
     }
-    .hero-pattern {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-      background-size: 36px 36px;
+
+    @keyframes heroGradient {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    .hero-glow {
-      position: absolute; top: -160px; right: -160px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
       pointer-events: none;
     }
-    .hero-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 88px 32px 0;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: center; position: relative; z-index: 1;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.95);
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
-      margin-bottom: 20px; backdrop-filter: blur(4px);
-    }
-    .hero-headline {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
-      font-weight: 900; line-height: 1.08; letter-spacing: -0.03em;
-      color: #fff; margin-bottom: 22px;
-    }
-    .hero-tagline {
-      font-size: 1.1rem; color: rgba(255,255,255,0.82);
-      line-height: 1.75; margin-bottom: 40px; max-width: 460px;
-    }
-    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
-    .hero-visual { position: relative; }
-    .hero-card {
-      background: rgba(255,255,255,0.12); backdrop-filter: blur(20px);
-      border: 1.5px solid rgba(255,255,255,0.25); border-radius: 24px;
-      padding: 32px; color: #fff;
-    }
-    .hero-card-emoji { font-size: 4rem; line-height: 1; margin-bottom: 16px; display: block; }
-    .hero-card-name {
-      font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800;
-      color: #fff; margin-bottom: 6px;
-    }
-    .hero-card-loc {
-      font-size: 0.85rem; color: rgba(255,255,255,0.7);
-      display: flex; align-items: center; gap: 6px; margin-bottom: 24px;
-    }
-    .hero-card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .hero-card-tag {
-      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
-      font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 100px;
-    }
-    .hero-stats {
-      position: relative; z-index: 1;
-      display: flex; align-items: center;
-      background: rgba(0,0,0,0.18); backdrop-filter: blur(10px);
-      padding: 24px 32px; margin: 0 -32px;
-    }
-    .stat-item {
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; flex: 1;
-    }
-    .stat-value {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 900; color: #fff; line-height: 1; margin-bottom: 6px;
-    }
-    .stat-label {
-      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.65);
-      text-transform: uppercase; letter-spacing: 0.1em;
-    }
-    .stat-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
 
-    /* ── QUICK TRUST FEATURES ─────────────────────────────────────── */
-    .features-strip { background: var(--dark); padding: 20px 0; }
-    .features-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-      display: flex; align-items: center; justify-content: center;
-      gap: 40px; flex-wrap: wrap;
+    .hero-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-height);
     }
-    .feature-badge {
-      display: flex; align-items: center; gap: 10px;
-      color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500;
-    }
-    .feature-badge i { color: var(--accent); font-size: 1rem; }
 
-    /* ── SERVICES ─────────────────────────────────────────────────── */
-    .section-services { padding: 96px 0; background: var(--bg); }
-    .section-header { margin-bottom: 56px; }
-    .section-header.center { text-align: center; }
-    .section-header.center .section-sub { margin: 0 auto; }
-    .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
-      margin-bottom: 14px;
-    }
-    .section-sub {
-      font-size: 1.05rem; color: var(--mid);
-      line-height: 1.75; max-width: 560px;
-    }
-    .services-grid {
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
-    }
-    .service-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 32px 28px; border: 1.5px solid var(--border);
-      box-shadow: var(--shadow-sm); transition: var(--transition);
-      position: relative; overflow: hidden;
-      opacity: 0; transform: translateY(18px);
-    }
-    .service-card::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
-    }
-    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-card.visible { opacity: 1; transform: translateY(0); }
-    .service-icon {
-      width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), color-mix(in srgb, var(--accent) 12%, transparent));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; color: var(--primary); transition: var(--transition);
-    }
-    .service-card:hover .service-icon {
-      background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff;
-    }
-    .service-title {
-      font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700;
-      color: var(--text); margin-bottom: 10px;
-    }
-    .service-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.7; }
-
-    /* ── TRUST STRIP ──────────────────────────────────────────────── */
-    .section-trust-strip {
-      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); padding: 36px 0;
-    }
-    .trust-strip-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-around;
-      gap: 16px; flex-wrap: wrap;
-    }
-    .strip-item {
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; flex: 1; min-width: 110px; padding: 8px 0;
-    }
-    .strip-value {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 900; color: #fff; line-height: 1;
-    }
-    .strip-label {
-      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.72);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px;
-    }
-    .strip-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.2); }
-
-    /* ── ABOUT ─────────────────────────────────────────────────────── */
-    .section-about { padding: 96px 0; background: var(--light); }
-    .about-grid {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-      display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--primary);
-      background: rgba(0,0,0,0.04); padding: 5px 14px;
-      border-radius: 100px; margin-bottom: 16px;
-    }
-    .about-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800; line-height: 1.18; color: var(--text);
-      margin-bottom: 18px; letter-spacing: -0.02em;
-    }
-    .about-body { font-size: 1rem; color: var(--mid); line-height: 1.8; margin-bottom: 32px; }
-    .about-checks {
-      list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px;
-    }
-    .about-checks li {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 0.95rem; font-weight: 500; color: var(--text);
-    }
-    .about-checks li::before {
-      content: '¹3'; flex-shrink: 0; width: 24px; height: 24px;
-      border-radius: 50%; background: color-mix(in srgb, var(--primary) 12%, transparent);
-      color: var(--primary); font-weight: 800; font-size: 0.85rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .btn-about-call {
-      display: inline-flex; align-items: center; gap: 9px;
-      background: var(--primary); color: #fff; padding: 14px 28px;
-      border-radius: 100px; font-weight: 600; font-size: 0.95rem; transition: var(--transition);
-    }
-    .btn-about-call:hover { filter: brightness(1.1); transform: translateY(-2px); }
-    .about-rating {
-      background: var(--white); border-radius: 20px; padding: 36px;
-      box-shadow: var(--shadow-md); border: 1.5px solid var(--border); text-align: center;
-    }
-    .rating-card { }
-    .rating-number {
-      font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 900;
-      color: var(--primary); line-height: 1;
-    }
-    .rating-stars { color: #F59E0B; font-size: 1.3rem; margin: 10px 0 6px; letter-spacing: 3px; }
-    .rating-label {
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--mid);
-    }
-    .rating-count { font-size: 0.85rem; color: var(--mid); margin-top: 6px; }
-
-    /* ── TESTIMONIALS ──────────────────────────────────────────────── */
-    .section-testimonials { padding: 96px 0; background: var(--bg); }
-    .section-testimonials .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800;
-      line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 52px;
-      text-align: center; max-width: var(--max-w);
-      margin-left: auto; margin-right: auto; padding: 0 32px;
-    }
-    .reviews-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px; max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-    }
-    .review-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 32px 28px; border: 1.5px solid var(--border);
-      box-shadow: var(--shadow-sm); transition: var(--transition);
-      display: flex; flex-direction: column; gap: 12px; position: relative;
-    }
-    .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .review-quote {
-      font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 900;
-      color: var(--primary); line-height: 0.6; opacity: 0.2; margin-bottom: 4px;
-    }
-    .review-text {
-      font-size: 0.93rem; color: var(--mid); line-height: 1.75; font-style: italic; flex: 1;
-    }
-    .review-stars { color: #F59E0B; font-size: 0.9rem; letter-spacing: 2px; }
-    .review-source {
-      font-size: 0.75rem; font-weight: 600; color: var(--mid);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0 80px;
+      width: 100%;
     }
 
-    /* ── CONTACT ──────────────────────────────────────────────────── */
-    .section-contact {
-      padding: 96px 0; background: var(--dark); position: relative; overflow: hidden;
+    /* Left column */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .section-contact::before {
-      content: ''; position: absolute; top: -120px; left: -120px;
-      width: 480px; height: 480px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
-    }
-    .contact-grid {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 80px; align-items: start; position: relative; z-index: 1;
-    }
-    .contact-info-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.2;
-    }
-    .contact-tagline {
-      font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 40px;
-    }
-    .contact-info-item {
-      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
-    }
-    .icon-circle {
-      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-      background: rgba(255,255,255,0.08); display: flex; align-items: center;
-      justify-content: center; color: rgba(255,255,255,0.65); font-size: 1rem;
-    }
-    .info-text { display: flex; flex-direction: column; gap: 3px; }
-    .info-text strong {
-      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: rgba(255,255,255,0.4);
-    }
-    .info-text span { font-size: 0.92rem; color: rgba(255,255,255,0.8); }
-    .btn-maps {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75);
-      border: 1px solid rgba(255,255,255,0.12); padding: 11px 20px;
-      border-radius: 100px; font-size: 0.85rem; font-weight: 600;
-      margin-top: 8px; transition: var(--transition);
-    }
-    .btn-maps:hover { background: rgba(255,255,255,0.14); color: #fff; }
-    .contact-form {
-      background: var(--white); border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg);
-    }
-    .contact-form h3 {
-      font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 700;
-      margin-bottom: 28px; color: var(--text);
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block; font-size: 0.78rem; font-weight: 700; color: var(--mid);
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 7px;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%; padding: 13px 16px; border: 2px solid var(--border);
-      border-radius: 10px; font-size: 0.95rem; font-family: 'Inter', sans-serif;
-      color: var(--text); background: var(--bg); transition: border-color 0.2s ease; outline: none;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-    .form-group textarea { min-height: 120px; resize: vertical; }
-    .btn-form-submit {
-      width: 100%; padding: 15px; background: var(--primary); color: #fff;
-      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
-      cursor: pointer; font-family: 'Inter', sans-serif; transition: var(--transition);
-    }
-    .btn-form-submit:hover { filter: brightness(1.1); transform: translateY(-1px); }
 
-    /* ── AGENCY CTA ────────────────────────────────────────────────── */
-    .section-agency-cta {
-      padding: 88px 0; text-align: center;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      position: relative; overflow: hidden;
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 7px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
     }
-    .section-agency-cta::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
-      background-size: 32px 32px;
-    }
-    .agency-cta-heading {
-      font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800; color: #fff; margin-bottom: 14px; position: relative;
-    }
-    .agency-cta-sub {
-      color: rgba(255,255,255,0.78); font-size: 1rem; margin-bottom: 36px;
-      line-height: 1.7; max-width: 520px;
-      margin-left: auto; margin-right: auto; position: relative;
-    }
-    .btn-agency-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #fff; color: var(--primary); padding: 16px 36px;
-      border-radius: 100px; font-weight: 700; font-size: 1rem;
-      transition: var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.18); position: relative;
-    }
-    .btn-agency-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,0.25); }
 
-    /* ── FOOTER ───────────────────────────────────────────────────── */
-    .site-footer { background: var(--dark); padding: 64px 0 0; color: rgba(255,255,255,0.5); }
-    .footer-grid {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 32px 48px;
-      display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px;
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
     }
-    .footer-brand {
-      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem;
-      color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+
+    .hero-tagline {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      margin-bottom: 40px;
+      max-width: 520px;
     }
-    .footer-details { font-size: 0.88rem; line-height: 1.9; margin-bottom: 24px; }
-    .footer-details a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
-    .footer-details a:hover { color: #fff; }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social-link {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(255,255,255,0.07); display: flex; align-items: center;
-      justify-content: center; color: rgba(255,255,255,0.45); font-size: 0.85rem;
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.97rem;
+      padding: 15px 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
       transition: var(--transition);
     }
-    .footer-social-link:hover { background: var(--primary); color: #fff; }
-    .footer-links-title {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: rgba(255,255,255,0.3); margin-bottom: 20px;
-    }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
-    .footer-links a:hover { color: #fff; }
-    .footer-bar {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      max-width: var(--max-w); margin: 0 auto; padding: 20px 32px;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-    }
-    .footer-bar span { font-size: 0.8rem; }
-    .site-by a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
-    .site-by a:hover { color: #fff; }
 
-    /* ── MOBILE STICKY BAR ─────────────────────────────────────────── */
-    .mobile-sticky-bar {
-      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-      background: #fff; box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.97rem;
+      padding: 15px 32px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      transition: var(--transition);
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255,255,255,0.28);
+      transform: translateY(-2px);
+    }
+
+    /* Hero stats card */
+    .hero-stats-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.25);
+      flex-shrink: 0;
+    }
+
+    /* Right column — browser mockup */
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-browser {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.30);
+      overflow: hidden;
+      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+      transition: transform 0.5s var(--ease-out);
+    }
+
+    .hero-browser:hover {
+      transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+    }
+
+    .hero-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f1f3f5;
       padding: 12px 16px;
-      padding-bottom: max(12px, env(safe-area-inset-bottom));
-    }
-    .mobile-sticky-bar a {
-      display: flex; align-items: center; justify-content: center;
-      gap: 9px; background: var(--primary); color: #fff;
-      padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.95rem;
-      max-width: 360px; margin: 0 auto;
+      border-bottom: 1px solid #e5e7eb;
     }
 
-    /* ── RESPONSIVE ────────────────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 72px; }
-      .hero-visual { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+    .browser-dots {
+      display: flex;
+      gap: 6px;
     }
-    @media (max-width: 768px) {
+
+    .browser-dots span {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #febc2e; }
+    .browser-dots span:nth-child(3) { background: #28c840; }
+
+    .browser-url {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      color: #6b7280;
+      font-family: monospace;
+    }
+
+    .hero-browser-content {
+      padding: 24px;
+      background: #fff;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 6%, #fff), color-mix(in srgb, var(--secondary) 5%, #fff));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .hero-card-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .hero-card-city {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .hero-card-stars {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .hero-card-stars span {
+      color: #f59e0b;
+      font-size: 1rem;
+    }
+
+    .hero-card-rating-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .hero-card-addr {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    .hero-card-addr i { color: var(--primary); margin-top: 1px; flex-shrink: 0; }
+
+    .hero-card-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hero-card-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: color-mix(in srgb, var(--primary) 10%, transparent);
+      color: var(--primary);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+
+    /* Hero features strip */
+    .hero-features {
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 16px 0;
+    }
+
+    .hero-features-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .hero-feat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 8px 24px;
+    }
+
+    .hero-feat + .hero-feat {
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-feat i { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-services {
+      padding: var(--section-pad) 0;
+      background: var(--surface-2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      counter-reset: service-counter;
+    }
+
+    .service-card {
+      counter-increment: service-counter;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .service-card::before {
+      content: counter(service-counter, decimal-leading-zero);
+      font-family: var(--font-display);
+      font-size: 5.5rem;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0.055;
+      position: absolute;
+      top: -12px; right: 12px;
+      color: var(--primary);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--primary);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.32s var(--ease-out);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .service-card:hover::after {
+      transform: scaleY(1);
+    }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 1.3rem;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      transform: rotate(-4deg) scale(1.05);
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TRUST STRIP
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-trust-strip {
+      position: relative;
+      padding: 56px 0;
+      background: linear-gradient(100deg, var(--primary) 0%, var(--secondary) 100%);
+      overflow: hidden;
+    }
+
+    .section-trust-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .trust-strip-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 48px;
+      text-align: center;
+    }
+
+    .strip-item + .strip-item {
+      border-left: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .strip-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .strip-label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.04em;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-about {
+      padding: var(--section-pad) 0;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-about::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .about-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .af-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .af-icon {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--primary) 10%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.88rem;
+      margin-top: 2px;
+    }
+
+    .af-text {
+      font-size: 0.93rem;
+      color: var(--mid);
+      line-height: 1.55;
+      padding-top: 8px;
+      font-weight: 500;
+    }
+
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 13px 26px;
+      border-radius: 10px;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 30%, transparent);
+    }
+
+    .btn-maps:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 38%, transparent);
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Rating card */
+    .rating-card {
+      background: var(--surface-2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .rating-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .rating-stars {
+      font-size: 1.8rem;
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .rating-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--mid);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .rating-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TESTIMONIALS (injected via {testimonials_html})
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-testimonials {
+      padding: var(--section-pad) 0;
+      background: var(--surface-2);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    }
+
+    .review-quote {
+      font-family: Georgia, serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.3;
+      margin-bottom: 8px;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .review-stars {
+      font-size: 1rem;
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .review-source {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-contact {
+      padding: var(--section-pad) 0;
+      background: var(--dark);
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-left-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .contact-cta-line {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover .contact-item-icon {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .contact-item-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .contact-item-value {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .contact-item-value a {
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .contact-item-value a:hover { color: color-mix(in srgb, var(--primary) 80%, #fff); }
+
+    /* Contact form card */
+    .contact-form-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.3);
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 16px 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--dark);
+      background: var(--surface-2);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+      padding-top: 22px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent);
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 12px; left: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--mid);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group input:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label {
+      top: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px color-mix(in srgb, var(--primary) 35%, transparent);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .btn-submit i {
+      transition: transform 0.28s var(--ease-spring);
+    }
+
+    .btn-submit:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px color-mix(in srgb, var(--primary) 42%, transparent);
+    }
+
+    .btn-submit:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       AGENCY BANNER
+    ══════════════════════════════════════════════════════════════════════ */
+    .agency-banner {
+      background: color-mix(in srgb, var(--primary) 6%, var(--surface-2));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .agency-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .agency-banner-text {
+      font-size: 0.88rem;
+      color: var(--mid);
+    }
+
+    .agency-banner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .agency-banner-link:hover { color: var(--secondary); }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════════════════ */
+    .footer-divider {
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.65);
+      padding: 64px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-social:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .footer-col-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: #fff; }
+
+    .footer-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-contact-item i {
+      color: var(--primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 14px;
+    }
+
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       MOBILE STICKY BAR
+    ══════════════════════════════════════════════════════════════════════ */
+    .sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 990;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px) saturate(180%);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+    }
+
+    .sticky-bar-inner {
+      display: flex;
+      gap: 12px;
+    }
+
+    .sticky-bar-call {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 35%, transparent);
+    }
+
+    @keyframes phonePulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      10%       { transform: scale(1.15) rotate(-12deg); }
+      20%       { transform: scale(1.1) rotate(10deg); }
+      30%       { transform: scale(1) rotate(0deg); }
+    }
+
+    .sticky-bar-call i { animation: phonePulse 2.5s ease-in-out infinite; }
+
+    .sticky-bar-contact {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 13px 20px;
+      border-radius: 10px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { gap: 48px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .hero-inner { padding-top: 56px; }
-      .hero-headline { font-size: 2.4rem; }
-      .hero-stats { padding: 20px 24px; }
-      .stat-value { font-size: 1.5rem; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .section-services, .section-about, .section-testimonials { padding: 64px 0; }
-      .section-contact { padding: 64px 0 100px; }
-      .about-grid, .contact-grid, .reviews-grid { padding: 0 24px; }
-      .about-grid { gap: 40px; }
-      .contact-form { padding: 28px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 40px; }
-      .footer-bar { flex-direction: column; text-align: center; padding: 18px 24px; }
-      .mobile-sticky-bar { display: block; }
-    }
-    @media (max-width: 500px) {
       .services-grid { grid-template-columns: 1fr; }
-      .hero-headline { font-size: 2rem; }
-      .hero-stats { flex-direction: column; gap: 16px; padding: 28px 24px; }
-      .stat-divider { width: 60px; height: 1px; }
-      .features-inner { gap: 20px; }
-      .container { padding: 0 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .strip-item { padding: 8px 28px; }
+      .hero-feat { padding: 6px 14px; }
+      .hero-feat + .hero-feat { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); }
+      .hero-features-inner { flex-direction: column; }
+      .sticky-bar { display: flex; }
+      body { padding-bottom: 72px; }
+      .contact-form-card { padding: 28px 20px; }
     }
 
-    /* ── ANIMATION ─────────────────────────────────────────────────── */
-    .fade-in {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    /* ══════════════════════════════════════════════════════════════════════
+       SECTION (general)
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-cat {
+      padding: var(--section-pad) 0;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ── Persona overrides (injected per category) ─────────────────────── */
+    
+/* ─ EDITORIAL PERSONA ──────────────────────────────── */
+:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+body { font-family: 'DM Sans', system-ui, sans-serif; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-title::after {
+  content: ''; display: block; width: 40px; height: 1.5px;
+  background: var(--primary); margin: 14px auto 0; opacity: 0.5;
+}
+.hero { background: radial-gradient(ellipse at 65% 50%,
+  color-mix(in srgb, var(--primary) 55%, #1a0a00) 0%, #0a0603 70%) !important; }
+.hero-headline { font-style: italic; font-weight: 600; }
+.service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
+.service-card::before { border-radius: 4px 4px 16px 16px !important; }
+.nav-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem; font-weight: 600; font-style: italic; letter-spacing: 0.03em;
+}
+
   </style>
 </head>
+
 <body>
 
-  <!-- ═══ STICKY NAV ══════════════════════════════════════════════════════ -->
+  <!-- ══ NAV ═══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
-    <div class="nav-inner">
-      <a class="nav-brand" href="#hero">
-        <span class="brand-emoji">☕</span>
-        <span>The Baltic</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn-nav-cta" href="#contact">Get a Quote</a>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-brand">
+          <span class="nav-brand-dot"></span>
+          The Baltic
+        </a>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#contact" class="nav-cta">Get a Quote</a>
+        </div>
+
+        <div class="nav-hamburger" id="nav-hamburger" aria-label="Menu" role="button" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div class="nav-hamburger" id="nav-hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <a href="#services" onclick="closeMobileNav()">Services</a>
-      <a href="#about" onclick="closeMobileNav()">About</a>
-      <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
-      <a href="#contact" onclick="closeMobileNav()">Get a Free Quote &rarr;</a>
     </div>
   </nav>
 
-  <!-- ═══ HERO ════════════════════════════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-pattern" aria-hidden="true"></div>
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="hero-eyebrow">
-          <i class="fa-solid fa-location-dot"></i>
-          Geelong &bull; Trusted Local Experts
-        </span>
-        <h1 class="hero-headline">Geelong's Favourite Specialty Café</h1>
-        <p class="hero-tagline">Premium coffee, fresh pastries, and European-inspired treats in the heart of Geelong</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#contact">
-            <i class="fa-solid fa-paper-plane"></i> Get a Free Quote
-          </a>
-          <a class="btn btn-ghost" href="tel:tel:+61493783226">
-            <i class="fa-solid fa-phone"></i> +61 493 783 226
-          </a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-card">
-          <span class="hero-card-emoji">☕</span>
-          <div class="hero-card-name">The Baltic</div>
-          <div class="hero-card-loc">
-            <i class="fa-solid fa-map-pin"></i> 148 Little Malop St, Geelong VIC 3220
-          </div>
-          <div class="hero-card-tags">
-            <span class="hero-card-tag"><i class="fa-solid fa-star"></i> Highly Rated</span>
-            <span class="hero-card-tag"><i class="fa-solid fa-shield-halved"></i> Licensed</span>
-            <span class="hero-card-tag"><i class="fa-solid fa-clock"></i> Fast Response</span>
-          </div>
-        </div>
-      </div>
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+61493783226" style="color:var(--primary);font-weight:700;">+61 493 783 226</a>
     </div>
-    <div class="hero-stats">
-      
+  </div>
+
+  <!-- ══ HERO ══════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-main">
+      <div class="container" style="width:100%;">
+        <div class="hero-grid">
+
+          <!-- Left column -->
+          <div class="hero-left fade-in">
+            <span class="hero-eyebrow">
+              <i class="fa-solid fa-location-dot"></i>
+              Geelong &mdash; Trusted Local Experts
+            </span>
+            <h1 class="hero-headline">Geelong's Favourite Neighbourhood Café</h1>
+            <p class="hero-tagline">Exceptional coffee, fresh food, and genuine hospitality since day one</p>
+
+            <div class="hero-btns">
+              <a href="tel:+61493783226" class="btn-hero-primary">
+                <i class="fa-solid fa-phone"></i>
+                Call Now
+              </a>
+              <a href="#contact" class="btn-hero-secondary">
+                <i class="fa-solid fa-envelope"></i>
+                Free Quote
+              </a>
+            </div>
+
+            <div class="hero-stats-card">
+              
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
               <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">53</span>
+              <span class="stat-value">53+</span>
               <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years in Geelong</span>
+              <span class="stat-value">8 Years</span>
+              <span class="stat-label">Local Favourite</span>
             </div>
             
+            </div>
+          </div>
+
+          <!-- Right column — browser mockup -->
+          <div class="hero-right fade-in" style="transition-delay:0.15s;">
+            <div class="hero-browser">
+              <div class="hero-browser-bar">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-url">yoursite.com.au</div>
+              </div>
+              <div class="hero-browser-content">
+                <div class="hero-card">
+                  <div class="hero-card-emoji">☕</div>
+                  <div class="hero-card-name">The Baltic</div>
+                  <div class="hero-card-city">Geelong, Australia</div>
+                  <div class="hero-card-stars">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="hero-card-rating-text">5.0 · Excellent</span>
+                  </div>
+                  <div class="hero-card-addr">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>148 Little Malop St, Geelong VIC 3220</span>
+                  </div>
+                  <div class="hero-card-divider"></div>
+                  <div class="hero-card-tags">
+                    <span class="hero-card-tag">Locally Owned</span>
+                    <span class="hero-card-tag">5-Star Rated</span>
+                    <span class="hero-card-tag">Fast Response</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero features strip -->
+    <div class="hero-features">
+      <div class="container">
+        <div class="hero-features-inner">
+          <div class="hero-feat">
+            <i class="fa-solid fa-shield-halved"></i>
+            Licensed &amp; Insured
+          </div>
+          <div class="hero-feat">
+            <i class="fa-solid fa-star"></i>
+            5-Star Rated
+          </div>
+          <div class="hero-feat">
+            <i class="fa-solid fa-house-chimney"></i>
+            Locally Owned
+          </div>
+          <div class="hero-feat">
+            <i class="fa-solid fa-bolt"></i>
+            Fast Response
+          </div>
+          <div class="hero-feat">
+            <i class="fa-solid fa-circle-check"></i>
+            Satisfaction Guaranteed
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ═══ QUICK TRUST FEATURES ════════════════════════════════════════════ -->
-  <div class="features-strip">
-    <div class="features-inner">
-      <div class="feature-badge">
-        <i class="fa-solid fa-certificate"></i> Licensed &amp; Insured
-      </div>
-      <div class="feature-badge">
-        <i class="fa-solid fa-star"></i> 5-Star Rated
-      </div>
-      <div class="feature-badge">
-        <i class="fa-solid fa-location-dot"></i> Locally Owned
-      </div>
-      <div class="feature-badge">
-        <i class="fa-solid fa-clock"></i> Fast Response
-      </div>
-      <div class="feature-badge">
-        <i class="fa-solid fa-thumbs-up"></i> 100% Satisfaction
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ SERVICES ════════════════════════════════════════════════════════ -->
+  <!-- ══ SERVICES ══════════════════════════════════════════════════════════ -->
   <section class="section-services" id="services">
     <div class="container">
-      <div class="section-header center fade-in">
-        <div class="eyebrow"><i class="fa-solid fa-bolt"></i> What We Do</div>
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-sub">Professional, reliable service for every job &mdash; big or small.</p>
+      <div class="section-label fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-list-check"></i> What We Do</span>
       </div>
+      <h2 class="section-heading fade-in">Our Services</h2>
+      <p class="section-sub fade-in">Everything you need, delivered with care and expertise by your trusted local team.</p>
       <div class="services-grid">
         
             <div class="service-card">
@@ -724,90 +1659,107 @@
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium, single-origin beans and train our baristas to perfection. Every espresso, flat white, and cold brew is crafted with care and expertise.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-croissant"></i>
-              </div>
-              <h3 class="service-title">Fresh Pastries & Baked Goods</h3>
-              <p class="service-desc">From flaky croissants to Danish pastries, our selection rotates daily with fresh, locally-inspired options. Perfect to pair with your morning coffee.</p>
+              <p class="service-desc">Hand-roasted espresso blends and single-origin beans prepared by our trained baristas. From flat whites to cold brew, we dial in every extraction for perfect flavour.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Light Lunch Menu</h3>
-              <p class="service-desc">Enjoy fresh salads, sandwiches, and European-style small plates throughout the day. All ingredients are sourced locally wherever possible.</p>
+              <h3 class="service-title">Fresh Brunch & Lunch</h3>
+              <p class="service-desc">Seasonal menu featuring locally sourced ingredients and house-made specials. Our kitchen team prepares everything fresh daily, from avocado toast to hearty mains.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <h3 class="service-title">Dietary Options</h3>
+              <p class="service-desc">We cater to vegan, gluten-free, and dairy-free diets without compromise on taste. Every dietary requirement is treated with the same care and attention as our standard menu.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Welcoming Café Space</h3>
-              <p class="service-desc">Cosy seating, free Wi-Fi, and a genuine community feel make The Baltic the perfect spot to work, meet friends, or simply slow down.</p>
+              <h3 class="service-title">Community Hub</h3>
+              <p class="service-desc">A warm, inclusive space where Geelong locals gather, work, and connect. We're proud to support local artists, businesses, and events that strengthen our community.</p>
             </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ TRUST STRIP ══════════════════════════════════════════════════════ -->
-  <section class="section-trust-strip">
-    <div class="trust-strip-inner">
-      
+  <!-- ══ TRUST STRIP ════════════════════════════════════════════════════════ -->
+  <div class="section-trust-strip">
+    <div class="container">
+      <div class="trust-strip-inner">
+        
             <div class="strip-item">
               <div class="strip-value">4.7★</div>
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">53</div>
+              <div class="strip-value">53+</div>
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years in Geelong</div>
+              <div class="strip-value">8 Years</div>
+              <div class="strip-label">Local Favourite</div>
             </div>
-    </div>
-  </section>
-
-  <!-- ═══ ABOUT ════════════════════════════════════════════════════════════ -->
-  <section class="section-about" id="about">
-    <div class="about-grid">
-      <div class="about-text fade-in">
-        <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Who We Are</span>
-        <h2 class="about-title">About The Baltic</h2>
-        <p class="about-body">The Baltic is Geelong's go-to destination for expertly crafted coffee and authentic European-style café culture. With a 4.7★ rating from over 50 locals, we're known for our quality beans, warm atmosphere, and carefully curated seasonal menu.</p>
-        <ul class="about-checks">
-          <li>Locally owned and operated in Geelong</li>
-          <li>Licensed, insured &amp; fully certified</li>
-          <li>Fast response times &amp; upfront pricing</li>
-          <li>Hundreds of 5-star reviews from happy customers</li>
-        </ul>
-        <a class="btn-about-call" href="mailto:info@the-baltic.com.au">
-          <i class="fa-solid fa-envelope"></i>
-          Send Us an Email
-        </a>
       </div>
-      <div class="about-rating fade-in">
-        
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══════════════════════════════════════════════════════════════ -->
+  <section class="section-about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left -->
+        <div class="fade-in">
+          <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
+          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About The Baltic</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Baltic is Geelong's go-to café for expertly crafted espresso drinks, seasonal brunch, and a welcoming atmosphere that keeps locals coming back. With a 4.7★ rating from 53 Google reviews, we're known for quality ingredients, skilled baristas, and a commitment to getting every cup just right.</p>
+
+          <div class="about-features">
+            <div class="af-item">
+              <span class="af-icon"><i class="fa-solid fa-map-pin"></i></span>
+              <span class="af-text">Locally owned and operated right here in Geelong</span>
+            </div>
+            <div class="af-item">
+              <span class="af-icon"><i class="fa-solid fa-shield-halved"></i></span>
+              <span class="af-text">Licensed, insured &amp; fully certified — your peace of mind matters</span>
+            </div>
+            <div class="af-item">
+              <span class="af-icon"><i class="fa-solid fa-gauge-high"></i></span>
+              <span class="af-text">Fast response times &amp; upfront pricing — no hidden surprises</span>
+            </div>
+            <div class="af-item">
+              <span class="af-icon"><i class="fa-solid fa-star"></i></span>
+              <span class="af-text">Hundreds of 5-star reviews from happy customers across the area</span>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/search/148+Little+Malop+St%2C+Geelong+VIC+3220" target="_blank" rel="noopener" class="btn-maps">
+            <i class="fa-brands fa-google"></i>
+            Find Us on Google Maps
+          </a>
+        </div>
+
+        <!-- Right -->
+        <div class="about-right fade-in" style="transition-delay:0.12s;">
+          
             <div class="rating-card">
               <div class="rating-number">4.7</div>
               <div class="rating-stars">★★★★½</div>
               <div class="rating-label">on Google</div>
               <div class="rating-count">53 Google reviews</div>
             </div>
-        <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);text-align:left;">
-          <a href="https://www.google.com/maps/search/148+Little+Malop+St%2C+Geelong+VIC+3220" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;font-size:0.9rem;text-decoration:none;">
-            <i class="fa-brands fa-google"></i> View our Google listing &rarr;
-          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ══ TESTIMONIALS (injected) ════════════════════════════════════════════ -->
   
 
+  <!-- ══ CATEGORY SECTION (injected) ═══════════════════════════════════════ -->
   
   <!-- ═══ MENU / HOURS ══════════════════════════════════════════════════════ -->
   <section class="section-cat" id="menu" style="background:#fdf6ec;padding:90px 0;">
@@ -817,26 +1769,26 @@
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Single-Origin Espresso</span>
-                  <span class="cat-menu-desc">Premium beans, perfectly pulled.</span>
-                </div>
-                <span class="cat-menu-price">$4.50</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Butter Croissant</span>
-                  <span class="cat-menu-desc">Flaky, fresh, and made daily.</span>
+                  <span class="cat-menu-name">Flat White</span>
+                  <span class="cat-menu-desc">Velvety microfoam espresso with perfectly steamed milk.</span>
                 </div>
                 <span class="cat-menu-price">$5.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avo Toast</span>
-                  <span class="cat-menu-desc">Local sourdough with fresh avocado.</span>
+                  <span class="cat-menu-name">Smashed Avo on Sourdough</span>
+                  <span class="cat-menu-desc">Local eggs, heirloom tomato, dukkah, and fresh chilli.</span>
+                </div>
+                <span class="cat-menu-price">$16.50</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">The Baltic Breakfast Bowl</span>
+                  <span class="cat-menu-desc">Granola, yoghurt, seasonal fruit, and house-made granola clusters.</span>
                 </div>
                 <span class="cat-menu-price">$14.00</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — walk in anytime. Groups welcome!</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Walk-ins always welcome — no bookings necessary</p>
         </div>
         
             <div class="cat-hours-box">
@@ -864,227 +1816,281 @@
     .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
   </style>
 
-  <!-- ═══ CONTACT ═══════════════════════════════════════════════════════════ -->
+  <!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
   <section class="section-contact" id="contact">
-    <div class="contact-grid">
-      <div class="contact-info fade-in">
-        <h2 class="contact-info-title">Get in Touch</h2>
-        <p class="contact-tagline">Visit The Baltic today and experience the café culture that Geelong's locals love. We're here to brighten your day, one cup at a time.</p>
-        <div class="contact-info-item">
-          <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="info-text">
-            <strong>Our Address</strong>
-            <span>148 Little Malop St, Geelong VIC 3220</span>
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left -->
+        <div class="fade-in">
+          <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
+          <h2 class="contact-title">Let&rsquo;s talk about your project</h2>
+          <p class="contact-cta-line">Drop by The Baltic soon and discover why Geelong loves us. We're here to brew something special for you every single day.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value"><a href="tel:+61493783226">+61 493 783 226</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value"><a href="mailto:info@the-baltic.com.au">info@the-baltic.com.au</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-item-label">Address</div>
+                <div class="contact-item-value">148 Little Malop St, Geelong VIC 3220</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-          <div class="info-text">
-            <strong>Call Us</strong>
-            <span><a href="tel:tel:+61493783226" style="color:inherit;">+61 493 783 226</a></span>
+
+        <!-- Right — form -->
+        <div class="fade-in" style="transition-delay:0.12s;">
+          <div class="contact-form-card">
+            <div class="form-title">Send Us a Message</div>
+            <form onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="f-name" placeholder=" " autocomplete="name">
+                  <label for="f-name">Your Name</label>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="f-email" placeholder=" " autocomplete="email">
+                  <label for="f-email">Email Address</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="f-phone" placeholder=" " autocomplete="tel">
+                <label for="f-phone">Phone Number</label>
+              </div>
+              <div class="form-group">
+                <textarea id="f-msg" rows="4" placeholder=" "></textarea>
+                <label for="f-msg">Your Message</label>
+              </div>
+              <button type="submit" class="btn-submit">
+                Send Message
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
           </div>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
-          <div class="info-text">
-            <strong>Email Us</strong>
-            <span><a href="mailto:info@the-baltic.com.au" style="color:inherit;">info@the-baltic.com.au</a></span>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
-          <div class="info-text">
-            <strong>Hours</strong>
-            <span>Open 7 Days &mdash; Call for availability</span>
-          </div>
-        </div>
-        <a class="btn-maps" href="https://www.google.com/maps/search/148+Little+Malop+St%2C+Geelong+VIC+3220" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-map-location-dot"></i>&nbsp; View on Google Maps &rarr;
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AGENCY BANNER ══════════════════════════════════════════════════════ -->
+  <div class="agency-banner">
+    <div class="container">
+      <div class="agency-banner-inner">
+        <span class="agency-banner-text">Want a professional website like this for your business?</span>
+        <a href="mailto:info@the-baltic.com.au" class="agency-banner-link">
+          <i class="fa-solid fa-rocket"></i>
+          Get started today
         </a>
       </div>
-      <div class="fade-in">
-        <form class="contact-form" action="mailto:info@the-baltic.com.au" method="get" enctype="text/plain">
-          <h3>Send Us a Message</h3>
-          <div class="form-group">
-            <label for="cf-name">Your Name</label>
-            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
-          </div>
-          <div class="form-group">
-            <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" name="email" placeholder="jane@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="cf-phone">Phone Number</label>
-            <input type="tel" id="cf-phone" name="phone" placeholder="04XX XXX XXX">
-          </div>
-          <div class="form-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="body" placeholder="Tell us about your project&#8230;" required></textarea>
-          </div>
-          <button type="submit" class="btn-form-submit">Send Message &rarr;</button>
-        </form>
-      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══ AGENCY CTA BANNER ══════════════════════════════════════════════ -->
-  <section class="section-agency-cta">
-    <div class="container">
-      <h2 class="agency-cta-heading">&#10024; Want a professional website like this?</h2>
-      <p class="agency-cta-sub">We build custom sites for local businesses across Australia &mdash; fast, beautiful, and built to convert.</p>
-      <a class="btn-agency-cta" href="mailto:info@the-baltic.com.au">Get Your Free Website &rarr;</a>
-    </div>
-  </section>
-
-  <!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
-  <footer class="site-footer">
+  <!-- ══ FOOTER ═════════════════════════════════════════════════════════════ -->
+  <div class="footer-divider"></div>
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Brand -->
         <div>
-          <div class="footer-brand">☕ The Baltic</div>
-          <div class="footer-details">
-            148 Little Malop St, Geelong VIC 3220<br>
-            <a href="tel:tel:+61493783226">+61 493 783 226</a><br>
-            <a href="mailto:info@the-baltic.com.au">info@the-baltic.com.au</a>
+          <div class="footer-brand">
+            <span class="footer-brand-dot"></span>
+            The Baltic
           </div>
-          <div class="footer-social">
-            <a class="footer-social-link" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a class="footer-social-link" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a class="footer-social-link" href="https://www.google.com/maps/search/148+Little+Malop+St%2C+Geelong+VIC+3220" target="_blank" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+          <p class="footer-tagline">Exceptional coffee, fresh food, and genuine hospitality since day one</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Google"><i class="fa-brands fa-google"></i></a>
           </div>
         </div>
+
+        <!-- Quick links -->
         <div>
-          <div class="footer-links-title">Quick Links</div>
-          <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+          </div>
         </div>
+
+        <!-- Contact info -->
         <div>
-          <div class="footer-links-title">Contact</div>
-          <ul class="footer-links">
-            <li><a href="tel:tel:+61493783226">+61 493 783 226</a></li>
-            <li><a href="mailto:info@the-baltic.com.au">info@the-baltic.com.au</a></li>
-            <li><a href="https://www.google.com/maps/search/148+Little+Malop+St%2C+Geelong+VIC+3220" target="_blank">Geelong</a></li>
-          </ul>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+61493783226">+61 493 783 226</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@the-baltic.com.au">info@the-baltic.com.au</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>148 Little Malop St, Geelong VIC 3220</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-bar">
-        <span>&copy; 2025 The Baltic. All rights reserved.</span>
-        <span class="site-by">Site by <a href="#">ProjectStorm</a></span>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2025 The Baltic. All rights reserved. Geelong, Australia.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- ═══ MOBILE STICKY BAR ═══════════════════════════════════════════════ -->
-  <div class="mobile-sticky-bar">
-    <a href="tel:tel:+61493783226">
-      <i class="fa-solid fa-phone"></i>
-      Call The Baltic
-    </a>
+  <!-- ══ MOBILE STICKY BAR ══════════════════════════════════════════════════ -->
+  <div class="sticky-bar">
+    <div class="sticky-bar-inner">
+      <a href="tel:+61493783226" class="sticky-bar-call">
+        <i class="fa-solid fa-phone"></i>
+        Call Now
+      </a>
+      <a href="#contact" class="sticky-bar-contact">
+        <i class="fa-solid fa-envelope"></i>
+        Free Quote
+      </a>
+    </div>
   </div>
 
-  <!-- ═══ JAVASCRIPT ═══════════════════════════════════════════════════════ -->
+  <!-- ══ JAVASCRIPT ══════════════════════════════════════════════════════════ -->
   <script>
     (function () {
+      'use strict';
+
+      /* 1 — Nav scroll */
       var nav = document.getElementById('main-nav');
       window.addEventListener('scroll', function () {
         nav.classList.toggle('scrolled', window.scrollY > 20);
       }, { passive: true });
-    })();
 
-    var hamburger = document.getElementById('nav-hamburger');
-    var mobileNav  = document.getElementById('mobile-nav');
-    hamburger.addEventListener('click', function () {
-      mobileNav.classList.toggle('open');
-    });
-    function closeMobileNav() { mobileNav.classList.remove('open'); }
+      /* 2 — Mobile nav toggle */
+      var hamburger  = document.getElementById('nav-hamburger');
+      var mobileNav  = document.getElementById('mobile-nav');
 
-    (function () {
-      var els = document.querySelectorAll('.fade-in');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function (el) { el.classList.add('visible'); });
-        return;
+      function openMobileNav() {
+        mobileNav.classList.add('open');
+        hamburger.classList.add('open');
       }
-      var obs = new IntersectionObserver(function (entries) {
+
+      function closeMobileNav() {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+
+      hamburger.addEventListener('click', function () {
+        mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
+      });
+
+      /* 3 — Close mobile nav on link click */
+      mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMobileNav);
+      });
+
+      /* 4 — Fade-in IntersectionObserver */
+      var fadeObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+            fadeObserver.unobserve(entry.target);
           }
         });
       }, { threshold: 0.12 });
-      els.forEach(function (el) { obs.observe(el); });
-    })();
 
-    (function () {
-      var cards = document.querySelectorAll('.service-card');
-      if (!cards.length) return;
-      if (!('IntersectionObserver' in window)) {
-        cards.forEach(function (c) { c.classList.add('visible'); });
-        return;
-      }
-      var obs = new IntersectionObserver(function (entries) {
+      document.querySelectorAll('.fade-in').forEach(function (el) {
+        fadeObserver.observe(el);
+      });
+
+      /* 5 — Service card stagger */
+      var cardObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+            var cards = entry.target.querySelectorAll('.service-card');
+            cards.forEach(function (card, i) {
+              card.style.transitionDelay = (i * 0.08) + 's';
+              card.classList.add('visible');
+            });
+            cardObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
-      cards.forEach(function (card, i) {
-        card.style.transitionDelay = (i * 0.08) + 's';
-        obs.observe(card);
-      });
-    })();
+      }, { threshold: 0.05 });
 
-    (function () {
-      function animateValue(el) {
-        var raw       = el.textContent.replace(/,/g, '');
-        var num       = parseFloat(raw);
-        var suffix    = raw.replace(/[0-9.]/g, '');
+      var svcGrid = document.querySelector('.services-grid');
+      if (svcGrid) {
+        svcGrid.querySelectorAll('.service-card').forEach(function (c) {
+          c.classList.add('fade-in');
+        });
+        cardObserver.observe(svcGrid);
+      }
+
+      /* 6 — Number counter animation */
+      function animateCounter(el) {
+        var raw    = el.textContent.trim();
+        var suffix = raw.replace(/[\d.]/g, '');
+        var num    = parseFloat(raw.replace(/[^\d.]/g, ''));
         if (isNaN(num) || num === 0) return;
         var start     = 0;
         var duration  = 1400;
-        var t0        = null;
-        var isDecimal = (num % 1 !== 0);
+        var startTime = null;
+        var isDecimal = raw.includes('.');
+
         function step(ts) {
-          if (!t0) t0 = ts;
-          var p    = Math.min((ts - t0) / duration, 1);
-          var ease = 1 - Math.pow(1 - p, 3);
-          var cur  = isDecimal
-            ? (start + (num - start) * ease).toFixed(1)
-            : Math.round(start + (num - start) * ease);
-          el.textContent = cur + suffix;
-          if (p < 1) requestAnimationFrame(step);
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased    = 1 - Math.pow(1 - progress, 3);
+          var current  = num * eased;
+          el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
         }
+
         requestAnimationFrame(step);
       }
-      var statEls = document.querySelectorAll('.stat-value, .strip-value');
-      if (!('IntersectionObserver' in window)) { statEls.forEach(animateValue); return; }
-      var obs = new IntersectionObserver(function (entries) {
+
+      var counterObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            animateValue(entry.target);
-            obs.unobserve(entry.target);
+            entry.target.querySelectorAll('.stat-value, .strip-value').forEach(animateCounter);
+            counterObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.5 });
-      statEls.forEach(function (el) { obs.observe(el); });
-    })();
+      }, { threshold: 0.3 });
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          closeMobileNav();
-        }
+      document.querySelectorAll('.hero-stats-card, .trust-strip-inner').forEach(function (el) {
+        counterObserver.observe(el);
       });
-    });
+
+      /* 7 — Smooth anchor scroll */
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            closeMobileNav();
+          }
+        });
+      });
+
+    })();
   </script>
 
 </body>

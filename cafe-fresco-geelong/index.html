@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe Fresco Geelong | Geelong</title>
-  <meta name="description" content="Freshly brewed coffee, seasonal brunch, and genuine hospitality since 2015">
+  <meta name="description" content="Fresh coffee, seasonal food, and warm hospitality in the heart of the city">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,8 +75,8 @@
     h1, h2, h3, h4 {
       font-family: var(--font-display);
       line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      letter-spacing: 0em;
     }
 
     .eyebrow {
@@ -127,6 +127,37 @@
     .fade-in.visible {
       opacity: 1;
       transform: none;
+    }
+
+    /* ── Hero staggered reveal animations ──────────────────────────────── */
+    @keyframes heroReveal {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0s;
+    }
+    .hero-headline {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.15s;
+    }
+    .hero-tagline {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.3s;
+    }
+    .hero-actions {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.45s;
+    }
+    .hero-stats-card {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.6s;
     }
 
     /* ══════════════════════════════════════════════════════════════════════
@@ -295,15 +326,9 @@
       position: relative;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
       background-size: 300% 300%;
-      animation: heroGradient 12s ease infinite;
       overflow: hidden;
     }
 
-    @keyframes heroGradient {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
 
     .hero::before {
       content: '';
@@ -355,11 +380,11 @@
 
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
       line-height: 1.08;
       color: #fff;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
       margin-bottom: 20px;
     }
 
@@ -395,6 +420,19 @@
     .btn-hero-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    }
+
+    .btn-arrow {
+      transition: transform 0.25s var(--ease-spring);
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 0.85em;
+    }
+    .btn-hero-primary:hover .btn-arrow {
+      transform: translateX(5px);
+    }
+    .btn-hero-primary:active {
+      transform: scale(0.97);
     }
 
     .btn-hero-secondary {
@@ -459,141 +497,63 @@
       flex-shrink: 0;
     }
 
-    /* Right column — browser mockup */
+    /* Right column — social proof panel */
     .hero-right {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .hero-browser {
+    .hero-proof-panel {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 40px 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      max-width: 380px;
       width: 100%;
-      max-width: 480px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.30);
-      overflow: hidden;
-      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
-      transition: transform 0.5s var(--ease-out);
     }
-
-    .hero-browser:hover {
-      transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+    .proof-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
     }
-
-    .hero-browser-bar {
+    .proof-stars { color: #f59e0b; font-size: 1.3rem; letter-spacing: 2px; }
+    .proof-score { font-size: 2rem; font-weight: 800; color: #fff; font-family: var(--font-display); }
+    .proof-count { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .proof-platform-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+    .proof-platform { display: flex; align-items: center; gap: 6px; }
+    .proof-dot { color: rgba(255,255,255,0.3); }
+    .proof-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin-bottom: 24px;
+    }
+    .proof-features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .proof-feat {
       display: flex;
       align-items: center;
       gap: 12px;
-      background: #f1f3f5;
-      padding: 12px 16px;
-      border-bottom: 1px solid #e5e7eb;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+      font-weight: 500;
     }
-
-    .browser-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .browser-dots span {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-    }
-
-    .browser-dots span:nth-child(1) { background: #ff5f57; }
-    .browser-dots span:nth-child(2) { background: #febc2e; }
-    .browser-dots span:nth-child(3) { background: #28c840; }
-
-    .browser-url {
-      flex: 1;
-      background: #fff;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      padding: 5px 12px;
-      font-size: 0.78rem;
-      color: #6b7280;
-      font-family: monospace;
-    }
-
-    .hero-browser-content {
-      padding: 24px;
-      background: #fff;
-    }
-
-    .hero-card {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 6%, #fff), color-mix(in srgb, var(--secondary) 5%, #fff));
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .hero-card-emoji {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .hero-card-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .hero-card-city {
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-bottom: 16px;
-    }
-
-    .hero-card-stars {
+    .proof-feat i { color: var(--primary); font-size: 0.85rem; width: 16px; text-align: center; }
+    .proof-cta-hint {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .hero-card-stars span {
-      color: #f59e0b;
-      font-size: 1rem;
-    }
-
-    .hero-card-rating-text {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .hero-card-addr {
-      display: flex;
-      align-items: flex-start;
       gap: 8px;
-      font-size: 0.83rem;
-      color: var(--mid);
-      line-height: 1.5;
-    }
-
-    .hero-card-addr i { color: var(--primary); margin-top: 1px; flex-shrink: 0; }
-
-    .hero-card-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 0;
-    }
-
-    .hero-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: color-mix(in srgb, var(--primary) 10%, transparent);
-      color: var(--primary);
-      border-radius: 6px;
-      padding: 4px 10px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
     }
 
     /* Hero features strip */
@@ -724,6 +684,13 @@
       color: var(--mid);
       line-height: 1.65;
     }
+
+    /* Alternating section backgrounds for visual rhythm */
+    .section-services  { background: var(--light); }
+    .section-about     { background: #fff; }
+    .section-cat       { background: var(--surface-2, #f8fafc); }
+    .section-reviews   { background: var(--light); }
+    .section-contact   { background: var(--dark); }
 
     /* ══════════════════════════════════════════════════════════════════════
        TRUST STRIP
@@ -972,6 +939,16 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
+    .review-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-meta i { color: #4285f4; font-size: 0.75rem; }
 
     /* ══════════════════════════════════════════════════════════════════════
        CONTACT
@@ -1464,11 +1441,68 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
       color: var(--dark);
       text-align: center;
       margin-bottom: 48px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       FAQ ACCORDION
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-faq {
+      padding: var(--section-pad) 0;
+      background: #fff;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dark);
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--primary); }
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      color: var(--mid);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.75;
+      transition: max-height 0.35s var(--ease-out), padding 0.35s;
+      padding: 0;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 20px;
     }
 
     /* ── Persona overrides (injected per category) ─────────────────────── */
@@ -1481,8 +1515,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero { background: radial-gradient(ellipse at 65% 50%,
-  color-mix(in srgb, var(--primary) 55%, #1a0a00) 0%, #0a0603 70%) !important; }
+.hero {
+  background:
+    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
+  animation: none !important;
+}
 .hero-headline { font-style: italic; font-weight: 600; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
@@ -1490,8 +1528,59 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.3rem; font-weight: 600; font-style: italic; letter-spacing: 0.03em;
 }
+/* editorial layout */
+.hero-inner { align-items: flex-start; }
+.hero-left { text-align: left; }
+.hero-actions { justify-content: flex-start; }
+.hero-stats-card { justify-content: flex-start; }
+.section-title { text-align: left; }
+.section-label { text-align: left; }
+.section-title::before {
+  content: '"';
+  display: block;
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--primary);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
 
   </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Cafe Fresco Geelong | Geelong">
+  <meta property="og:description" content="Fresh coffee, seasonal food, and warm hospitality in the heart of the city">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
+  <meta property="og:type"        content="website">
+  <meta property="og:url" content="https://biz-cafe-fresco-geelong-a6b2xvhd8-presencly-3833s-projects.vercel.app">
+  <!-- Twitter card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Cafe Fresco Geelong | Geelong">
+  <meta name="twitter:description" content="Fresh coffee, seasonal food, and warm hospitality in the heart of the city">
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Cafe Fresco Geelong",
+  "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "281 Ryrie St, Geelong VIC 3220",
+    "addressLocality": "Geelong",
+    "addressCountry": "AU"
+  },
+  "telephone": "+61 3 5222 4930",
+  "hasMap": "https://www.google.com/maps/place/Cafe+Fresco+Geelong/@-38.1507907,144.3654565,14z/data=!4m8!1m2!2m1!1sCafe+Fresco+Geelong!3m4!1s0x6ad4141ed14c254d:0x8ffd9dfe95cd6f44!8m2!3d-38.1507907!4d144.3654565",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "66",
+    "bestRating": "5"
+  }
+}
+  </script>
 </head>
 
 <body>
@@ -1509,6 +1598,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#testimonials">Reviews</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact" class="nav-cta">Get a Quote</a>
         </div>
 
@@ -1527,6 +1617,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="tel:+61352224930" style="color:var(--primary);font-weight:700;">+61 3 5222 4930</a>
     </div>
@@ -1539,18 +1630,19 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="hero-grid">
 
           <!-- Left column -->
-          <div class="hero-left fade-in">
+          <div class="hero-left">
             <span class="hero-eyebrow">
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Geelong's Favourite Neighbourhood Cafe</h1>
-            <p class="hero-tagline">Freshly brewed coffee, seasonal brunch, and genuine hospitality since 2015</p>
+            <h1 class="hero-headline">Geelong's Beloved Neighbourhood Cafe</h1>
+            <p class="hero-tagline">Fresh coffee, seasonal food, and warm hospitality in the heart of the city</p>
 
-            <div class="hero-btns">
+            <div class="hero-actions hero-btns">
               <a href="tel:+61352224930" class="btn-hero-primary">
                 <i class="fa-solid fa-phone"></i>
                 Call Now
+                <i class="fa-solid fa-arrow-right btn-arrow"></i>
               </a>
               <a href="#contact" class="btn-hero-secondary">
                 <i class="fa-solid fa-envelope"></i>
@@ -1566,47 +1658,40 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">66+</span>
+              <span class="stat-value">66</span>
               <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">9 years</span>
-              <span class="stat-label">Serving Geelong</span>
+              <span class="stat-value">9+</span>
+              <span class="stat-label">Years Operating</span>
             </div>
             
             </div>
           </div>
 
-          <!-- Right column — browser mockup -->
-          <div class="hero-right fade-in" style="transition-delay:0.15s;">
-            <div class="hero-browser">
-              <div class="hero-browser-bar">
-                <div class="browser-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="browser-url">yoursite.com.au</div>
+          <!-- Right column — social proof panel -->
+          <div class="hero-right hero-proof-col fade-in" style="transition-delay:0.45s;">
+            <div class="hero-proof-panel">
+              <div class="proof-rating-row">
+                <span class="proof-stars">★★★★½</span>
+                <span class="proof-score">4.8</span>
+                <span class="proof-count">· 66 reviews</span>
               </div>
-              <div class="hero-browser-content">
-                <div class="hero-card">
-                  <div class="hero-card-emoji">☕</div>
-                  <div class="hero-card-name">Cafe Fresco Geelong</div>
-                  <div class="hero-card-city">Geelong, Australia</div>
-                  <div class="hero-card-stars">
-                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="hero-card-rating-text">5.0 · Excellent</span>
-                  </div>
-                  <div class="hero-card-addr">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>281 Ryrie St, Geelong VIC 3220</span>
-                  </div>
-                  <div class="hero-card-divider"></div>
-                  <div class="hero-card-tags">
-                    <span class="hero-card-tag">Locally Owned</span>
-                    <span class="hero-card-tag">5-Star Rated</span>
-                    <span class="hero-card-tag">Fast Response</span>
-                  </div>
-                </div>
+              <div class="proof-platform-row">
+                <span class="proof-platform"><i class="fa-brands fa-google"></i> Google</span>
+                <span class="proof-dot">·</span>
+                <span class="proof-platform">Geelong, Australia</span>
+              </div>
+              <div class="proof-divider"></div>
+              <div class="proof-features">
+                <div class="proof-feat"><i class="fa-solid fa-circle-check"></i> Locally owned &amp; operated</div>
+                <div class="proof-feat"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; fully insured</div>
+                <div class="proof-feat"><i class="fa-solid fa-clock"></i> Fast response time</div>
+                <div class="proof-feat"><i class="fa-solid fa-thumbs-up"></i> Satisfaction guaranteed</div>
+              </div>
+              <div class="proof-cta-hint">
+                <i class="fa-solid fa-arrow-down"></i> Scroll to see our work
               </div>
             </div>
           </div>
@@ -1656,31 +1741,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-coffee"></i>
+                <i class="fa-solid fa-mug-hot"></i>
               </div>
-              <h3 class="service-title">Speciality Coffee</h3>
-              <p class="service-desc">Our experienced baristas craft the perfect espresso, flat white, and seasonal single-origin blends. We source premium beans from Australian roasters and dial in each shot to perfection.</p>
+              <h3 class="service-title">Specialty Coffee</h3>
+              <p class="service-desc">We source premium beans from Australian roasters and pull every shot with care and precision. Our baristas are trained to craft the perfect espresso, cappuccino, or flat white tailored to your taste.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Seasonal Brunch</h3>
-              <p class="service-desc">From smashed avocado to ricotta pancakes, our menu changes with the seasons using local Geelong produce. Every dish is prepared fresh to order in our open kitchen.</p>
+              <h3 class="service-title">Seasonal Brunch & Lunch</h3>
+              <p class="service-desc">Our menu changes with the seasons, featuring fresh, locally-sourced ingredients prepared by our in-house kitchen team. From smashed avocado to house-made pastries, every dish is made to order.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Plant-Based Options</h3>
-              <p class="service-desc">We cater to all diets with a thoughtful range of vegan and vegetarian dishes. Dairy-free milk alternatives are available for every coffee order.</p>
+              <h3 class="service-title">Dietary Options</h3>
+              <p class="service-desc">We cater to vegan, gluten-free, and other dietary requirements with thoughtful menu alternatives. Simply ask our staff — we're happy to adapt any dish to suit your needs.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-people-group"></i>
+                <i class="fa-solid fa-wifi"></i>
               </div>
-              <h3 class="service-title">Community Space</h3>
-              <p class="service-desc">Cafe Fresco is more than coffee—it's where Geelong locals connect, work, and celebrate. Our relaxed vibe and reliable WiFi make us the perfect spot to linger.</p>
+              <h3 class="service-title">Relaxed Work-Friendly Space</h3>
+              <p class="service-desc">Free WiFi, plenty of seating, and a calm atmosphere make Cafe Fresco the perfect spot for a working lunch or catch-up with friends. Stay as long as you'd like.</p>
             </div>
       </div>
     </div>
@@ -1696,12 +1781,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">66+</div>
+              <div class="strip-value">66</div>
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">9 years</div>
-              <div class="strip-label">Serving Geelong</div>
+              <div class="strip-value">9+</div>
+              <div class="strip-label">Years Operating</div>
             </div>
       </div>
     </div>
@@ -1714,8 +1799,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
-          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Cafe Fresco Geelong</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Fresco Geelong has become a beloved local institution, serving expertly crafted espresso drinks and vibrant seasonal brunch dishes to the Geelong community. Our commitment to quality ingredients, skilled baristas, and a welcoming atmosphere has earned us a 4.8-star rating from over 66 loyal customers.</p>
+          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Cafe Fresco</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Fresco has been serving Geelong with expertly crafted espresso and locally-sourced seasonal dishes since 2015. We're passionate about quality ingredients, sustainable practices, and creating a welcoming space where locals feel at home.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1769,26 +1854,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
-                  <span class="cat-menu-desc">Local hass avo, dukkah, and poached eggs on charred sourdough.</span>
+                  <span class="cat-menu-name">Smashed Avo on Sourdough</span>
+                  <span class="cat-menu-desc">Hass avocado, heritage tomato, dukkah, lemon oil, and poached egg.</span>
                 </div>
-                <span class="cat-menu-price">$16.50</span>
+                <span class="cat-menu-price">$18</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Ricotta Hotcakes</span>
-                  <span class="cat-menu-desc">Fluffy ricotta pancakes with seasonal berries and honeycomb drizzle.</span>
+                  <span class="cat-menu-name">Fresco Flat White</span>
+                  <span class="cat-menu-desc">Double shot of specialty-roasted espresso with silky microfoam.</span>
                 </div>
-                <span class="cat-menu-price">$17</span>
+                <span class="cat-menu-price">$5</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Velvety microfoam espresso made with our house-roasted blend.</span>
+                  <span class="cat-menu-name">House-Made Granola Bowl</span>
+                  <span class="cat-menu-desc">Greek yoghurt, seasonal berries, honey, and toasted almonds.</span>
                 </div>
-                <span class="cat-menu-price">$4.50</span>
+                <span class="cat-menu-price">$16</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Walk-ins welcome — no bookings needed. Perfect for groups too!</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime. For large groups, please call ahead.</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1816,6 +1901,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
   </style>
 
+  <!-- ══ FAQ ══════════════════════════════════════════════════════════════ -->
+  <section class="section-faq" id="faq">
+    <div class="container">
+      <div class="section-label fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+      </div>
+      <h2 class="section-title fade-in">Common Questions</h2>
+      <div class="faq-list fade-in">
+        
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you offer takeaway coffee and food?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Absolutely! Our takeaway service is perfect if you're on the run. Just ask at the counter and we'll have your order ready in minutes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Are you open on weekends?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we're open every Saturday and Sunday from 8am–3pm. It's a great time to relax over brunch without the weekday rush.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can you accommodate large groups or functions?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We'd love to host your group! For parties of 8 or more, please call us on +61 3 5222 4930 to discuss options and availability.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you have parking nearby?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, there's ample street parking and a nearby car park just a short walk away. Geelong's city centre is very accessible by car and public transport.</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
   <section class="section-contact" id="contact">
     <div class="container">
@@ -1823,8 +1949,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Let&rsquo;s talk about your project</h2>
-          <p class="contact-cta-line">Stop by Cafe Fresco today and discover why Geelong locals keep coming back. We're here for your morning fix, lazy weekend brunch, or afternoon pick-me-up.</p>
+          <h2 class="contact-title">Visit us for your next coffee</h2>
+          <p class="contact-cta-line">Ready to experience Geelong's best brunch spot? Drop in today — we're open seven days a week and always happy to welcome new faces.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1908,7 +2034,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Cafe Fresco Geelong
           </div>
-          <p class="footer-tagline">Freshly brewed coffee, seasonal brunch, and genuine hospitality since 2015</p>
+          <p class="footer-tagline">Fresh coffee, seasonal food, and warm hospitality in the heart of the city</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

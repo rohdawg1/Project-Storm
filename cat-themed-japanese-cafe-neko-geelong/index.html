@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cat-themed Japanese cafe | neko Geelong | Geelong</title>
-  <meta name="description" content="Adorable cats, authentic Japanese cuisine, and cosy vibes in the heart of Geelong">
+  <meta name="description" content="Authentic Japanese cuisine meets adorable cat companionship in the heart of Geelong">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,8 +75,8 @@
     h1, h2, h3, h4 {
       font-family: var(--font-display);
       line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      letter-spacing: 0em;
     }
 
     .eyebrow {
@@ -127,6 +127,37 @@
     .fade-in.visible {
       opacity: 1;
       transform: none;
+    }
+
+    /* ── Hero staggered reveal animations ──────────────────────────────── */
+    @keyframes heroReveal {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0s;
+    }
+    .hero-headline {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.15s;
+    }
+    .hero-tagline {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.3s;
+    }
+    .hero-actions {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.45s;
+    }
+    .hero-stats-card {
+      opacity: 0;
+      animation: heroReveal 0.7s var(--ease-out) forwards;
+      animation-delay: 0.6s;
     }
 
     /* ══════════════════════════════════════════════════════════════════════
@@ -295,15 +326,9 @@
       position: relative;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
       background-size: 300% 300%;
-      animation: heroGradient 12s ease infinite;
       overflow: hidden;
     }
 
-    @keyframes heroGradient {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
 
     .hero::before {
       content: '';
@@ -355,11 +380,11 @@
 
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
       line-height: 1.08;
       color: #fff;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
       margin-bottom: 20px;
     }
 
@@ -395,6 +420,19 @@
     .btn-hero-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    }
+
+    .btn-arrow {
+      transition: transform 0.25s var(--ease-spring);
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 0.85em;
+    }
+    .btn-hero-primary:hover .btn-arrow {
+      transform: translateX(5px);
+    }
+    .btn-hero-primary:active {
+      transform: scale(0.97);
     }
 
     .btn-hero-secondary {
@@ -459,141 +497,63 @@
       flex-shrink: 0;
     }
 
-    /* Right column — browser mockup */
+    /* Right column — social proof panel */
     .hero-right {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .hero-browser {
+    .hero-proof-panel {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 40px 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      max-width: 380px;
       width: 100%;
-      max-width: 480px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.30);
-      overflow: hidden;
-      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
-      transition: transform 0.5s var(--ease-out);
     }
-
-    .hero-browser:hover {
-      transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+    .proof-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
     }
-
-    .hero-browser-bar {
+    .proof-stars { color: #f59e0b; font-size: 1.3rem; letter-spacing: 2px; }
+    .proof-score { font-size: 2rem; font-weight: 800; color: #fff; font-family: var(--font-display); }
+    .proof-count { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .proof-platform-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+    .proof-platform { display: flex; align-items: center; gap: 6px; }
+    .proof-dot { color: rgba(255,255,255,0.3); }
+    .proof-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin-bottom: 24px;
+    }
+    .proof-features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .proof-feat {
       display: flex;
       align-items: center;
       gap: 12px;
-      background: #f1f3f5;
-      padding: 12px 16px;
-      border-bottom: 1px solid #e5e7eb;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+      font-weight: 500;
     }
-
-    .browser-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .browser-dots span {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-    }
-
-    .browser-dots span:nth-child(1) { background: #ff5f57; }
-    .browser-dots span:nth-child(2) { background: #febc2e; }
-    .browser-dots span:nth-child(3) { background: #28c840; }
-
-    .browser-url {
-      flex: 1;
-      background: #fff;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      padding: 5px 12px;
-      font-size: 0.78rem;
-      color: #6b7280;
-      font-family: monospace;
-    }
-
-    .hero-browser-content {
-      padding: 24px;
-      background: #fff;
-    }
-
-    .hero-card {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 6%, #fff), color-mix(in srgb, var(--secondary) 5%, #fff));
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .hero-card-emoji {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .hero-card-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .hero-card-city {
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-bottom: 16px;
-    }
-
-    .hero-card-stars {
+    .proof-feat i { color: var(--primary); font-size: 0.85rem; width: 16px; text-align: center; }
+    .proof-cta-hint {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .hero-card-stars span {
-      color: #f59e0b;
-      font-size: 1rem;
-    }
-
-    .hero-card-rating-text {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .hero-card-addr {
-      display: flex;
-      align-items: flex-start;
       gap: 8px;
-      font-size: 0.83rem;
-      color: var(--mid);
-      line-height: 1.5;
-    }
-
-    .hero-card-addr i { color: var(--primary); margin-top: 1px; flex-shrink: 0; }
-
-    .hero-card-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 0;
-    }
-
-    .hero-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: color-mix(in srgb, var(--primary) 10%, transparent);
-      color: var(--primary);
-      border-radius: 6px;
-      padding: 4px 10px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
     }
 
     /* Hero features strip */
@@ -724,6 +684,13 @@
       color: var(--mid);
       line-height: 1.65;
     }
+
+    /* Alternating section backgrounds for visual rhythm */
+    .section-services  { background: var(--light); }
+    .section-about     { background: #fff; }
+    .section-cat       { background: var(--surface-2, #f8fafc); }
+    .section-reviews   { background: var(--light); }
+    .section-contact   { background: var(--dark); }
 
     /* ══════════════════════════════════════════════════════════════════════
        TRUST STRIP
@@ -972,6 +939,16 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
+    .review-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-meta i { color: #4285f4; font-size: 0.75rem; }
 
     /* ══════════════════════════════════════════════════════════════════════
        CONTACT
@@ -1464,11 +1441,68 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
       color: var(--dark);
       text-align: center;
       margin-bottom: 48px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       FAQ ACCORDION
+    ══════════════════════════════════════════════════════════════════════ */
+    .section-faq {
+      padding: var(--section-pad) 0;
+      background: #fff;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dark);
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--primary); }
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      color: var(--mid);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.75;
+      transition: max-height 0.35s var(--ease-out), padding 0.35s;
+      padding: 0;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 20px;
     }
 
     /* ── Persona overrides (injected per category) ─────────────────────── */
@@ -1481,8 +1515,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero { background: radial-gradient(ellipse at 65% 50%,
-  color-mix(in srgb, var(--primary) 55%, #1a0a00) 0%, #0a0603 70%) !important; }
+.hero {
+  background:
+    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
+  animation: none !important;
+}
 .hero-headline { font-style: italic; font-weight: 600; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
@@ -1490,8 +1528,59 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.3rem; font-weight: 600; font-style: italic; letter-spacing: 0.03em;
 }
+/* editorial layout */
+.hero-inner { align-items: flex-start; }
+.hero-left { text-align: left; }
+.hero-actions { justify-content: flex-start; }
+.hero-stats-card { justify-content: flex-start; }
+.section-title { text-align: left; }
+.section-label { text-align: left; }
+.section-title::before {
+  content: '"';
+  display: block;
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--primary);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
 
   </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Cat-themed Japanese cafe | neko Geelong | Geelong">
+  <meta property="og:description" content="Authentic Japanese cuisine meets adorable cat companionship in the heart of Geelong">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
+  <meta property="og:type"        content="website">
+  <meta property="og:url" content="https://biz-cat-themed-japanese-cafe-neko-geelong-yr8z2ei7x.vercel.app">
+  <!-- Twitter card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Cat-themed Japanese cafe | neko Geelong | Geelong">
+  <meta name="twitter:description" content="Authentic Japanese cuisine meets adorable cat companionship in the heart of Geelong">
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Cat-themed Japanese cafe | neko Geelong",
+  "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "LEVEL 1/237 Ryrie St, Geelong VIC 3220",
+    "addressLocality": "Geelong",
+    "addressCountry": "AU"
+  },
+  "telephone": "+61 3 5221 3028",
+  "hasMap": "https://www.google.com/maps/place/Cat-themed+Japanese+cafe+%7C+neko+Geelong/@-38.1500811,144.3637119,14z/data=!4m8!1m2!2m1!1sCat-themed+Japanese+cafe+%7C+neko+Geelong!3m4!1s0x6ad4159eb4226f05:0x17016cdbd27b3a23!8m2!3d-38.1500811!4d144.3637119",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "204",
+    "bestRating": "5"
+  }
+}
+  </script>
 </head>
 
 <body>
@@ -1509,6 +1598,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#testimonials">Reviews</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact" class="nav-cta">Get a Quote</a>
         </div>
 
@@ -1527,6 +1617,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="tel:+61352213028" style="color:var(--primary);font-weight:700;">+61 3 5221 3028</a>
     </div>
@@ -1539,18 +1630,19 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="hero-grid">
 
           <!-- Left column -->
-          <div class="hero-left fade-in">
+          <div class="hero-left">
             <span class="hero-eyebrow">
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Trusted Local Experts
             </span>
             <h1 class="hero-headline">Geelong's Purr-fect Japanese Cafe Experience</h1>
-            <p class="hero-tagline">Adorable cats, authentic Japanese cuisine, and cosy vibes in the heart of Geelong</p>
+            <p class="hero-tagline">Authentic Japanese cuisine meets adorable cat companionship in the heart of Geelong</p>
 
-            <div class="hero-btns">
+            <div class="hero-actions hero-btns">
               <a href="tel:+61352213028" class="btn-hero-primary">
                 <i class="fa-solid fa-phone"></i>
                 Call Now
+                <i class="fa-solid fa-arrow-right btn-arrow"></i>
               </a>
               <a href="#contact" class="btn-hero-secondary">
                 <i class="fa-solid fa-envelope"></i>
@@ -1571,42 +1663,35 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">2020</span>
-              <span class="stat-label">Year Established</span>
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Resident Cats</span>
             </div>
             
             </div>
           </div>
 
-          <!-- Right column — browser mockup -->
-          <div class="hero-right fade-in" style="transition-delay:0.15s;">
-            <div class="hero-browser">
-              <div class="hero-browser-bar">
-                <div class="browser-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="browser-url">yoursite.com.au</div>
+          <!-- Right column — social proof panel -->
+          <div class="hero-right hero-proof-col fade-in" style="transition-delay:0.45s;">
+            <div class="hero-proof-panel">
+              <div class="proof-rating-row">
+                <span class="proof-stars">★★★★½</span>
+                <span class="proof-score">4.8</span>
+                <span class="proof-count">· 204 reviews</span>
               </div>
-              <div class="hero-browser-content">
-                <div class="hero-card">
-                  <div class="hero-card-emoji">🍽️</div>
-                  <div class="hero-card-name">Cat-themed Japanese cafe | neko Geelong</div>
-                  <div class="hero-card-city">Geelong, Australia</div>
-                  <div class="hero-card-stars">
-                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="hero-card-rating-text">5.0 · Excellent</span>
-                  </div>
-                  <div class="hero-card-addr">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>LEVEL 1/237 Ryrie St, Geelong VIC 3220</span>
-                  </div>
-                  <div class="hero-card-divider"></div>
-                  <div class="hero-card-tags">
-                    <span class="hero-card-tag">Locally Owned</span>
-                    <span class="hero-card-tag">5-Star Rated</span>
-                    <span class="hero-card-tag">Fast Response</span>
-                  </div>
-                </div>
+              <div class="proof-platform-row">
+                <span class="proof-platform"><i class="fa-brands fa-google"></i> Google</span>
+                <span class="proof-dot">·</span>
+                <span class="proof-platform">Geelong, Australia</span>
+              </div>
+              <div class="proof-divider"></div>
+              <div class="proof-features">
+                <div class="proof-feat"><i class="fa-solid fa-circle-check"></i> Locally owned &amp; operated</div>
+                <div class="proof-feat"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; fully insured</div>
+                <div class="proof-feat"><i class="fa-solid fa-clock"></i> Fast response time</div>
+                <div class="proof-feat"><i class="fa-solid fa-thumbs-up"></i> Satisfaction guaranteed</div>
+              </div>
+              <div class="proof-cta-hint">
+                <i class="fa-solid fa-arrow-down"></i> Scroll to see our work
               </div>
             </div>
           </div>
@@ -1656,31 +1741,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-cat"></i>
-              </div>
-              <h3 class="service-title">Cat-Friendly Dining</h3>
-              <p class="service-desc">Enjoy your meal surrounded by our friendly, well-socialised rescue cats in a calm, welcoming environment. Our cafe provides the perfect setting to interact with cats while savouring quality Japanese food.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-bowl-rice"></i>
+                <i class="fa-solid fa-bowl-food"></i>
               </div>
               <h3 class="service-title">Authentic Japanese Menu</h3>
-              <p class="service-desc">From ramen and donburi to sushi rolls and gyoza, our menu features traditional Japanese dishes prepared with quality ingredients. Each dish is crafted to deliver genuine Japanese flavours right here in Geelong.</p>
+              <p class="service-desc">Every meal is crafted with quality ingredients and attention to detail that reflects our passion for Japanese cuisine.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-cat"></i>
               </div>
-              <h3 class="service-title">Specialty Beverages</h3>
-              <p class="service-desc">Sip on Japanese green tea, matcha lattes, and other carefully selected drinks in our cosy cat lounge. Our beverages perfectly complement your meal and the relaxing atmosphere.</p>
+              <h3 class="service-title">Interactive Cat Lounge</h3>
+              <p class="service-desc">Our cats are used to visitors and genuinely enjoy the social interaction in our welcoming environment.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Rescue Cat Support</h3>
-              <p class="service-desc">A portion of our proceeds supports local animal rescue organisations, so every visit helps save cats in need. You'll feel good knowing your meal makes a real difference.</p>
+              <h3 class="service-title">Calm, Therapeutic Space</h3>
+              <p class="service-desc">Our carefully designed atmosphere promotes relaxation and mindfulness away from the bustle of everyday life.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-birthday-cake"></i>
+              </div>
+              <h3 class="service-title">Event & Group Bookings</h3>
+              <p class="service-desc">We cater to groups and can customise experiences for your occasion with advance notice.</p>
             </div>
       </div>
     </div>
@@ -1700,8 +1785,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">2020</div>
-              <div class="strip-label">Year Established</div>
+              <div class="strip-value">10+</div>
+              <div class="strip-label">Resident Cats</div>
             </div>
       </div>
     </div>
@@ -1715,7 +1800,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About neko Geelong</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">neko Geelong is a unique cat-themed Japanese cafe combining the charm of rescue cats with authentic Japanese cuisine and traditional aesthetics. Since opening, we've become Geelong's favourite spot for cat lovers and Japanese food enthusiasts, rated 4.8★ by over 200 happy guests.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">neko Geelong is Geelong's unique cat-themed Japanese cafe, where you can enjoy authentic Japanese dishes while relaxing alongside friendly felines in our interactive cat lounge. With a 4.8★ rating from over 200 happy customers, we've created a welcoming space that combines culinary excellence with the therapeutic joy of spending time with cats.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1769,26 +1854,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Miso Ramen</span>
-                  <span class="cat-menu-desc">Rich pork broth with noodles, soft egg, and fresh vegetables.</span>
+                  <span class="cat-menu-name">Tonkotsu Ramen</span>
+                  <span class="cat-menu-desc">Rich pork bone broth with tender chashu and fresh noodles.</span>
                 </div>
                 <span class="cat-menu-price">$16.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Salmon Sushi Roll</span>
-                  <span class="cat-menu-desc">Fresh salmon and avocado wrapped in nori and sushi rice.</span>
+                  <span class="cat-menu-name">Katsu Curry Donburi</span>
+                  <span class="cat-menu-desc">Crumbed pork cutlet on rice with aromatic Japanese curry sauce.</span>
                 </div>
-                <span class="cat-menu-price">$14.00</span>
+                <span class="cat-menu-price">$15.00</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Chicken Katsudon</span>
-                  <span class="cat-menu-desc">Crispy panko-crusted chicken over steamed rice with katsu sauce.</span>
+                  <span class="cat-menu-name">Salmon Sushi Set</span>
+                  <span class="cat-menu-desc">Six pieces of premium salmon nigiri with pickled ginger and wasabi.</span>
                 </div>
-                <span class="cat-menu-price">$17.50</span>
+                <span class="cat-menu-price">$14.50</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call 03 5221 3028 or walk in welcome</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends and for groups — walk-ins welcome subject to availability</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1816,6 +1901,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
   </style>
 
+  <!-- ══ FAQ ══════════════════════════════════════════════════════════════ -->
+  <section class="section-faq" id="faq">
+    <div class="container">
+      <div class="section-label fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+      </div>
+      <h2 class="section-title fade-in">Common Questions</h2>
+      <div class="faq-list fade-in">
+        
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Are your cats friendly and safe to interact with?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, all our cats are well-socialised, vaccinated, and accustomed to guest interaction. We ask visitors to be gentle and respectful of the cats' boundaries.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you offer takeaway and delivery?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We specialise in the dine-in experience to enjoy the full neko Geelong atmosphere with our cats, but takeaway is available for selected menu items.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Are you suitable for people with cat allergies?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Since we're a cat-themed cafe, we recommend that visitors with severe allergies reconsider visiting, as cats are present throughout the space.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you have vegetarian and vegan options?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we offer several vegetarian and vegan Japanese dishes including vegetable ramen, edamame, agedashi tofu, and vegetable sushi rolls. Ask our staff for full details.</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
   <section class="section-contact" id="contact">
     <div class="container">
@@ -1823,8 +1949,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Let&rsquo;s talk about your project</h2>
-          <p class="contact-cta-line">Ready to experience Geelong's cosiest cat cafe? Ring us on 03 5221 3028 or pop in for a purr-fect Japanese dining adventure.</p>
+          <h2 class="contact-title">Visit neko Geelong Today</h2>
+          <p class="contact-cta-line">Ready to experience Geelong's most unique cafe? Drop by neko Geelong today or call us to book your perfect afternoon.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1908,7 +2034,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Cat-themed Japanese cafe | neko Geelong
           </div>
-          <p class="footer-tagline">Adorable cats, authentic Japanese cuisine, and cosy vibes in the heart of Geelong</p>
+          <p class="footer-tagline">Authentic Japanese cuisine meets adorable cat companionship in the heart of Geelong</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

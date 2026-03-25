@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Sprout About | East Geelong</title>
-  <meta name="description" content="Fresh, vibrant, locally-sourced vegetarian cuisine loved by 108+ reviewers">
+  <meta name="description" content="Fresh, flavourful vegan cuisine loved by 108 reviewers — 4.8★ rated">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1545,24 +1556,18 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   margin-bottom: 8px;
 }
 
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; letter-spacing: 0.015em; } h1 { line-height: 1.05; } h2 { line-height: 1.2; } .hero-headline { font-style: italic; } .section-heading { font-style: italic; line-height: 1.25; letter-spacing: 0.01em; } .hero { background: linear-gradient(160deg, #2d4a2d 0%, #4a3728 55%, #6b4c35 100%); background-size: unset; } .hero-tagline { color: rgba(255,255,255,0.88); } .hero p, .hero-actions .btn-secondary { color: rgba(255,255,255,0.85); }
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; } h1 { line-height: 1.05; } .section-heading { line-height: 1.25; } h1, h2, h3, h4 { letter-spacing: 0.02em; } .hero { background: linear-gradient(150deg, #3d2b1f 0%, #6b3a2a 45%, #8b5e3c 100%); background-size: unset; } .hero-tagline, .hero p { color: rgba(255,255,255,0.88); } .hero-headline { color: #ffffff; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="The Sprout About | East Geelong">
-  <meta property="og:description" content="Fresh, vibrant, locally-sourced vegetarian cuisine loved by 108+ reviewers">
+  <meta property="og:description" content="Fresh, flavourful vegan cuisine loved by 108 reviewers — 4.8★ rated">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-the-sprout-about-4zpkngzzh-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-the-sprout-about-dsdwvsd06-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="The Sprout About | East Geelong">
-  <meta name="twitter:description" content="Fresh, vibrant, locally-sourced vegetarian cuisine loved by 108+ reviewers">
+  <meta name="twitter:description" content="Fresh, flavourful vegan cuisine loved by 108 reviewers — 4.8★ rated">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1642,7 +1647,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               East Geelong &mdash; Trusted Local Experts
             </span>
             <h1 class="hero-headline">East Geelong's Favourite Plant-Based Restaurant</h1>
-            <p class="hero-tagline">Fresh, vibrant, locally-sourced vegetarian cuisine loved by 108+ reviewers</p>
+            <p class="hero-tagline">Fresh, flavourful vegan cuisine loved by 108 reviewers — 4.8★ rated</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61352296131" class="btn-hero-primary">
@@ -1664,13 +1669,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">108+</span>
+              <span class="stat-value">108</span>
               <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years Local</span>
+              <span class="stat-value">7 Years</span>
+              <span class="stat-label">Trusted in East Geelong</span>
             </div>
             
             </div>
@@ -1749,29 +1754,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Plant-Based Menu</h3>
-              <p class="service-desc">Our ever-evolving menu features seasonal vegetables and organic ingredients sourced from local East Geelong suppliers. Every dish is designed to showcase the natural richness and texture of plant-based cooking.</p>
+              <h3 class="service-title">Plant-Based Dining</h3>
+              <p class="service-desc">Discover our carefully crafted menu of 100% vegan dishes designed to delight every palate. From hearty mains to lighter fare, every plate showcases the versatility and vibrancy of plant-based cooking.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Dine-In Experience</h3>
-              <p class="service-desc">Enjoy a warm, welcoming atmosphere with carefully curated décor and attentive service. Perfect for casual meals, date nights, or gathering with friends and family.</p>
+              <h3 class="service-title">À la Carte & Set Menus</h3>
+              <p class="service-desc">Choose from our extensive à la carte selection or let our chef's special set menus guide your evening. Perfect for solo diners, couples, or groups looking for a curated culinary experience.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-box"></i>
+                <i class="fa-solid fa-wine-glass"></i>
               </div>
-              <h3 class="service-title">Takeaway & Catering</h3>
-              <p class="service-desc">Order fresh meals to enjoy at home, or let us cater your next event with custom plant-based menus. We deliver across East Geelong and surrounding suburbs.</p>
+              <h3 class="service-title">Beverage Pairing</h3>
+              <p class="service-desc">Our carefully selected wine, craft beer, and non-alcoholic beverage list complements every dish perfectly. Ask our staff for personalised recommendations tailored to your meal.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-handshake"></i>
               </div>
-              <h3 class="service-title">Dietary Accommodations</h3>
-              <p class="service-desc">We cater to gluten-free, vegan, and allergen-conscious diners with clear labelling and knowledgeable staff. Your health and preferences are always our priority.</p>
+              <h3 class="service-title">Private Functions</h3>
+              <p class="service-desc">Host your next celebration, work lunch, or special gathering with us. We offer customised menus and intimate spaces ideal for groups of all sizes.</p>
             </div>
       </div>
     </div>
@@ -1787,12 +1792,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">108+</div>
+              <div class="strip-value">108</div>
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years Local</div>
+              <div class="strip-value">7 Years</div>
+              <div class="strip-label">Trusted in East Geelong</div>
             </div>
       </div>
     </div>
@@ -1806,7 +1811,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About The Sprout About</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Sprout About is East Geelong's premier destination for innovative plant-based dining, celebrating fresh vegetables, grains, and legumes in every dish. With a 4.8-star rating from over 100 Google reviews, we're committed to delivering flavour-packed meals that nourish both body and community.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Sprout About is East Geelong's go-to destination for creative plant-based dining that doesn't compromise on taste or satisfaction. With a focus on seasonal produce and innovative recipes, we've built a loyal following of diners who crave wholesome, flavour-packed meals in a welcoming atmosphere.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1860,31 +1865,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Charred Broccolini & Quinoa Bowl</span>
-                  <span class="cat-menu-desc">Roasted broccolini, fluffy quinoa, tahini dressing, pomegranate seeds.</span>
+                  <span class="cat-menu-name">Roasted Beetroot & Walnut Wellington</span>
+                  <span class="cat-menu-desc">Layered pastry with herb pâté and seasonal vegetables.</span>
+                </div>
+                <span class="cat-menu-price">$28</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Creamy Cashew Carbonara</span>
+                  <span class="cat-menu-desc">House-made linguine with smoky tempeh and silky sauce.</span>
+                </div>
+                <span class="cat-menu-price">$22</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Spiced Lentil Dhal with Naan</span>
+                  <span class="cat-menu-desc">Warming aromatic dhal served with warm, fluffy naan bread.</span>
                 </div>
                 <span class="cat-menu-price">$18</span>
               </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Mushroom & Lentil Wellington</span>
-                  <span class="cat-menu-desc">Puff pastry wrapped around herb-crusted mushroom and brown lentils.</span>
-                </div>
-                <span class="cat-menu-price">$24</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Beetroot & Walnut Salad</span>
-                  <span class="cat-menu-desc">Roasted beetroot, candied walnuts, feta, balsamic reduction.</span>
-                </div>
-                <span class="cat-menu-price">$16</span>
-              </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends—call +61 3 5229 6131 or walk in anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended, especially Friday–Saturday — call +61 3 5229 6131 or walk in anytime</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Tue–Thu 5pm–10pm  |  Fri–Sat 11am–11pm  |  Sun 10am–9pm  |  Closed Mondays</div>
             </div>
       </div>
     </div>
@@ -1918,31 +1923,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you cater for dietary requirements?
+          Do you cater for dietary requirements beyond vegan?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We accommodate vegan, gluten-free, nut-free, and other dietary needs—just let us know when you book or visit. Our team is happy to discuss ingredients and preparation.</div>
+        <div class="faq-a">Absolutely! We can accommodate gluten-free, nut allergies, and other dietary needs — just let us know when booking or on arrival.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can I book a table for a large group?
+          Can I dine solo at The Sprout About?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we welcome groups and can arrange private dining for special occasions. We recommend calling ahead on +61 3 5229 6131 to ensure we can seat your party comfortably.</div>
+        <div class="faq-a">We love solo diners and have comfortable seating at the bar where you can enjoy the atmosphere and chat with our staff.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway and delivery?
+          Do you offer takeaway or delivery?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We offer takeaway from our East Geelong location, and we can discuss catering and delivery options for events. Call us to discuss your needs.</div>
+        <div class="faq-a">Yes, we offer takeaway for many of our menu items — call us to place your order. We currently partner with selected delivery platforms.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What are your opening hours?
+          Are bookings essential, or can I just walk in?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 11am–10pm and Saturday–Sunday 10am–11pm. Bookings are recommended on weekends, though walk-ins are always welcome.</div>
+        <div class="faq-a">Walk-ins are always welcome! However, we strongly recommend bookings on Friday and Saturday evenings to secure your preferred time.</div>
       </div>
       </div>
     </div>
@@ -1955,8 +1960,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Reserve your table now</h2>
-          <p class="contact-cta-line">Discover your new favourite restaurant. Visit The Sprout About today or call us to make a reservation.</p>
+          <h2 class="contact-title">Reserve your table today</h2>
+          <p class="contact-cta-line">Ready to experience plant-based dining done right? Reserve your table or pop in today — our team can't wait to welcome you.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2040,7 +2045,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             The Sprout About
           </div>
-          <p class="footer-tagline">Fresh, vibrant, locally-sourced vegetarian cuisine loved by 108+ reviewers</p>
+          <p class="footer-tagline">Fresh, flavourful vegan cuisine loved by 108 reviewers — 4.8★ rated</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Corner Brew | Melbourne VIC</title>
-  <meta name="description" content="Award-winning espresso and locally-sourced food in the heart of the CBD">
+  <meta name="description" content="Exceptional coffee, fresh brunch, and genuine hospitality in the heart of the city">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1549,14 +1560,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="The Corner Brew | Melbourne VIC">
-  <meta property="og:description" content="Award-winning espresso and locally-sourced food in the heart of the CBD">
+  <meta property="og:description" content="Exceptional coffee, fresh brunch, and genuine hospitality in the heart of the city">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-the-corner-brew-r5tdbv18b-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-the-corner-brew-91np3pv4o-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="The Corner Brew | Melbourne VIC">
-  <meta name="twitter:description" content="Award-winning espresso and locally-sourced food in the heart of the CBD">
+  <meta name="twitter:description" content="Exceptional coffee, fresh brunch, and genuine hospitality in the heart of the city">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1634,8 +1645,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne VIC &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Melbourne's Best Specialty Coffee & All-Day Brunch</h1>
-            <p class="hero-tagline">Award-winning espresso and locally-sourced food in the heart of the CBD</p>
+            <h1 class="hero-headline">Melbourne's Favourite Corner Cafe</h1>
+            <p class="hero-tagline">Exceptional coffee, fresh brunch, and genuine hospitality in the heart of the city</p>
 
             <div class="hero-actions hero-btns">
               <a href="#contact" class="btn-hero-primary">
@@ -1653,17 +1664,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating (183 Reviews)</span>
+              <span class="stat-label">Google Rating (183 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years in Melbourne</span>
+              <span class="stat-value">7+ years</span>
+              <span class="stat-label">Trusted by Melbourne</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Ethically Sourced</span>
+              <span class="stat-value">100% local</span>
+              <span class="stat-label">Independent & family-run</span>
             </div>
             
             </div>
@@ -1743,28 +1754,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">Our baristas train regularly to perfect espresso extraction, milk texturing, and pour-over techniques using single-origin beans from Australian roasters. Whether you prefer a smooth flat white or a bold long black, we've got you covered.</p>
+              <p class="service-desc">Our baristas hand-craft every espresso using premium single-origin beans sourced from sustainable roasters. From smooth flat whites to bold espressos, we prioritise flavour and consistency in every cup.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">All-Day Brunch</h3>
-              <p class="service-desc">Enjoy inventive breakfast and lunch dishes made fresh daily with locally-sourced produce and premium ingredients. From smashed avocado on sourdough to house-made granola, every plate is crafted with care.</p>
+              <h3 class="service-title">Fresh Brunch & Light Meals</h3>
+              <p class="service-desc">Daily rotating brunch menu featuring sourdough toast, grain bowls, and seasonal specials made with local produce. We cater to dietary requirements including vegan, gluten-free, and allergen-conscious options.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Dietary Options</h3>
-              <p class="service-desc">We cater to vegan, gluten-free, and dairy-free diets with clearly-labelled menu options and thoughtful substitutions. Our team can guide you through alternatives that don't compromise on flavour.</p>
+              <h3 class="service-title">Ethically Sourced Ingredients</h3>
+              <p class="service-desc">We partner with local farmers, bakeries, and roasters to ensure every item reflects our commitment to quality and sustainability. Transparency in sourcing is core to who we are.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Work-Friendly Space</h3>
-              <p class="service-desc">Fast, reliable WiFi and plenty of seating make The Corner Brew the perfect spot to work or study over a coffee. We're happy to have you stay as long as you like.</p>
+              <h3 class="service-title">Community Gathering Space</h3>
+              <p class="service-desc">More than just a cafe—we're a welcoming corner where locals meet, work, and connect. Our warm hospitality and relaxed vibe make us a true neighbourhood hub.</p>
             </div>
       </div>
     </div>
@@ -1777,15 +1788,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="strip-item">
               <div class="strip-value">4.7★</div>
-              <div class="strip-label">Google Rating (183 Reviews)</div>
+              <div class="strip-label">Google Rating (183 reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years in Melbourne</div>
+              <div class="strip-value">7+ years</div>
+              <div class="strip-label">Trusted by Melbourne</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">100%</div>
-              <div class="strip-label">Ethically Sourced</div>
+              <div class="strip-value">100% local</div>
+              <div class="strip-label">Independent & family-run</div>
             </div>
       </div>
     </div>
@@ -1799,7 +1810,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About The Corner Brew</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Corner Brew is a beloved Melbourne café serving expertly-crafted specialty coffees and fresh, seasonal brunch dishes to thousands of regulars and visitors every week. Since opening in 2015, we've earned a reputation for quality sourcing, skilled baristas, and a welcoming atmosphere that keeps customers coming back.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Corner Brew is a beloved independent cafe in Melbourne, serving expertly crafted espresso, seasonal brunch dishes, and a welcoming atmosphere that keeps locals coming back daily. With a 4.7★ rating across 183 Google reviews, we're committed to quality ingredients, skilled baristas, and creating a space where the community gathers.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1854,25 +1865,25 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Silky microfoam espresso with premium local milk.</span>
+                  <span class="cat-menu-desc">Silky microfoam and premium espresso—our signature daily order.</span>
                 </div>
-                <span class="cat-menu-price">$5.50</span>
+                <span class="cat-menu-price">$4.80</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Smashed Avo on Sourdough</span>
-                  <span class="cat-menu-desc">Ripe avocado, poached egg, dukkah, and house-made chilli oil.</span>
+                  <span class="cat-menu-desc">Creamy avocado, poached eggs, dukkah, and charred tomato on toasted sourdough.</span>
                 </div>
-                <span class="cat-menu-price">$16.90</span>
+                <span class="cat-menu-price">$16.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Ricotta Hotcakes</span>
-                  <span class="cat-menu-desc">Fluffy pancakes with fresh berries, honeycomb, and whipped cream.</span>
+                  <span class="cat-menu-name">Seasonal Grain Bowl</span>
+                  <span class="cat-menu-desc">Locally roasted vegetables, grains, and house-made dressing—changes weekly.</span>
                 </div>
-                <span class="cat-menu-price">$18.50</span>
+                <span class="cat-menu-price">$17.00</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—walk in anytime. Peak times are 7–9am and 12–1pm on weekdays.</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—come in anytime. Expect a friendly hello from our team.</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1914,28 +1925,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           Do you offer takeaway coffee?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We're set up for quick takeaway service with our range of reusable cups and eco-friendly packaging. Just let our team know and we'll have your order ready in minutes.</div>
+        <div class="faq-a">Absolutely—grab your favourite brew to go, and we'll have it ready in minutes. We use recyclable cups and support keep-cup initiatives.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm. Weekends can get busy, especially during brunch, so arrive early for a table or come by for takeaway.</div>
+        <div class="faq-a">Yes, we're open Saturday 8am–3pm and Sunday 8am–3pm. Perfect for a leisurely weekend brunch.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can you accommodate large groups or functions?
+          Can you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're happy to welcome groups during quieter times and can discuss catering options for small events. Please call ahead to check availability and discuss your needs.</div>
+        <div class="faq-a">We happily accommodate vegan, vegetarian, gluten-free, and allergen-free requests. Just let our team know when you order.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What coffee beans do you use?
+          Do you have wifi and seating for working?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We rotate single-origin beans from award-winning Australian roasters, changing our seasonal blend every month. Ask our baristas about our current selection—they love talking coffee.</div>
+        <div class="faq-a">Yes—we have free wifi, plenty of seating, and a relaxed atmosphere perfect for working or studying. We ask that guests order regularly.</div>
       </div>
       </div>
     </div>
@@ -1948,8 +1959,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Come visit us today</h2>
-          <p class="contact-cta-line">Stop by The Corner Brew today and experience why Melbourne's coffee lovers choose us. We're here to make your day brighter, one cup at a time.</p>
+          <h2 class="contact-title">Visit us today</h2>
+          <p class="contact-cta-line">Stop by The Corner Brew today and experience the coffee and community that's won over Melbourne. We're here for you, every single day.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2033,7 +2044,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             The Corner Brew
           </div>
-          <p class="footer-tagline">Award-winning espresso and locally-sourced food in the heart of the CBD</p>
+          <p class="footer-tagline">Exceptional coffee, fresh brunch, and genuine hospitality in the heart of the city</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CULPA ESPRESSO | Melbourne</title>
-  <meta name="description" content="Craft coffee perfection served daily in the heart of Melbourne">
+  <meta name="description" content="Award-winning coffee crafted with passion daily">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="CULPA ESPRESSO | Melbourne">
-  <meta property="og:description" content="Craft coffee perfection served daily in the heart of Melbourne">
+  <meta property="og:description" content="Award-winning coffee crafted with passion daily">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/culpa-espresso/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="CULPA ESPRESSO | Melbourne">
-  <meta name="twitter:description" content="Craft coffee perfection served daily in the heart of Melbourne">
+  <meta name="twitter:description" content="Award-winning coffee crafted with passion daily">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1418,8 +1454,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Espresso Destination</h1>
-            <p class="hero-tagline">Craft coffee perfection served daily in the heart of Melbourne</p>
+            <h1 class="hero-headline">Melbourne's finest specialty espresso awaits</h1>
+            <p class="hero-tagline">Award-winning coffee crafted with passion daily</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/91+William+St%2C+Melbourne+VIC+3000" class="btn-hero-primary">
@@ -1437,17 +1473,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating (150 reviews)</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">150+</span>
-              <span class="stat-label">Happy customers</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Est. 2015</span>
-              <span class="stat-label">Melbourne café</span>
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
             
             </div>
@@ -1511,29 +1547,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-cup-hot"></i>
               </div>
-              <h3 class="service-title">Specialty Espresso</h3>
-              <p class="service-desc">Hand-crafted espresso drinks made with perfectly extracted single-origin beans. Our skilled baristas dial in each shot to highlight the unique characteristics of our rotating selection.</p>
+              <h3 class="service-title">Specialty Coffee</h3>
+              <p class="service-desc">Hand-selected single-origin espresso blends prepared by certified baristas. Each cup is crafted with precision to highlight the unique flavour profile of our beans.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-croissant"></i>
+              </div>
+              <h3 class="service-title">Fresh Pastries</h3>
+              <p class="service-desc">Locally baked croissants, sourdough, and sweet treats delivered fresh daily. Perfectly paired with your morning flat white or afternoon pick-me-up.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-wifi"></i>
+              </div>
+              <h3 class="service-title">Work-Friendly Space</h3>
+              <p class="service-desc">Reliable WiFi and comfortable seating ideal for laptops and meetings. Join Melbourne's professionals who make Culpa their second office.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Premium Coffee Beans</h3>
-              <p class="service-desc">Take home our carefully curated selection of specialty coffee beans. We stock seasonal single-origins and signature blends perfect for home brewing.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-cake-candles"></i>
-              </div>
-              <h3 class="service-title">Fresh Pastries & Food</h3>
-              <p class="service-desc">Pair your coffee with freshly baked pastries and light lunch options made daily. Our menu features locally sourced ingredients and seasonal specials.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-people-group"></i>
-              </div>
-              <h3 class="service-title">Welcoming Community Space</h3>
-              <p class="service-desc">A relaxed atmosphere where regulars and new visitors alike gather to enjoy quality coffee. Perfect for meetings, studying, or simply savouring a moment of calm.</p>
+              <h3 class="service-title">Sustainable Practices</h3>
+              <p class="service-desc">We're committed to ethical sourcing and eco-friendly packaging. Every purchase supports fair-trade farmers and reduces our environmental footprint.</p>
             </div>
       </div>
     </div>
@@ -1548,6 +1584,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1559,26 +1604,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Single-Origin Espresso</span>
-                  <span class="cat-menu-desc">Premium single-origin shot highlighting terroir and origin flavours.</span>
-                </div>
-                <span class="cat-menu-price">$4.50</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Silky microfoam espresso with velvety steamed milk — Melbourne's signature.</span>
+                  <span class="cat-menu-name">Culpa Signature Flat White</span>
+                  <span class="cat-menu-desc">Velvety microfoam with our house espresso blend.</span>
                 </div>
                 <span class="cat-menu-price">$5.20</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Batch Filter</span>
-                  <span class="cat-menu-desc">Our rotating selection of carefully sourced single-origin filter coffees.</span>
+                  <span class="cat-menu-name">Single-Origin Piccolo</span>
+                  <span class="cat-menu-desc">Bold, concentrated shot with creamy milk.</span>
+                </div>
+                <span class="cat-menu-price">$4.80</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Cold Brew Concentrate</span>
+                  <span class="cat-menu-desc">Smooth, refreshing—perfect for warm days.</span>
                 </div>
                 <span class="cat-menu-price">$5.50</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime and we'll get your coffee ready</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1615,7 +1660,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Culpa Espresso</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Culpa Espresso has established itself as a beloved Melbourne café, crafting exceptional specialty coffee with precision and passion since opening. Our baristas are trained in advanced espresso techniques, sourcing single-origin beans from Australia's finest roasters to deliver consistently outstanding flavour in every cup.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Culpa Espresso has earned a stellar 4.7★ rating from 150 Google reviews, cementing our reputation as Melbourne's go-to destination for exceptional specialty coffee. Our expert baristas source premium beans and perfect every extraction to deliver the authentic café experience locals have trusted for years.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1663,31 +1708,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer oat milk and other dairy-free options?
+          Do you offer dairy-free milk alternatives?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we stock oat, almond, soy, and coconut milk alternatives. Just ask your barista and we'll craft your coffee exactly how you like it.</div>
+        <div class="faq-a">Yes, we stock oat, almond, soy, and coconut milk options for all coffee beverages. Simply ask your barista when ordering.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I order coffee beans online?
+          Can I order coffee beans to take home?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Currently we offer beans for purchase in-store. We recommend visiting us to chat with our team about which roast suits your brewing method best.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Do you have seating available?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We have comfortable indoor seating perfect for enjoying your coffee and pastry. It's a popular spot so seats fill up during peak hours.</div>
+        <div class="faq-a">Absolutely! We sell our premium single-origin beans in 250g and 1kg bags, freshly roasted weekly.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 7am–4pm and Saturday to Sunday 8am–3pm. Just drop by — no reservation needed.</div>
+        <div class="faq-a">We're open Monday–Friday 7am–4pm and Saturday–Sunday 8am–3pm. Come by whenever suits you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you have seating for groups?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We welcome groups and have comfortable communal seating available. No booking needed—just pop in whenever you're ready.</div>
       </div>
       </div>
     </div>
@@ -1700,8 +1745,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in Touch with Culpa Espresso</h2>
-          <p class="contact-cta-line">Visit us today and taste the difference quality espresso makes — we look forward to serving you your next perfect cup.</p>
+          <h2 class="contact-title">Get in touch with us today</h2>
+          <p class="contact-cta-line">Ready for truly exceptional coffee? Call us today or visit Culpa Espresso and discover why Melbourne loves us.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1727,7 +1772,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=CULPA+ESPRESSO+91+William+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find CULPA ESPRESSO on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1790,7 +1837,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             CULPA ESPRESSO
           </div>
-          <p class="footer-tagline">Craft coffee perfection served daily in the heart of Melbourne</p>
+          <p class="footer-tagline">Award-winning coffee crafted with passion daily</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1333,7 +1369,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   <meta property="og:description" content="Energising food and coffee culture in the heart of Melbourne">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cafe-kinetic/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cafe Kinetic | Melbourne">
@@ -1419,7 +1455,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Melbourne's Dynamic Kinetic Cafe Experience</h1>
+            <h1 class="hero-headline">Melbourne's Premier Kinetic Cafe Experience</h1>
             <p class="hero-tagline">Energising food and coffee culture in the heart of Melbourne</p>
 
             <div class="hero-actions hero-btns">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.5★</span>
-              <span class="stat-label">Google rating from 205 reviews</span>
+              <span class="stat-label">Google Rating (205 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">205+</span>
-              <span class="stat-label">Satisfied local customers</span>
+              <span class="stat-label">Verified Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Est.</span>
-              <span class="stat-label">Melbourne community favourite</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Local Heritage</span>
             </div>
             
             </div>
@@ -1510,31 +1546,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-coffee"></i>
+                <i class="fa-solid fa-cup-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">Expertly pulled espresso drinks and single-origin pour-overs crafted by skilled baristas. Each cup is made with precision to highlight the unique characteristics of carefully selected beans.</p>
+              <p class="service-desc">Our baristas craft premium espresso drinks and single-origin pour-overs with precision. Every cup is expertly prepared to showcase the unique character of our carefully sourced beans.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Contemporary Cuisine</h3>
-              <p class="service-desc">Fresh, seasonal menus featuring modern Australian fare with innovative flavour combinations. Dishes are prepared daily to ensure quality and support local ingredient suppliers.</p>
+              <h3 class="service-title">Modern Brunch & Lunch</h3>
+              <p class="service-desc">Discover inventive dishes that blend fresh seasonal ingredients with contemporary techniques. From smashed avo on sourdough to signature grain bowls, every plate is crafted with care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-wine-glass"></i>
               </div>
-              <h3 class="service-title">Social Dining</h3>
-              <p class="service-desc">Welcoming communal spaces designed for both solo patrons and group gatherings. The energetic vibe makes Cafe Kinetic perfect for catching up with friends or colleagues.</p>
+              <h3 class="service-title">Dinner & Cocktails</h3>
+              <p class="service-desc">Experience our elevated evening menu featuring locally sourced proteins and house-made spirits. Our mixologists create bespoke cocktails that perfectly complement your meal.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-calendar"></i>
+                <i class="fa-solid fa-handshake"></i>
               </div>
-              <h3 class="service-title">Event Hosting</h3>
-              <p class="service-desc">Private and semi-private event spaces available for celebrations, meetings and special occasions. The team can tailor menus and arrangements to suit your specific needs.</p>
+              <h3 class="service-title">Event & Function Space</h3>
+              <p class="service-desc">Host your next gathering in our versatile private dining area perfect for corporate events or celebrations. Our team handles catering, setup and service with meticulous attention to detail.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,24 +1605,24 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Kinetic Flat White</span>
-                  <span class="cat-menu-desc">Signature house blend espresso with perfectly steamed milk.</span>
+                  <span class="cat-menu-name">Smashed Avo & Burnt Butter Toast</span>
+                  <span class="cat-menu-desc">Hass avocado on house-made sourdough with poached eggs and dukkah.</span>
                 </div>
-                <span class="cat-menu-price">$4.50</span>
+                <span class="cat-menu-price">$18</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avo on Sourdough</span>
-                  <span class="cat-menu-desc">Ripe avocado, lime, feta and microgreens on toasted artisan bread.</span>
+                  <span class="cat-menu-name">Kinetic Grain Bowl</span>
+                  <span class="cat-menu-desc">Quinoa, roasted vegetables, house-made labne and pomegranate.</span>
                 </div>
-                <span class="cat-menu-price">$16.00</span>
+                <span class="cat-menu-price">$22</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Grain Bowl</span>
-                  <span class="cat-menu-desc">Locally sourced vegetables, quinoa and house-made dressing.</span>
+                  <span class="cat-menu-name">Pan-Seared Barramundi</span>
+                  <span class="cat-menu-desc">Local caught fish with seasonal greens and citrus beurre blanc.</span>
                 </div>
-                <span class="cat-menu-price">$18.50</span>
+                <span class="cat-menu-price">$32</span>
               </div>
           <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 3 9662 4533 or walk in welcome</p>
         </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Cafe Kinetic</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Kinetic has established itself as a beloved neighbourhood destination in Melbourne, earning a stellar 4.5-star rating across 205 Google reviews. Known for its vibrant atmosphere and commitment to quality, the cafe combines expertly crafted beverages with thoughtfully prepared meals that keep locals and visitors returning.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Kinetic has established itself as a beloved destination for Melbourne diners seeking innovative cuisine and expertly crafted beverages. With 4.5★ across 205 Google reviews, we're committed to delivering exceptional service and memorable dining experiences every single day.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We're open Monday to Friday 11am–10pm and Saturday to Sunday 10am–11pm. Public holiday hours may vary, so please check ahead.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
           Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, bookings are recommended, especially on weekends. Walk-ins are always welcome subject to availability—call us on +61 3 9662 4533 to secure a table.</div>
+        <div class="faq-a">Yes, bookings are recommended especially on weekends and evenings. Call +61 3 9662 4533 to secure your table or walk-ins are always welcome.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What dietary requirements can you accommodate?
+          What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We cater to vegetarian, vegan and gluten-free preferences. Please mention any allergies when ordering, and our team will assist with suitable menu options.</div>
+        <div class="faq-a">We're open Mon–Fri 11am–10pm and Sat–Sun 10am–11pm. Public holiday hours may vary, so feel free to check ahead.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Is there parking available nearby?
+          Do you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Street parking is available in the surrounding area, and several paid car parks are within walking distance. We recommend checking local parking signs for restrictions.</div>
+        <div class="faq-a">Absolutely. We offer vegan, gluten-free, and allergen-friendly options across our menu. Let our team know your requirements when ordering.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Is there parking available?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Street parking is available in our Melbourne CBD location, and several nearby car parks are within walking distance of Cafe Kinetic.</div>
       </div>
       </div>
     </div>
@@ -1702,7 +1747,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in Touch with Cafe Kinetic</h2>
-          <p class="contact-cta-line">Experience the kinetic energy of Melbourne's favourite cafe — visit us today or call to reserve your table.</p>
+          <p class="contact-cta-line">Ready to experience Cafe Kinetic? Call us today or drop by—we'd love to welcome you.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cafe+Kinetic+103+Flinders+Ln%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cafe Kinetic on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396624533?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396624533" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396624533?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

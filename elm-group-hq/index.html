@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ELM Group HQ | Melbourne</title>
-  <meta name="description" content="Transform your body and mind at ELM Group HQ today">
+  <meta name="description" content="World-class gym experience with expert coaching and community">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1332,14 +1368,14 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="ELM Group HQ | Melbourne">
-  <meta property="og:description" content="Transform your body and mind at ELM Group HQ today">
+  <meta property="og:description" content="World-class gym experience with expert coaching and community">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/elm-group-hq/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="ELM Group HQ | Melbourne">
-  <meta name="twitter:description" content="Transform your body and mind at ELM Group HQ today">
+  <meta name="twitter:description" content="World-class gym experience with expert coaching and community">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1421,8 +1457,8 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Train Harder. Live Better.
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Fitness Community Awaits</h1>
-            <p class="hero-tagline">Transform your body and mind at ELM Group HQ today</p>
+            <h1 class="hero-headline">Melbourne's Premier Fitness Hub Awaits You</h1>
+            <p class="hero-tagline">World-class gym experience with expert coaching and community</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+611300356477" class="btn-hero-primary">
@@ -1444,13 +1480,13 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">36</span>
-              <span class="stat-label">Verified Reviews</span>
+              <span class="stat-value">36+</span>
+              <span class="stat-label">Client Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">24/7</span>
-              <span class="stat-label">Member Access</span>
+              <span class="stat-value">2000+</span>
+              <span class="stat-label">Active Members</span>
             </div>
             
             </div>
@@ -1515,28 +1551,28 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
                 <i class="fa-solid fa-dumbbell"></i>
               </div>
               <h3 class="service-title">Strength Training</h3>
-              <p class="service-desc">Access our fully equipped weight room with Olympic platforms, dumbbells, and cable machines. Personal trainers on-site provide form checks and progressive programming.</p>
+              <p class="service-desc">Access to premium weights, machines, and functional equipment for all fitness levels. Our certified trainers design personalised programmes to maximise your gains safely and effectively.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-fire"></i>
+                <i class="fa-solid fa-users"></i>
               </div>
-              <h3 class="service-title">Group Fitness Classes</h3>
-              <p class="service-desc">Join energising HIIT, Bootcamp, Yoga, Pilates, and Spin sessions throughout the week. Our certified instructors create motivating environments for all fitness levels.</p>
+              <h3 class="service-title">Group Classes</h3>
+              <p class="service-desc">High-energy HIIT, yoga, spin, and bootcamp sessions led by passionate instructors. Group fitness builds community whilst keeping you motivated and accountable to your goals.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-person"></i>
               </div>
               <h3 class="service-title">Personal Training</h3>
-              <p class="service-desc">Work one-on-one with experienced coaches to crush your goals faster. Customised programs are tailored to your needs, schedule, and aspirations.</p>
+              <p class="service-desc">One-on-one coaching tailored to your specific objectives and fitness level. Our PTs provide nutrition guidance, form correction, and unwavering accountability throughout your journey.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-spa"></i>
               </div>
-              <h3 class="service-title">Wellness Support</h3>
-              <p class="service-desc">Access nutrition guidance, recovery services, and holistic fitness planning. We support your complete wellness journey beyond the gym floor.</p>
+              <h3 class="service-title">Recovery Services</h3>
+              <p class="service-desc">Stretch zones, massage therapy, and recovery programmes to optimise results and prevent injury. Proper recovery accelerates progress and keeps you performing at your peak.</p>
             </div>
       </div>
     </div>
@@ -1552,16 +1588,25 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">36</div>
-              <div class="strip-label">Verified Reviews</div>
+              <div class="strip-value">36+</div>
+              <div class="strip-label">Client Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">24/7</div>
-              <div class="strip-label">Member Access</div>
+              <div class="strip-value">2000+</div>
+              <div class="strip-label">Active Members</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#b71c1c;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Fitness Australia Member</span></div><div class="accred-item"><div class="accred-icon" style="color:#b71c1c;"><i class="fa-solid fa-shield-heart"></i></div><span class="accred-label">CPR Certified Staff</span></div><div class="accred-item"><div class="accred-icon" style="color:#b71c1c;"><i class="fa-solid fa-id-card"></i></div><span class="accred-label">Registered Trainers</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1574,7 +1619,7 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Community</span>
           <h2 class="about-heading">About ELM Group HQ</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">ELM Group HQ is Melbourne's leading fitness destination, boasting a 5-star rating from 36 verified Google reviews. Our state-of-the-art facility combines cutting-edge equipment with expert coaching to deliver measurable results for every fitness level.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">ELM Group HQ is Melbourne's leading fitness destination, trusted by over 2,000 members seeking transformative results. Our state-of-the-art facility combines cutting-edge equipment with personalised coaching to deliver exceptional fitness outcomes.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-dumbbell"></i></span><span class="af-text">Expert certified coaches with proven transformation programs</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-building"></i></span><span class="af-text">Modern equipment and clean, spacious facilities</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="af-text">Flexible membership options — no lock-in contracts</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Hundreds of member success stories and 5-star reviews</span></div>
@@ -1643,19 +1688,19 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
             <div class="gym-tier">
               <div class="gym-tier-name">Casual</div>
               <div class="gym-tier-price">$25/visit</div>
-              <ul class="gym-tier-feats"><li>Full gym access</li><li>All equipment included</li><li>No lock-in contract</li></ul>
+              <ul class="gym-tier-feats"><li>Full gym access</li><li>No lock-in contract</li></ul>
               <a class="btn-gym-join" href="#contact">Join Now</a>
             </div>
             <div class="gym-tier">
               <div class="gym-tier-name">Monthly</div>
               <div class="gym-tier-price">$89/month</div>
-              <ul class="gym-tier-feats"><li>Unlimited gym access</li><li>2 group classes per week</li><li>Flexible cancellation</li></ul>
+              <ul class="gym-tier-feats"><li>Unlimited gym access</li><li>2 group classes per week</li></ul>
               <a class="btn-gym-join" href="#contact">Join Now</a>
             </div>
             <div class="gym-tier">
               <div class="gym-tier-name">Annual</div>
               <div class="gym-tier-price">$79/month</div>
-              <ul class="gym-tier-feats"><li>Unlimited gym access</li><li>Unlimited group classes</li><li>1 PT session per month</li><li>Best value</li></ul>
+              <ul class="gym-tier-feats"><li>Unlimited gym access</li><li>Unlimited classes</li><li>1 PT session per month</li></ul>
               <a class="btn-gym-join" href="#contact">Join Now</a>
             </div>
       </div>
@@ -1696,31 +1741,31 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer a free trial membership?
+          Do you offer a free trial?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, your first week is completely free with no credit card required. Experience our facilities and classes risk-free.</div>
+        <div class="faq-a">Yes! We offer a complimentary week trial with no credit card required. This lets you experience our facility and classes risk-free before committing.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          What experience level are your classes suitable for?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">ELM Group HQ offers 24/7 access for all members. Our staff team is available during peak hours for guidance and support.</div>
+        <div class="faq-a">Our classes cater to all levels from complete beginners to advanced athletes. Instructors provide modifications and progressions to challenge every participant appropriately.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do I need to book group classes in advance?
+          Can I train at any time that suits me?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Most classes accept walk-ins, but booking online ensures your spot during peak times. Check our schedule and reserve via our app or website.</div>
+        <div class="faq-a">Our gym is designed for flexible access with extended hours to fit your schedule. Whether you're an early riser or night owl, we've got you covered.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are personal training sessions included in membership?
+          Are personal trainers available for consultations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Personal training is available as an add-on service. Our Annual membership includes one complimentary PT session per month.</div>
+        <div class="faq-a">Absolutely. All our PTs offer complimentary consultations to discuss your goals and create a customised training plan that delivers results.</div>
       </div>
       </div>
     </div>
@@ -1733,8 +1778,8 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Start Free Trial With ELM Group HQ</h2>
-          <p class="contact-cta-line">Ready to transform? Call us on +61 1300 356 477 or visit ELM Group HQ today.</p>
+          <h2 class="contact-title">Start Free Trial at ELM Group HQ Today</h2>
+          <p class="contact-cta-line">Ready to transform? Join ELM Group HQ and become part of Melbourne's strongest community.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1760,7 +1805,9 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=ELM+Group+HQ+Elm+Group%3B+HQ%2C+11%2F580+Collins+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find ELM Group HQ on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1823,7 +1870,7 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
             </span>
             ELM Group HQ
           </div>
-          <p class="footer-tagline">Transform your body and mind at ELM Group HQ today</p>
+          <p class="footer-tagline">World-class gym experience with expert coaching and community</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2026,6 +2073,47 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; font-weight: 500; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/611300356477?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+611300356477" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/611300356477?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

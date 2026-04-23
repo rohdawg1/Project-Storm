@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cesca's Cafe Geelong | Geelong West</title>
-  <meta name="description" content="Award-winning coffee and brunch in the heart of Geelong West">
+  <meta name="description" content="Exceptional coffee and fresh brunch in Geelong West">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cesca's Cafe Geelong | Geelong West">
-  <meta property="og:description" content="Award-winning coffee and brunch in the heart of Geelong West">
+  <meta property="og:description" content="Exceptional coffee and fresh brunch in Geelong West">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cescas-cafe-geelong/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cesca's Cafe Geelong | Geelong West">
-  <meta name="twitter:description" content="Award-winning coffee and brunch in the heart of Geelong West">
+  <meta name="twitter:description" content="Exceptional coffee and fresh brunch in Geelong West">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong West &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Geelong West's Beloved Local Café</h1>
-            <p class="hero-tagline">Award-winning coffee and brunch in the heart of Geelong West</p>
+            <h1 class="hero-headline">Geelong's Best Neighbourhood Café</h1>
+            <p class="hero-tagline">Exceptional coffee and fresh brunch in Geelong West</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/90+Pakington+St%2C+Geelong+West+VIC+3218" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.8★</span>
-              <span class="stat-label">Google rating from 51 reviews</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">51</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">Geelong West</span>
-              <span class="stat-label">Local neighbourhood favourite</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">Expert Baristas</span>
-              <span class="stat-label">Skilled specialty coffee team</span>
+              <span class="stat-label">Local Favourite</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium beans roasted locally and expertly prepare every cup. Whether you prefer a smooth flat white or bold espresso, our baristas craft each drink with precision and care.</p>
+              <p class="service-desc">We serve expertly pulled espresso and artisan coffee drinks crafted by passionate baristas. Every cup is made to order using quality beans and meticulous technique.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Brunch Menu</h3>
-              <p class="service-desc">Our seasonal brunch offerings feature fresh, locally-sourced ingredients prepared with attention to flavour and presentation. From smashed avocado to signature egg dishes, there's something to delight every appetite.</p>
+              <h3 class="service-title">Fresh Brunch</h3>
+              <p class="service-desc">Enjoy seasonal, fresh brunch dishes made daily with locally sourced ingredients. From classic toast to creative specials, there's something for every appetite.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-chairs"></i>
+              </div>
+              <h3 class="service-title">Welcoming Atmosphere</h3>
+              <p class="service-desc">Our relaxed, friendly space is perfect for catching up with friends or settling in with a good book. We pride ourselves on genuine hospitality and a real community vibe.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Vegan & Dietary Options</h3>
-              <p class="service-desc">We cater to all dietary requirements with plant-based alternatives and gluten-free choices available daily. Our team can advise on ingredients and help you find the perfect meal.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-              <h3 class="service-title">Community Space</h3>
-              <p class="service-desc">More than just a café, we're a gathering place for Geelong West locals and visitors alike. Warm, welcoming and always ready to make you feel at home.</p>
+              <h3 class="service-title">Sustainable Practices</h3>
+              <p class="service-desc">We're committed to environmentally conscious operations, from our sourcing to our waste management. Supporting local producers and minimising our footprint matters to us.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,26 +1605,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado Toast</span>
-                  <span class="cat-menu-desc">Ripe avo, whipped ricotta, heirloom tomato on sourdough.</span>
+                  <span class="cat-menu-name">Smashed Avocado on Multigrain</span>
+                  <span class="cat-menu-desc">Fresh avo, lime, chilli, and poached eggs on toasted multigrain.</span>
                 </div>
                 <span class="cat-menu-price">$16</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Eggs Your Way</span>
-                  <span class="cat-menu-desc">Poached, scrambled or fried with seasonal vegetables and house-made hollandaise.</span>
+                  <span class="cat-menu-name">Seasonal Brunch Plate</span>
+                  <span class="cat-menu-desc">Chef's daily creation featuring local, fresh ingredients.</span>
                 </div>
-                <span class="cat-menu-price">$14</span>
+                <span class="cat-menu-price">$18</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Specialty Flat White</span>
-                  <span class="cat-menu-desc">Silky microfoam, locally roasted espresso, perfectly balanced.</span>
+                  <span class="cat-menu-name">Flat White</span>
+                  <span class="cat-menu-desc">Silky espresso and velvety steamed milk, perfectly balanced.</span>
                 </div>
-                <span class="cat-menu-price">$5</span>
+                <span class="cat-menu-price">$4.50</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime and enjoy our warm welcome</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Cesca's Cafe</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cesca's Cafe has earned a stellar 4.8-star rating from 51 Google reviews, establishing itself as Geelong West's most trusted neighbourhood café. Specialising in expertly crafted espresso drinks and seasonal brunch menus, we've become the go-to spot for locals seeking quality, consistency and genuine hospitality.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cesca's Cafe has earned a stellar 4.8★ rating from 51 Google reviews, establishing itself as Geelong West's favourite neighbourhood destination. Specialising in expertly crafted coffee and fresh, seasonal brunch dishes, we create a welcoming space where locals gather daily.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you take reservations or bookings?
+          Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">No bookings needed—come in anytime! We welcome walk-ins throughout the day, though peak times (especially weekends) can get busy.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          What's your coffee roast style?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We work with locally roasted, premium beans suited to espresso and filter preparation. Our baristas are happy to discuss origin and flavour profiles.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Are gluten-free and vegan options available?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Yes, absolutely. We offer gluten-free bread and vegan alternatives across our menu, and our team can guide you on all dietary requirements.</div>
+        <div class="faq-a">We operate on a walk-in basis and don't take bookings. Just come in whenever suits you best!</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Monday to Friday 7am–4pm, and Saturday–Sunday 8am–3pm. We're closed on public holidays.</div>
+        <div class="faq-a">We're open Monday to Friday 7am–4pm, and Saturday to Sunday 8am–3pm. Perfect for your morning coffee or weekend brunch.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can you cater to dietary requirements?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Absolutely. We're happy to accommodate gluten-free, vegan, and other dietary needs. Just ask our friendly team.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you offer takeaway coffee?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we have excellent takeaway options for busy mornings. Our coffee travels well and tastes just as good on the go.</div>
       </div>
       </div>
     </div>
@@ -1702,7 +1747,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in Touch with Cesca's Cafe</h2>
-          <p class="contact-cta-line">Join us at Cesca's Cafe—where great coffee, delicious food and genuine hospitality come together. Call +61 433 683 275 or visit us in Geelong West today.</p>
+          <p class="contact-cta-line">Visit us in Geelong West and discover why locals keep coming back.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cesca%27s+Cafe+Geelong+90+Pakington+St%2C+Geelong+West+VIC+3218+Geelong+West+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cesca's Cafe Geelong on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1788,7 +1835,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Cesca's Cafe Geelong
           </div>
-          <p class="footer-tagline">Award-winning coffee and brunch in the heart of Geelong West</p>
+          <p class="footer-tagline">Exceptional coffee and fresh brunch in Geelong West</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1991,6 +2038,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61433683275?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61433683275" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61433683275?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

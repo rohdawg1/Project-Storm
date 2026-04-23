@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captains of Industry | Melbourne</title>
-  <meta name="description" content="Exceptional cuisine and service in the heart of the city">
+  <meta name="description" content="Award-winning cuisine and impeccable service in the heart of the city.">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Captains of Industry | Melbourne">
-  <meta property="og:description" content="Exceptional cuisine and service in the heart of the city">
+  <meta property="og:description" content="Award-winning cuisine and impeccable service in the heart of the city.">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/captains-of-industry/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Captains of Industry | Melbourne">
-  <meta name="twitter:description" content="Exceptional cuisine and service in the heart of the city">
+  <meta name="twitter:description" content="Award-winning cuisine and impeccable service in the heart of the city.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1420,7 +1456,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               Melbourne &mdash; Your Local Favourite
             </span>
             <h1 class="hero-headline">Melbourne's Premier Fine Dining Destination</h1>
-            <p class="hero-tagline">Exceptional cuisine and service in the heart of the city</p>
+            <p class="hero-tagline">Award-winning cuisine and impeccable service in the heart of the city.</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/1%2F2+Somerset+Pl%2C+Melbourne+VIC+3000" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">386</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-label">Google Rating (386 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">20+</span>
-              <span class="stat-label">Years Excellence</span>
+              <span class="stat-label">Years Fine Dining</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">386</span>
+              <span class="stat-label">Trusted Reviews</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-utensils"></i>
               </div>
               <h3 class="service-title">Fine Dining</h3>
-              <p class="service-desc">Experience exquisitely crafted dishes prepared by our award-winning culinary team. Each plate is a masterpiece designed to delight your palate and elevate your dining experience.</p>
+              <p class="service-desc">Experience meticulously crafted dishes prepared by our talented culinary team. Each plate reflects our commitment to excellence and seasonal ingredients.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wine-glass"></i>
               </div>
               <h3 class="service-title">Wine Pairing</h3>
-              <p class="service-desc">Our expert sommeliers curate carefully selected wines to complement your meal perfectly. Discover local and international vintages that enhance every course.</p>
+              <p class="service-desc">Our sommelier curates an exceptional selection of wines to complement your meal perfectly. Discover new favourites from our carefully chosen collection.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-calendar-check"></i>
               </div>
               <h3 class="service-title">Private Events</h3>
-              <p class="service-desc">Host your special occasion in our elegant venue with bespoke catering services. We create unforgettable experiences for corporate functions, celebrations, and intimate gatherings.</p>
+              <p class="service-desc">Host your special occasion in our elegant dining spaces designed for intimate gatherings. We tailor menus and arrangements to suit your vision.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-chair"></i>
               </div>
-              <h3 class="service-title">Intimate Ambiance</h3>
-              <p class="service-desc">Dine in sophisticated surroundings designed for romance and refined conversation. Our carefully curated atmosphere provides the perfect setting for memorable meals.</p>
+              <h3 class="service-title">Comfortable Dining</h3>
+              <p class="service-desc">Relax in our sophisticated dining room with impeccable service and attention to detail. Your comfort and satisfaction are our highest priorities.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1561,30 +1606,30 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Pan-Seared Barramundi</span>
-                  <span class="cat-menu-desc">Delicate white fish with seasonal vegetables and citrus beurre blanc.</span>
+                  <span class="cat-menu-desc">Locally sourced barramundi with seasonal vegetables and citrus beurre blanc.</span>
                 </div>
                 <span class="cat-menu-price">$42</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Grass-Fed Ribeye</span>
-                  <span class="cat-menu-desc">Premium Australian beef with truffle mash and red wine jus.</span>
+                  <span class="cat-menu-name">Grass-Fed Beef Tenderloin</span>
+                  <span class="cat-menu-desc">Premium Australian beef with red wine jus and roasted root vegetables.</span>
                 </div>
                 <span class="cat-menu-price">$58</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Chocolate Soufflé</span>
-                  <span class="cat-menu-desc">Light and airy with warm chocolate centre and vanilla cream.</span>
+                  <span class="cat-menu-name">Dark Chocolate Torte</span>
+                  <span class="cat-menu-desc">Rich decadent chocolate with berry compote and vanilla bean cream.</span>
                 </div>
-                <span class="cat-menu-price">$18</span>
+                <span class="cat-menu-price">$16</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 3 9670 4405 or walk in welcome</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 3 9670 4405 or walk-in welcome</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Mon–Fri 11am–10pm | Sat–Sun 10am–11pm</div>
             </div>
       </div>
     </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Captains of Industry</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Captains of Industry is Melbourne's acclaimed fine dining restaurant, boasting a 4.7-star rating from 386 Google reviews. Located in the vibrant heart of Melbourne, we specialise in sophisticated cuisine paired with impeccable service for discerning diners.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Captains of Industry is Melbourne's celebrated fine dining restaurant, boasting a 4.7-star rating from 386 Google reviews. Renowned for its innovative menu and sophisticated ambiance, the restaurant has established itself as a destination for discerning diners seeking exceptional culinary experiences.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1667,28 +1712,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           Do I need to make a reservation?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Reservations are strongly recommended, especially for weekends and special occasions. You can call us on +61 3 9670 4405 to secure your preferred time.</div>
+        <div class="faq-a">Bookings are recommended, especially for weekends and evenings. Walk-ins are welcome, subject to availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           What is your dress code?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We maintain a smart casual to formal dress code to maintain the ambiance of our fine dining establishment. Jeans and thongs are not permitted.</div>
+        <div class="faq-a">Smart casual is recommended for our fine dining experience. Business attire is appreciated but not required.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can you accommodate dietary requirements?
+          Do you accommodate dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. Please inform us of any allergies or dietary preferences when booking, and our kitchen will prepare something special for you.</div>
+        <div class="faq-a">Yes, we're happy to accommodate vegetarian, vegan, and allergy-friendly requirements. Please advise when booking.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer private dining?
+          What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we have private spaces available for corporate events, celebrations, and intimate gatherings. Contact us to discuss your requirements.</div>
+        <div class="faq-a">We're open Monday to Friday from 11am to 10pm, and Saturday to Sunday from 10am to 11pm. Please call ahead for public holiday hours.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to Reserve Your Table?</h2>
-          <p class="contact-cta-line">Reserve your table today and discover why Captains of Industry is Melbourne's most celebrated dining destination.</p>
+          <h2 class="contact-title">Reserve Your Table Now</h2>
+          <p class="contact-cta-line">Ready to experience Melbourne's finest dining? Reserve your table today and discover why diners return again and again.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Captains+of+Industry+1%2F2+Somerset+Pl%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Captains of Industry on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Captains of Industry
           </div>
-          <p class="footer-tagline">Exceptional cuisine and service in the heart of the city</p>
+          <p class="footer-tagline">Award-winning cuisine and impeccable service in the heart of the city.</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396704405?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396704405" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396704405?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

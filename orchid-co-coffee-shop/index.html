@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orchid Co Coffee shop | Geelong</title>
-  <meta name="description" content="Expertly crafted coffee and fresh cafe fare daily.">
+  <meta name="description" content="Award-winning espresso and locally roasted beans since day one">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Orchid Co Coffee shop | Geelong">
-  <meta property="og:description" content="Expertly crafted coffee and fresh cafe fare daily.">
+  <meta property="og:description" content="Award-winning espresso and locally roasted beans since day one">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/orchid-co-coffee-shop/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Orchid Co Coffee shop | Geelong">
-  <meta name="twitter:description" content="Expertly crafted coffee and fresh cafe fare daily.">
+  <meta name="twitter:description" content="Award-winning espresso and locally roasted beans since day one">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1418,8 +1454,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Geelong's Premier Specialty Coffee Destination</h1>
-            <p class="hero-tagline">Expertly crafted coffee and fresh cafe fare daily.</p>
+            <h1 class="hero-headline">Geelong's Favourite Specialty Coffee Destination</h1>
+            <p class="hero-tagline">Award-winning espresso and locally roasted beans since day one</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/26+Garden+St%2C+Geelong+VIC+3220" class="btn-hero-primary">
@@ -1441,13 +1477,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+ years</span>
+              <span class="stat-value">12+ years</span>
               <span class="stat-label">Serving Geelong</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Specialty Grade</span>
-              <span class="stat-label">Coffee Beans</span>
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Ethically Sourced Beans</span>
             </div>
             
             </div>
@@ -1509,31 +1545,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-coffee"></i>
               </div>
-              <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium single-origin beans and craft each espresso with precision. Our baristas are trained to pull the perfect shot every time.</p>
+              <h3 class="service-title">Specialty Coffee & Espresso</h3>
+              <p class="service-desc">We craft premium espresso-based drinks using freshly ground, locally roasted beans. Our experienced baristas perfect every shot for rich flavour and beautiful crema.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-croissant"></i>
               </div>
-              <h3 class="service-title">All-Day Brunch</h3>
-              <p class="service-desc">Enjoy smashed avocado, eggs benedict, and fresh salads made daily. Dietary requirements accommodated upon request.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-cake-candles"></i>
-              </div>
-              <h3 class="service-title">House-Made Pastries</h3>
-              <p class="service-desc">Croissants, muffins and seasonal cakes baked fresh each morning. Pairs perfectly with our espresso.</p>
+              <h3 class="service-title">Fresh Pastries & Light Bites</h3>
+              <p class="service-desc">Pair your coffee with our daily selection of freshly baked croissants, muffins, and seasonal breakfast items. All sourced from local Geelong suppliers.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wifi"></i>
               </div>
               <h3 class="service-title">Comfortable Workspace</h3>
-              <p class="service-desc">Free WiFi and plenty of seating for remote workers and friends. Relaxed atmosphere ideal for studying or meetings.</p>
+              <p class="service-desc">Free WiFi and plenty of seating make Orchid Co perfect for freelancers and students. Power outlets available throughout the café.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <h3 class="service-title">Community Focused Café</h3>
+              <p class="service-desc">We host local artists' work on our walls and regularly support Geelong community events. Every cup supports local businesses and sustainable practices.</p>
             </div>
       </div>
     </div>
@@ -1548,6 +1584,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,30 +1605,30 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Single-Origin Espresso</span>
-                  <span class="cat-menu-desc">Rotating single-origin beans showcasing unique flavour profiles.</span>
+                  <span class="cat-menu-desc">Rotating specialty single-origin shots featuring direct-trade Ethiopian or Colombian beans.</span>
                 </div>
-                <span class="cat-menu-price">$4.50</span>
+                <span class="cat-menu-price">$5</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
-                  <span class="cat-menu-desc">Ripe avocado, tomato, feta and dukkah on toasted sourdough.</span>
+                  <span class="cat-menu-name">Signature Flat White</span>
+                  <span class="cat-menu-desc">Smooth and velvety with perfectly textured microfoam and our house blend espresso.</span>
                 </div>
-                <span class="cat-menu-price">$16.50</span>
+                <span class="cat-menu-price">$5.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Fruit Tart</span>
-                  <span class="cat-menu-desc">House-made pastry with fresh berries and crème patissière.</span>
+                  <span class="cat-menu-name">Cold Brew Concentrate</span>
+                  <span class="cat-menu-desc">Smooth, naturally sweet cold brew served with ice and your choice of milk.</span>
                 </div>
-                <span class="cat-menu-price">$7.00</span>
+                <span class="cat-menu-price">$6</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—come in anytime. Call ahead for large groups.</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — walk in anytime. Call us for group catering inquiries.</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Opening Hours</div>
-              <div class="cat-hours-text">Mon–Fri 7am–4pm  |  Sat–Sun 8am–3pm</div>
+              <div class="cat-hours-text">Mon–Fri 7am–5pm  |  Sat 8am–4pm  |  Sun 8am–3pm</div>
             </div>
       </div>
     </div>
@@ -1615,7 +1660,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Orchid Co Coffee</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Orchid Co Coffee has become Geelong's go-to destination for premium specialty coffee and thoughtfully prepared cafe meals. With 4.5 stars across 176 Google reviews, we're committed to delivering exceptional quality and genuine hospitality to every customer.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Orchid Co has been serving Geelong's coffee lovers with expertly crafted espresso drinks and single-origin beans sourced from trusted Australian roasters. Our baristas are certified and passionate about delivering consistently exceptional coffee in a welcoming, vibrant café atmosphere.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1663,31 +1708,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer dairy-free milk options?
+          Do you offer plant-based milk options?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we stock oat, almond, soy and coconut milk alternatives. All espresso drinks can be made with your preferred choice.</div>
+        <div class="faq-a">Yes, we stock oat, almond, soy, and coconut milk alternatives. All our baristas are trained to create perfect microfoam with each option.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I order ahead or book a table?
+          Can I order coffee beans to take home?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Walk-ins are always welcome—no reservations needed. For large groups, we recommend calling ahead to ensure seating.</div>
+        <div class="faq-a">Absolutely! We sell single-origin and house-blend beans in 250g and 1kg bags, with detailed tasting notes to help you choose.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          Is there parking near Orchid Co?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 7am–4pm, and Saturday to Sunday 8am–3pm. Closed public holidays.</div>
+        <div class="faq-a">Yes, street parking is available directly outside, and there's a public car park just one block away in central Geelong.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you have a loyalty program?
+          Do you cater for events or bulk orders?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Ask in-store about our rewards card and receive a free coffee after 10 purchases.</div>
+        <div class="faq-a">We absolutely do! Please call us to discuss custom coffee setups for your event or large office orders.</div>
       </div>
       </div>
     </div>
@@ -1700,8 +1745,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to Visit Us?</h2>
-          <p class="contact-cta-line">Stop by Orchid Co today—we'd love to brew your perfect cup.</p>
+          <h2 class="contact-title">Get in Touch with Orchid Co</h2>
+          <p class="contact-cta-line">Ready for the perfect coffee? Ring us today or swing by — we'd love to see you.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1727,7 +1772,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Orchid+Co+Coffee+shop+26+Garden+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Orchid Co Coffee shop on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1787,7 +1834,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Orchid Co Coffee shop
           </div>
-          <p class="footer-tagline">Expertly crafted coffee and fresh cafe fare daily.</p>
+          <p class="footer-tagline">Award-winning espresso and locally roasted beans since day one</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

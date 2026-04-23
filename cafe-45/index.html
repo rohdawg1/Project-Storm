@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@ cafe 45 | Melbourne</title>
-  <meta name="description" content="Exceptional coffee and cuisine in the heart of the city">
+  <meta name="description" content="Exceptional dining and coffee culture in the heart of the city">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="@ cafe 45 | Melbourne">
-  <meta property="og:description" content="Exceptional coffee and cuisine in the heart of the city">
+  <meta property="og:description" content="Exceptional dining and coffee culture in the heart of the city">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cafe-45/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="@ cafe 45 | Melbourne">
-  <meta name="twitter:description" content="Exceptional coffee and cuisine in the heart of the city">
+  <meta name="twitter:description" content="Exceptional dining and coffee culture in the heart of the city">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Melbourne's Modern Café Culture Awaits</h1>
-            <p class="hero-tagline">Exceptional coffee and cuisine in the heart of the city</p>
+            <h1 class="hero-headline">Melbourne's Premier Cafe and Restaurant Destination</h1>
+            <p class="hero-tagline">Exceptional dining and coffee culture in the heart of the city</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/45+William+St%2C+Melbourne+VIC+3000" class="btn-hero-primary">
@@ -1447,8 +1483,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Local</span>
-              <span class="stat-label">Melbourne Favourite</span>
+              <span class="stat-value">Melbourne</span>
+              <span class="stat-label">Inner City Location</span>
             </div>
             
             </div>
@@ -1512,29 +1548,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Dine-In Restaurant</h3>
-              <p class="service-desc">Enjoy a full-service dining experience with our carefully curated menu in a welcoming atmosphere. Perfect for casual lunches, special occasions, or catching up with friends and family.</p>
+              <h3 class="service-title">Fine Dining</h3>
+              <p class="service-desc">Experience thoughtfully prepared dishes crafted with premium ingredients and culinary expertise. Our restaurant showcases modern Australian cuisine in an inviting atmosphere perfect for any occasion.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-coffee"></i>
               </div>
-              <h3 class="service-title">Premium Coffee Bar</h3>
-              <p class="service-desc">Expert baristas craft specialty coffees using quality beans and traditional techniques. From flat whites to cold brew, every cup is made with precision and care.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-bag-shopping"></i>
-              </div>
-              <h3 class="service-title">Takeaway Service</h3>
-              <p class="service-desc">Grab your favourites on the go with our convenient takeaway menu. Quick service without compromising on quality or taste.</p>
+              <h3 class="service-title">Speciality Coffee</h3>
+              <p class="service-desc">Enjoy expertly brewed coffee selections made by skilled baristas who understand their craft. We source quality beans and prepare each cup with care and attention to detail.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <h3 class="service-title">Event Bookings</h3>
-              <p class="service-desc">Host your private event or group gathering in our inviting space. We accommodate bookings for celebrations, meetings, and special occasions.</p>
+              <h3 class="service-title">Private Events & Functions</h3>
+              <p class="service-desc">Host your special celebration with our personalised event catering and intimate venue spaces. We accommodate corporate gatherings, celebrations, and private dining experiences tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-takeout-container"></i>
+              </div>
+              <h3 class="service-title">Takeaway Service</h3>
+              <p class="service-desc">Grab your favourite meals to enjoy at home or on the go with our convenient takeaway options. Quality and freshness maintained with every order prepared to order.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,24 +1605,24 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Signature Flat White</span>
-                  <span class="cat-menu-desc">Velvety espresso and steamed milk perfection.</span>
+                  <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
+                  <span class="cat-menu-desc">Creamy avocado with house-made ricotta on toasted sourdough.</span>
+                </div>
+                <span class="cat-menu-price">$18</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Barista's Choice Specialty Coffee</span>
+                  <span class="cat-menu-desc">Single-origin bean expertly crafted by our skilled baristas.</span>
                 </div>
                 <span class="cat-menu-price">$5.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado on Toast</span>
-                  <span class="cat-menu-desc">Fresh avo on sourdough with lemon and dukkah.</span>
+                  <span class="cat-menu-name">Pan-Seared Market Fish</span>
+                  <span class="cat-menu-desc">Fresh seasonal catch with seasonal vegetables and sauce.</span>
                 </div>
-                <span class="cat-menu-price">$16</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal House Salad</span>
-                  <span class="cat-menu-desc">Market-fresh greens with house-made dressing.</span>
-                </div>
-                <span class="cat-menu-price">$18</span>
+                <span class="cat-menu-price">$32</span>
               </div>
           <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 401 185 881 or walk in welcome</p>
         </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About @ cafe 45</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">@ cafe 45 is a beloved Melbourne restaurant and café delivering exceptional food and beverage experiences to over 134 satisfied Google reviewers. Located in the vibrant city centre, we pride ourselves on quality ingredients, skilled preparation, and genuine hospitality that keeps locals and visitors returning.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">@ cafe 45 is a highly-rated Melbourne restaurant and café serving discerning locals and visitors with consistently excellent food and beverage offerings. With a 4.1-star rating from 134 Google reviews, we've established ourselves as a trusted neighbourhood destination for quality dining experiences.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
+          Do you take reservations at @ cafe 45?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we welcome bookings and recommend them especially during weekend peak times. You can call us on +61 401 185 881 to secure your table.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday from 11am to 10pm, and weekends from 10am to 11pm. Check our website for public holiday variations.</div>
+        <div class="faq-a">We're open Monday to Friday from 11am to 10pm, and Saturday to Sunday from 10am to 11pm. Visit us anytime during these hours or book ahead for guaranteed seating.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you take reservations?
+          Do you offer takeaway and delivery?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we welcome bookings and recommend them for weekends and larger groups. Call +61 401 185 881 or walk in anytime.</div>
+        <div class="faq-a">Absolutely, we provide convenient takeaway service for all our menu items. Call ahead to place your order and collect at your preferred time.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's your speciality?
+          Can you cater for private events?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're known for our premium coffee and seasonal restaurant menu featuring fresh, quality ingredients. Our skilled team takes pride in every dish and beverage.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Is there parking nearby?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We're located in central Melbourne with excellent public transport access and nearby street parking. Ask our staff for specific recommendations when you visit.</div>
+        <div class="faq-a">Yes, we specialise in private functions and corporate events with customised catering options. Contact us directly to discuss your event requirements and menu preferences.</div>
       </div>
       </div>
     </div>
@@ -1702,7 +1747,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in Touch with @ cafe 45</h2>
-          <p class="contact-cta-line">Experience the @ cafe 45 difference today—call us or drop by to see why Melbourne loves us.</p>
+          <p class="contact-cta-line">Ready to experience @ cafe 45? Call us today or visit us in Melbourne to discover why locals love our food and service.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=%40+cafe+45+45+William+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find @ cafe 45 on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             @ cafe 45
           </div>
-          <p class="footer-tagline">Exceptional coffee and cuisine in the heart of the city</p>
+          <p class="footer-tagline">Exceptional dining and coffee culture in the heart of the city</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61401185881?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61401185881" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61401185881?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

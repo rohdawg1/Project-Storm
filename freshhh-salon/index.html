@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freshhh salon | Melbourne</title>
-  <meta name="description" content="Award-winning cuts, colour and styling in the heart of Melbourne">
+  <meta name="description" content="Five-star salon trusted by 187+ happy customers">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Freshhh salon | Melbourne">
-  <meta property="og:description" content="Award-winning cuts, colour and styling in the heart of Melbourne">
+  <meta property="og:description" content="Five-star salon trusted by 187+ happy customers">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/freshhh-salon/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Freshhh salon | Melbourne">
-  <meta name="twitter:description" content="Award-winning cuts, colour and styling in the heart of Melbourne">
+  <meta name="twitter:description" content="Five-star salon trusted by 187+ happy customers">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1441,8 +1477,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Your Wellness Destination
             </span>
-            <h1 class="hero-headline">Melbourne's freshest salon experience awaits</h1>
-            <p class="hero-tagline">Award-winning cuts, colour and styling in the heart of Melbourne</p>
+            <h1 class="hero-headline">Premium Hair & Beauty in Melbourne's Heart</h1>
+            <p class="hero-tagline">Five-star salon trusted by 187+ happy customers</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61492972318" class="btn-hero-primary">
@@ -1464,13 +1500,13 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">187</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-value">187+</span>
+              <span class="stat-label">Verified Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-value">Melbourne</span>
+              <span class="stat-label">Trusted Local</span>
             </div>
             
             </div>
@@ -1535,28 +1571,28 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
                 <i class="fa-solid fa-scissors"></i>
               </div>
               <h3 class="service-title">Hair Cutting & Styling</h3>
-              <p class="service-desc">Expert precision cuts tailored to your hair type and face shape. We deliver contemporary styles that keep you looking fresh between appointments.</p>
+              <p class="service-desc">Expert cuts tailored to your face shape and lifestyle by experienced stylists. From trendy fades to elegant long-hair styles, we deliver precision and confidence.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-spray-can"></i>
+                <i class="fa-solid fa-palette"></i>
               </div>
-              <h3 class="service-title">Colour Services</h3>
-              <p class="service-desc">From subtle highlights to bold transformations, our colour specialists use premium products for vibrant, long-lasting results. We offer balayage, ombré, and custom colour matching.</p>
+              <h3 class="service-title">Colour & Highlights</h3>
+              <p class="service-desc">Vibrant, long-lasting colour treatments using premium brands and techniques. Whether you want subtle highlights or a complete transformation, our colourists create stunning results.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-spa"></i>
               </div>
-              <h3 class="service-title">Hair Treatments</h3>
-              <p class="service-desc">Nourish and restore your hair with our range of keratin treatments and deep conditioning services. Perfect for damaged or colour-treated hair needing intensive care.</p>
+              <h3 class="service-title">Beauty & Treatments</h3>
+              <p class="service-desc">Pamper yourself with our range of beauty services including facials, waxing, and brow treatments. We use gentle, professional-grade products for radiant skin.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-person"></i>
               </div>
               <h3 class="service-title">Blow-Dry & Styling</h3>
-              <p class="service-desc">Get salon-ready for any occasion with our professional blow-dry and styling services. Our stylists create polished finishes that last all day.</p>
+              <p class="service-desc">Professional blow-dry and styling services perfect for special events or everyday glamour. Our stylists create polished looks that last all day.</p>
             </div>
       </div>
     </div>
@@ -1572,16 +1608,25 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">187</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-value">187+</div>
+              <div class="strip-label">Verified Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years Experience</div>
+              <div class="strip-value">Melbourne</div>
+              <div class="strip-label">Trusted Local</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Freshhh Salon</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Freshhh Salon has earned an exceptional 5-star rating from 187 Google reviews, reflecting our commitment to delivering premium hair and beauty services in Melbourne. Our team of experienced stylists specialises in contemporary cuts, vibrant colour treatments, and personalised styling to bring your vision to life.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Freshhh Salon is Melbourne's go-to destination for professional hair styling, colour, and beauty treatments with consistently exceptional results. With a 5-star rating across 187 Google reviews, we pride ourselves on delivering premium service and creating a welcoming environment for every client.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,29 +1683,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Women's Cut</span>
+              <span class="pl-service">Women's Haircut</span>
               
-              <span class="pl-price">from $65</span>
+              <span class="pl-price">from $55</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Men's Cut</span>
+              <span class="pl-service">Men's Haircut</span>
               
-              <span class="pl-price">from $45</span>
+              <span class="pl-price">from $40</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour Service</span>
+              <span class="pl-service">Full Colour</span>
               
               <span class="pl-price">from $85</span>
             </div>
             <div class="pl-row">
               <span class="pl-service">Blow-Dry Styling</span>
               
-              <span class="pl-price">from $55</span>
+              <span class="pl-price">from $45</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to refresh your look? Get in touch with our team today and experience the Freshhh difference.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 492 972 318 or reply to this message to get started</p>
+          <p class="pl-cta-text">Ready for your next great look? Get in touch with Freshhh Salon today.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call us on +61 492 972 318 to book your appointment today. Walk-ins welcome!</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          How do I book an appointment at Freshhh Salon?
+          Do you accept walk-ins or is booking required?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">You can call us on +61 492 972 318 to book directly with our team. We'll find a time that works perfectly for your schedule.</div>
+        <div class="faq-a">We welcome both walk-ins and bookings. However, we recommend calling ahead on +61 492 972 318 to ensure availability and minimal wait time.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's your cancellation policy?
+          How long does a typical hair appointment take?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We request 24 hours notice for cancellations to ensure we can offer your appointment slot to other clients. Last-minute cancellations may incur a fee.</div>
+        <div class="faq-a">Most appointments range from 45 minutes to 2 hours depending on the service. We'll give you an estimate when you book.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer colour consultations before booking?
+          What payment methods do you accept?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we recommend scheduling a consultation if you're considering a significant colour change. This allows our colourist to assess your hair and discuss your desired result.</div>
+        <div class="faq-a">We accept all major payment methods including cash, card, and digital payments. Ask about our loyalty discounts for regular clients.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are your products cruelty-free and ethically sourced?
+          Are your products suitable for sensitive skin?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We use professional-grade products from reputable brands that prioritise quality and sustainability. Ask our team about specific product ingredients during your appointment.</div>
+        <div class="faq-a">Yes, we use professional-grade products and can recommend alternatives for sensitive skin. Mention any allergies or concerns when booking.</div>
       </div>
       </div>
     </div>
@@ -1736,8 +1781,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book your appointment now</h2>
-          <p class="contact-cta-line">Ready to refresh your look? Get in touch with our team today and experience the Freshhh difference.</p>
+          <h2 class="contact-title">Book Your Appointment Now</h2>
+          <p class="contact-cta-line">Ready for your next great look? Get in touch with Freshhh Salon today.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Freshhh+salon+2+Rankins+Ln%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Freshhh salon on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Freshhh salon
           </div>
-          <p class="footer-tagline">Award-winning cuts, colour and styling in the heart of Melbourne</p>
+          <p class="footer-tagline">Five-star salon trusted by 187+ happy customers</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61492972318?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61492972318" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61492972318?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

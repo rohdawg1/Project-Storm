@@ -4,1279 +4,338 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SALON atreve | Melbourne</title>
-  <meta name="description" content="Premium salon experiences designed for the daring.">
+  <meta name="description" content="Expert styling and treatments in the heart of Melbourne's vibrant salon scene">
+  <meta property="og:title" content="SALON atreve — Melbourne">
+  <meta property="og:description" content="Expert styling and treatments in the heart of Melbourne's vibrant salon scene">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138daaa3bb47?auto=format&fit=crop&w=1400&q=80">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6.5 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ── Design Tokens ────────────────────────────────────────────── */
+    /* ── Design Tokens ──────────────────────────────────────────── */
     :root {
       --primary:      #ad1457;
       --secondary:    #e91e8c;
       --bg:           #fce4ec;
       --text:         #1a0010;
       --accent:       #f48fb1;
-
-      /* Tints */
-      --primary-8:  color-mix(in srgb, var(--primary)  8%, transparent);
-      --primary-12: color-mix(in srgb, var(--primary) 12%, transparent);
-      --primary-20: color-mix(in srgb, var(--primary) 20%, transparent);
-      --primary-35: color-mix(in srgb, var(--primary) 35%, transparent);
-
-      /* Neutrals */
-      --white:      #ffffff;
-      --dark:       #0f1117;
-      --dark-2:     #1a1f2e;
-      --mid:        #6b7280;
-      --light:      #f9fafb;
-      --border:     #e5e7eb;
-      --text-muted: #9ca3af;
-      --surface:    #ffffff;
-      --surface-2:  #f8fafc;
-
-      /* Shape */
-      --radius:     14px;
-      --radius-sm:  8px;
-      --radius-md:  10px;
-      --radius-lg:  22px;
-      --radius-xl:  32px;
-
-      /* Elevation */
-      --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md:  0 4px 16px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
-      --shadow-lg:  0 12px 40px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.07);
-      --shadow-xl:  0 24px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.10);
-      --shadow-2xl: 0 40px 96px rgba(0,0,0,0.22), 0 16px 40px rgba(0,0,0,0.12);
-
-      /* Motion */
-      --transition:  all 0.28s cubic-bezier(0.4,0,0.2,1);
-      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-      --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-
-      /* Layout */
-      --max-w:       1200px;
-      --nav-height:  72px;
-      --section-pad: clamp(72px, 9vw, 120px);
-
-      /* Type */
-      --font-display:    'Bodoni Moda', Didot, Georgia, serif;
-      --heading-weight:  700;
-      --heading-tracking:-0.025em;
-      --display-size:    clamp(2.6rem, 5.5vw, 4.5rem);
-      --h2-size:         clamp(1.9rem, 4vw, 3.1rem);
+      --primary-8:    color-mix(in srgb, var(--primary)  8%, transparent);
+      --primary-12:   color-mix(in srgb, var(--primary) 12%, transparent);
+      --primary-20:   color-mix(in srgb, var(--primary) 20%, transparent);
+      --primary-35:   color-mix(in srgb, var(--primary) 35%, transparent);
+      --white:        #ffffff;
+      --dark:         #0f1117;
+      --dark-2:       #1a1f2e;
+      --mid:          #6b7280;
+      --light:        #f9fafb;
+      --border:       #e5e7eb;
+      --text-muted:   #9ca3af;
+      --surface:      #ffffff;
+      --surface-2:    #f8fafc;
+      --radius:       14px;
+      --radius-sm:    8px;
+      --radius-lg:    22px;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg:    0 12px 40px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.07);
+      --transition:   all 0.28s cubic-bezier(0.4,0,0.2,1);
+      --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+      --max-w:        1200px;
+      --nav-height:   72px;
+      --section-pad:  clamp(72px, 9vw, 120px);
+      --font-display: 'Bodoni Moda', Didot, Georgia, serif;
+      --heading-weight: 700;
+      --heading-tracking: -0.025em;
+      --display-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      --h2-size:      clamp(1.9rem, 4vw, 3.1rem);
     }
-
-    /* ── Reset & Base ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body {
-      font-family: 'Nunito', system-ui, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--dark);
-      background: var(--bg);
-      overflow-x: hidden;
-    }
+    body { font-family: 'Nunito', system-ui, sans-serif; font-size: 16px; line-height: 1.7; color: var(--dark); background: var(--surface); overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
     ul { list-style: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
 
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 clamp(16px, 4vw, 32px);
-    }
-
-    /* ── Typography ───────────────────────────────────────────────── */
-    h1, h2, h3, h4 {
-      font-family: var(--font-display);
-      font-weight: var(--heading-weight);
-      letter-spacing: var(--heading-tracking);
-      line-height: 1.1;
-    }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); line-height: 1.1; }
     h1 { line-height: 1.04; }
     h2 { line-height: 1.12; }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--primary);
-      background: var(--primary-8);
-      border: 1px solid var(--primary-20);
-      padding: 5px 13px;
-      border-radius: 50px;
-      margin-bottom: 18px;
-    }
-
-    .section-label { text-align: inherit; margin-bottom: 16px; }
-
-    .section-heading,
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--h2-size);
-      font-weight: var(--heading-weight);
-      letter-spacing: var(--heading-tracking);
-      color: var(--dark);
-      margin-bottom: 14px;
-    }
-
-    .section-title { text-align: center; margin-bottom: 52px; }
-
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--mid);
-      line-height: 1.75;
-      max-width: 580px;
-      margin: 0 0 52px;
-    }
-
-    /* ── Fade-in ──────────────────────────────────────────────────── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
-    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); background: var(--primary-8); border: 1px solid var(--primary-20); padding: 5px 13px; border-radius: 50px; margin-bottom: 18px; }
+    .section-heading { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); color: var(--dark); margin-bottom: 14px; }
+    .section-title { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); color: var(--dark); text-align: center; margin-bottom: 48px; }
+    .section-sub { font-size: 1.05rem; color: var(--mid); line-height: 1.75; max-width: 580px; margin: 0 0 48px; }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out); }
     .fade-in.visible { opacity: 1; transform: none; }
+    @keyframes heroReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    .hero-eyebrow  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0s    forwards; }
+    .hero-headline { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.12s forwards; }
+    .hero-tagline  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.24s forwards; }
+    .hero-actions  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.36s forwards; }
 
-    /* ── Keyframes ────────────────────────────────────────────────── */
-    @keyframes heroReveal {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: none; }
-    }
-    @keyframes floatGentle {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-10px); }
-    }
-    @keyframes phonePulse {
-      0%,100% { transform: scale(1) rotate(0deg); }
-      10%     { transform: scale(1.15) rotate(-12deg); }
-      20%     { transform: scale(1.1)  rotate(10deg); }
-      30%     { transform: scale(1)    rotate(0deg); }
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .hero-eyebrow   { opacity:0; animation: heroReveal 0.75s var(--ease-out) 0s    forwards; }
-    .hero-headline  { opacity:0; animation: heroReveal 0.75s var(--ease-out) 0.12s  forwards; }
-    .hero-tagline   { opacity:0; animation: heroReveal 0.75s var(--ease-out) 0.24s  forwards; }
-    .hero-actions   { opacity:0; animation: heroReveal 0.75s var(--ease-out) 0.36s  forwards; }
-    .hero-stats-card{ opacity:0; animation: heroReveal 0.75s var(--ease-out) 0.48s  forwards; }
-
-    /* ═══════════════════════════════════════════════════════════════
-       NAVIGATION
-    ═══════════════════════════════════════════════════════════════ */
-    #main-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 999;
-      height: var(--nav-height);
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(18px) saturate(200%);
-      -webkit-backdrop-filter: blur(18px) saturate(200%);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    #main-nav.scrolled {
-      background: rgba(255,255,255,0.97);
-      box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.06);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: var(--nav-height);
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-    }
-    .nav-brand-icon {
-      width: 34px; height: 34px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff;
-      font-size: 0.88rem;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px var(--primary-35);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-    .nav-links a {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--mid);
-      padding: 7px 13px;
-      border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
-    }
+    /* ═══ NAV ════════════════════════════════════════════════════════ */
+    #main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(255,255,255,0.72); backdrop-filter: blur(18px) saturate(200%); -webkit-backdrop-filter: blur(18px) saturate(200%); transition: background 0.3s, box-shadow 0.3s; }
+    #main-nav.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-height); }
+    .nav-brand { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--dark); letter-spacing: -0.02em; }
+    .nav-brand-icon { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.88rem; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--mid); padding: 7px 13px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: var(--dark); background: var(--light); }
-    .nav-cta {
-      background: var(--dark) !important;
-      color: #fff !important;
-      padding: 9px 20px !important;
-      border-radius: 10px !important;
-      font-weight: 600 !important;
-      transition: background 0.25s, transform 0.25s, box-shadow 0.25s !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
-    }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover {
-      background: var(--primary) !important;
-      color: #fff !important;
-      transform: translateY(-1px) !important;
-      box-shadow: 0 6px 20px var(--primary-35) !important;
-    }
-
-    /* Hamburger */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column; justify-content: center; gap: 5px;
-      width: 40px; height: 40px;
-      cursor: pointer; padding: 8px;
-      border-radius: 10px;
-      transition: background 0.2s;
-    }
-    .nav-hamburger:hover { background: var(--light); }
-    .nav-hamburger span {
-      display: block; height: 2px;
-      background: var(--dark); border-radius: 2px;
-      transition: var(--transition); transform-origin: center;
-    }
+    .nav-cta { background: var(--primary) !important; color: #fff !important; padding: 9px 20px !important; border-radius: 10px !important; font-weight: 600 !important; }
+    .nav-cta:hover { transform: translateY(-1px) !important; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; cursor: pointer; padding: 8px; border-radius: 10px; }
+    .nav-hamburger span { display: block; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--transition); transform-origin: center; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { position: fixed; top: var(--nav-height); left: 0; right: 0; z-index: 998; background: rgba(255,255,255,0.99); border-bottom: 1px solid var(--border); max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.38s var(--ease-out), opacity 0.28s ease; }
+    .mobile-nav.open { max-height: 400px; opacity: 1; }
+    .mobile-nav-links { display: flex; flex-direction: column; padding: 16px 20px 24px; gap: 4px; }
+    .mobile-nav-links a { font-size: 1rem; font-weight: 500; color: var(--dark); padding: 11px 16px; border-radius: 10px; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-hamburger { display: flex; } }
 
-    /* Mobile drawer */
-    .mobile-nav {
-      position: fixed;
-      top: var(--nav-height); left: 0; right: 0; z-index: 998;
-      background: rgba(255,255,255,0.99);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-      max-height: 0; overflow: hidden; opacity: 0;
-      transition: max-height 0.38s var(--ease-out), opacity 0.28s ease;
-    }
-    .mobile-nav.open { max-height: 360px; opacity: 1; }
-    .mobile-nav-links {
-      display: flex; flex-direction: column;
-      padding: 16px 24px 28px; gap: 2px;
-    }
-    .mobile-nav-links a {
-      font-size: 1rem; font-weight: 500;
-      color: var(--dark);
-      padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-      transition: color 0.2s;
-    }
-    .mobile-nav-links a:last-child { border-bottom: none; }
-    .mobile-nav-links a:hover { color: var(--primary); }
+    /* ═══ BUTTONS ════════════════════════════════════════════════════ */
+    .btn-hero-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: #fff; padding: 18px 36px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; box-shadow: 0 6px 28px var(--primary-35); transition: transform 0.3s var(--ease-out), box-shadow 0.3s; }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px var(--primary-35); }
+    .btn-hero-secondary { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.12); color: #fff; padding: 16px 28px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; border: 1.5px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px); }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.22); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--primary); color: #fff; padding: 16px 32px; border-radius: var(--radius); font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px var(--primary-35); transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--primary-35); }
+    .btn-submit { width: 100%; padding: 16px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius); font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--primary-35); }
 
-    /* ═══════════════════════════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════════════════════════ */
-    .hero {
-      min-height: 100svh;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      background: var(--hero-bg, linear-gradient(140deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
-      overflow: hidden;
-    }
-
-    /* Dot grid texture */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.14) 1px, transparent 1px);
-      background-size: 30px 30px;
-      pointer-events: none;
-    }
-
-    /* Grain texture */
-    .hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      pointer-events: none; z-index: 0;
-      opacity: 0.055;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-    }
-
-    /* Decorative ring */
-    .hero-deco {
-      position: absolute;
-      right: -220px; top: 50%;
-      transform: translateY(-52%);
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.1);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero-deco::before {
-      content: '';
-      position: absolute; inset: 80px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-    .hero-deco::after {
-      content: '';
-      position: absolute; inset: 160px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .hero-main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding-top: var(--nav-height);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
-      align-items: center;
-      padding: 88px 0 88px;
-      width: 100%;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.92);
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.26);
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 24px;
-    }
-
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: var(--display-size);
-      font-weight: 800;
-      line-height: 1.04;
-      color: #fff;
-      letter-spacing: -0.03em;
-      margin-bottom: 22px;
-    }
-
-    .hero-tagline {
-      font-size: clamp(0.98rem, 1.8vw, 1.18rem);
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 500px;
-    }
-
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 48px;
-    }
-
-    .btn-hero-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #fff;
-      color: var(--dark);
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.22), 0 1px 4px rgba(0,0,0,0.1);
-      transition: transform 0.28s var(--ease-spring), box-shadow 0.28s;
-    }
-    .btn-hero-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.28);
-    }
-    .btn-hero-primary:active { transform: scale(0.97); }
-
-    .btn-arrow {
-      transition: transform 0.28s var(--ease-spring);
-      font-size: 0.8em;
-    }
-    .btn-hero-primary:hover .btn-arrow { transform: translateX(4px); }
-
-    .btn-hero-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(255,255,255,0.13);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 12px;
-      border: 1.5px solid rgba(255,255,255,0.3);
-      transition: background 0.25s, transform 0.25s;
-    }
-    .btn-hero-secondary:hover {
-      background: rgba(255,255,255,0.22);
-      transform: translateY(-2px);
-    }
-
-    /* Hero stats card */
-    .hero-stats-card {
-      display: flex;
-      align-items: center;
-      background: rgba(255,255,255,0.11);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 16px;
-      padding: 18px 24px;
-      gap: 0;
-    }
-    .stat-item {
-      display: flex; flex-direction: column;
-      align-items: center; flex: 1;
-    }
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: 1.5rem; font-weight: 800;
-      color: #fff; line-height: 1; margin-bottom: 3px;
-    }
-    .stat-label {
-      font-size: 0.7rem; font-weight: 500;
-      color: rgba(255,255,255,0.65);
-      text-align: center; line-height: 1.3;
-    }
-    .stat-divider {
-      width: 1px; height: 36px;
-      background: rgba(255,255,255,0.2);
-      flex-shrink: 0;
-    }
-
-    /* Hero right — proof panel */
-    .hero-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-proof-panel {
-      background: rgba(0,0,0,0.22);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 24px;
-      padding: 36px 32px;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      max-width: 360px;
-      width: 100%;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
-      animation: floatGentle 7s ease-in-out infinite;
-    }
-    .proof-rating-row {
-      display: flex; align-items: center;
-      gap: 10px; margin-bottom: 6px;
-    }
-    .proof-stars { color: #f59e0b; font-size: 1.2rem; letter-spacing: 1px; }
-    .proof-score {
-      font-size: 2rem; font-weight: 800;
-      color: #fff; font-family: var(--font-display);
-    }
-    .proof-count { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
-    .proof-platform-row {
-      display: flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.48);
-      font-size: 0.8rem; margin-bottom: 22px;
-    }
-    .proof-platform { display: flex; align-items: center; gap: 5px; }
-    .proof-dot { color: rgba(255,255,255,0.22); }
-    .proof-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
-    .proof-features { display: flex; flex-direction: column; gap: 13px; margin-bottom: 24px; }
-    .proof-feat {
-      display: flex; align-items: center; gap: 11px;
-      color: rgba(255,255,255,0.78);
-      font-size: 0.9rem; font-weight: 500;
-    }
-    .proof-feat i { color: var(--accent); font-size: 0.82rem; width: 16px; text-align: center; }
-    .proof-cta-hint {
-      display: flex; align-items: center; gap: 7px;
-      color: rgba(255,255,255,0.35); font-size: 0.78rem;
-    }
-
-    /* Hero features strip */
-    .hero-features {
-      background: rgba(0,0,0,0.24);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 13px 0;
-      position: relative; z-index: 1;
-    }
-    .hero-features-inner {
-      display: flex; align-items: center;
-      justify-content: center;
-      flex-wrap: wrap; gap: 0;
-    }
-    .hero-feat {
-      display: flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.84);
-      font-size: 0.79rem; font-weight: 500;
-      padding: 7px 22px;
-    }
-    .hero-feat + .hero-feat { border-left: 1px solid rgba(255,255,255,0.16); }
-    .hero-feat i { font-size: 0.8rem; color: rgba(255,255,255,0.62); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       SERVICES — BENTO GRID
-    ═══════════════════════════════════════════════════════════════ */
-    .section-services {
-      padding: var(--section-pad) 0;
-      background: var(--light, #f9fafb);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 16px;
-      counter-reset: service-counter;
-    }
-
-    /* First card spans wider — feature treatment */
-    .service-card:first-child   { grid-column: span 3; }
-    .service-card:nth-child(2)  { grid-column: span 3; }
-    .service-card:nth-child(3)  { grid-column: span 2; }
-    .service-card:nth-child(4)  { grid-column: span 2; }
-    .service-card:nth-child(5)  { grid-column: span 2; }
-    .service-card:nth-child(6)  { grid-column: span 2; }
-    .service-card:nth-child(7)  { grid-column: span 2; }
-    .service-card:nth-child(n+8){ grid-column: span 3; }
-
-    .service-card {
-      counter-increment: service-counter;
-      position: relative;
-      overflow: hidden;
-      background: var(--surface, #fff);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      border: 1.5px solid var(--border);
-      transition: transform 0.32s var(--ease-spring), box-shadow 0.32s, border-color 0.32s;
-      cursor: default;
-    }
-
-    /* Watermark counter */
-    .service-card::before {
-      content: counter(service-counter, decimal-leading-zero);
-      font-family: var(--font-display);
-      font-size: 6rem; font-weight: 900; line-height: 1;
-      opacity: 0.04;
-      position: absolute; bottom: -10px; right: 16px;
-      color: var(--primary);
-      pointer-events: none; user-select: none;
-      transition: opacity 0.3s;
-    }
-
-    /* Gradient top-bar on hover */
-    .service-card::after {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.36s var(--ease-out);
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: transparent;
-    }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-card:hover::before { opacity: 0.08; }
-
-    .service-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-      color: var(--primary);
-      font-size: 1.25rem;
-      background: var(--primary-8);
-      border: 1.5px solid var(--primary-20);
-      transition: transform 0.32s var(--ease-spring), background 0.28s, color 0.28s, border-color 0.28s, box-shadow 0.28s;
-    }
-    .service-card:hover .service-icon {
-      background: var(--primary);
-      color: #fff;
-      border-color: transparent;
-      transform: rotate(-5deg) scale(1.1);
-      box-shadow: 0 8px 24px var(--primary-35);
-    }
-
-    .service-title {
-      font-family: var(--font-display);
-      font-size: 1.08rem; font-weight: 700;
-      color: var(--dark); margin-bottom: 9px;
-      letter-spacing: -0.01em;
-    }
-    .service-desc {
-      font-size: 0.9rem; color: var(--mid); line-height: 1.65;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       TRUST STRIP
-    ═══════════════════════════════════════════════════════════════ */
-    .section-trust-strip {
-      position: relative;
-      padding: 60px 0;
-      background: linear-gradient(108deg, var(--dark) 0%, color-mix(in srgb, var(--dark) 82%, var(--primary)) 100%);
-      overflow: hidden;
-    }
-    .section-trust-strip::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-    }
-    .section-trust-strip::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 100% at 50% 50%, var(--primary-12), transparent);
-      pointer-events: none;
-    }
-    .trust-strip-inner {
-      position: relative; z-index: 1;
-      display: flex; align-items: center;
-      justify-content: center;
-      flex-wrap: wrap; gap: 0;
-    }
-    .strip-item {
-      display: flex; flex-direction: column;
-      align-items: center;
-      padding: 8px 52px; text-align: center;
-    }
-    .strip-item + .strip-item { border-left: 1px solid rgba(255,255,255,0.1); }
-    .strip-value {
-      font-family: var(--font-display);
-      font-size: 2.4rem; font-weight: 800;
-      color: #fff; line-height: 1; margin-bottom: 7px;
-    }
-    .strip-label {
-      font-size: 0.75rem; font-weight: 600;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.07em; text-transform: uppercase;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       ABOUT
-    ═══════════════════════════════════════════════════════════════ */
-    .section-about {
-      padding: var(--section-pad) 0;
-      background: var(--surface, #fff);
-      position: relative;
-      overflow: hidden;
-    }
-    .section-about::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 48px 48px;
-      opacity: 0.25;
-      pointer-events: none;
-    }
-    .section-about::after {
-      content: '';
-      position: absolute;
-      right: -180px; top: -180px;
-      width: 560px; height: 560px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--primary-8) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .about-grid {
-      position: relative; z-index: 1;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.8vw, 2.9rem);
-      font-weight: 800;
-      color: var(--dark); margin-bottom: 18px;
-      letter-spacing: -0.025em; line-height: 1.1;
-    }
-
-    .about-features { display: flex; flex-direction: column; gap: 18px; margin: 28px 0; }
-    .af-item { display: flex; align-items: flex-start; gap: 14px; }
-    .af-icon {
-      width: 34px; height: 34px; flex-shrink: 0;
-      border-radius: 9px;
-      background: var(--primary-8);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--primary); font-size: 0.85rem; margin-top: 1px;
-    }
-    .af-text {
-      font-size: 0.93rem; color: var(--mid);
-      line-height: 1.6; padding-top: 7px; font-weight: 500;
-    }
-
-    .btn-maps {
-      display: inline-flex; align-items: center; gap: 9px;
-      background: var(--dark);
-      color: #fff; font-weight: 600; font-size: 0.9rem;
-      padding: 12px 24px; border-radius: 10px;
-      transition: var(--transition);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.14);
-    }
-    .btn-maps:hover {
-      background: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px var(--primary-35);
-    }
-
-    .about-hours-card {
-      background: var(--surface-2, #f8fafc);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 26px; margin-top: 14px;
-    }
-    .about-hours-title {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--mid); margin-bottom: 10px;
-      display: flex; align-items: center; gap: 7px;
-    }
-    .about-hours-title i { color: var(--primary); }
-    .about-hours-text { font-size: 0.92rem; color: var(--dark); line-height: 1.7; }
-
-    .about-right { display: flex; flex-direction: column; gap: 20px; }
-
-    /* Rating card — gradient */
-    .rating-card {
-      background: linear-gradient(140deg, var(--primary), var(--secondary));
-      border-radius: var(--radius-lg);
-      padding: 40px 36px; text-align: center;
-      box-shadow: 0 20px 56px var(--primary-35);
-      position: relative; overflow: hidden;
-    }
-    .rating-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
-      background-size: 22px 22px;
-    }
-    .rating-number {
-      font-family: var(--font-display);
-      font-size: 4.5rem; font-weight: 900;
-      color: #fff; line-height: 1; margin-bottom: 8px;
-      position: relative; z-index: 1;
-    }
-    .rating-stars {
-      font-size: 1.6rem; color: rgba(255,255,255,0.95);
-      letter-spacing: 3px; margin-bottom: 8px;
-      position: relative; z-index: 1;
-    }
-    .rating-label {
-      font-size: 0.78rem; font-weight: 700;
-      color: rgba(255,255,255,0.75);
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 4px; position: relative; z-index: 1;
-    }
-    .rating-count {
-      font-size: 0.82rem; color: rgba(255,255,255,0.6);
-      position: relative; z-index: 1;
-    }
-    .rating-bar-wrap {
-      height: 4px;
-      background: rgba(255,255,255,0.22);
-      border-radius: 2px;
-      margin-top: 18px;
-      overflow: hidden;
-      position: relative; z-index: 1;
-    }
-    .rating-bar {
-      height: 100%;
-      width: 0%;
-      background: rgba(255,255,255,0.9);
-      border-radius: 2px;
-      transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
-    }
-    .rating-card.bar-animated .rating-bar { width: var(--rating-pct, 0%); }
-    .rating-bar-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 6px;
-      position: relative; z-index: 1;
-    }
-    .rating-bar-labels span {
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.5);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       TESTIMONIALS
-    ═══════════════════════════════════════════════════════════════ */
-    .section-testimonials {
-      padding: var(--section-pad) 0;
-      background: var(--surface-2, #f8fafc);
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .review-card {
-      background: var(--surface, #fff);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      transition: transform 0.32s var(--ease-spring), box-shadow 0.32s, border-color 0.32s;
-      position: relative; overflow: hidden;
-    }
-    .review-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.36s var(--ease-out);
-    }
-    .review-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: transparent;
-    }
-    .review-card:hover::after { transform: scaleX(1); }
-
-    .review-quote {
-      font-family: Georgia, serif;
-      font-size: 4rem; line-height: 1;
-      color: var(--primary); opacity: 0.22;
-      margin-bottom: 4px;
-    }
-    .review-text {
-      font-size: 0.92rem; color: var(--mid);
-      line-height: 1.75; margin-bottom: 20px;
-    }
-    .review-stars {
-      font-size: 0.95rem; color: #f59e0b;
-      letter-spacing: 2px; margin-bottom: 8px;
-    }
-    .review-author {
-      font-size: 0.9rem; font-weight: 700;
-      color: var(--dark); margin-bottom: 2px;
-    }
-    .review-meta {
-      font-size: 0.76rem; color: var(--text-muted);
-      display: flex; align-items: center; gap: 5px; margin-top: 2px;
-    }
-    .review-meta i { color: #4285f4; font-size: 0.72rem; }
-    .review-source {
-      font-size: 0.75rem; font-weight: 600;
-      color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       CONTACT
-    ═══════════════════════════════════════════════════════════════ */
-    .section-contact {
-      padding: var(--section-pad) 0;
-      background: var(--dark);
-      position: relative; overflow: hidden;
-    }
-    .section-contact::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 640px 440px at 8% 50%, color-mix(in srgb, var(--primary) 22%, transparent) 0%, transparent 60%),
-        radial-gradient(ellipse 400px 320px at 92% 80%, color-mix(in srgb, var(--secondary) 16%, transparent) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .contact-grid {
-      position: relative; z-index: 1;
+    /* ═══ HERO — WELLNESS SPLIT ══════════════════════════════════════ */
+    .hero-wellness {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 72px; align-items: start;
+      min-height: 100vh;
+      padding-top: var(--nav-height);
     }
-
-    .contact-left-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 5px 13px; border-radius: 50px; margin-bottom: 18px;
-    }
-    .contact-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 2.9rem);
-      font-weight: 800; color: #fff;
-      line-height: 1.1; margin-bottom: 16px;
-      letter-spacing: -0.025em;
-    }
-    .contact-cta-line {
-      font-size: 1rem; color: rgba(255,255,255,0.58);
-      line-height: 1.7; margin-bottom: 40px;
-    }
-    .contact-items { display: flex; flex-direction: column; gap: 18px; }
-    .contact-item { display: flex; align-items: center; gap: 14px; }
-    .contact-item-icon {
-      width: 42px; height: 42px; border-radius: 11px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.68);
-      font-size: 0.9rem; flex-shrink: 0;
-      transition: var(--transition);
-    }
-    .contact-item:hover .contact-item-icon {
-      background: var(--primary); border-color: var(--primary); color: #fff;
-    }
-    .contact-item-label {
-      font-size: 0.7rem; font-weight: 700;
-      color: rgba(255,255,255,0.35);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px;
-    }
-    .contact-item-value {
-      font-size: 0.95rem; font-weight: 600;
-      color: rgba(255,255,255,0.85);
-    }
-    .contact-item-value a { color: inherit; transition: color 0.2s; }
-    .contact-item-value a:hover { color: #fff; }
-
-    /* Form card — glass on dark */
-    .contact-form-card {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-xl);
-      padding: 40px 36px;
-      box-shadow: 0 28px 72px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-    .form-title {
-      font-family: var(--font-display);
-      font-size: 1.3rem; font-weight: 800;
-      color: #fff; margin-bottom: 28px;
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { position: relative; margin-bottom: 18px; }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 18px 16px 6px;
-      font-size: 0.93rem; font-family: inherit;
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; padding-top: 22px; }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-      background: rgba(255,255,255,0.09);
-      box-shadow: 0 0 0 3px var(--primary-20);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: transparent; }
-    .form-group label {
-      position: absolute; top: 12px; left: 16px;
-      font-size: 0.83rem; font-weight: 500;
-      color: rgba(255,255,255,0.38);
-      pointer-events: none; transition: var(--transition);
-    }
-    .form-group input:not(:placeholder-shown) + label,
-    .form-group input:focus + label,
-    .form-group textarea:not(:placeholder-shown) + label,
-    .form-group textarea:focus + label {
-      top: 5px; font-size: 0.68rem; font-weight: 700;
-      color: var(--primary); letter-spacing: 0.05em;
-    }
-
-    .btn-submit {
-      width: 100%;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: #fff;
-      font-family: var(--font-display);
-      font-weight: 700; font-size: 1rem;
-      padding: 16px 32px;
-      border: none; border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.28s var(--ease-spring), box-shadow 0.28s, filter 0.28s;
-      box-shadow: 0 4px 24px var(--primary-35);
-    }
-    .btn-submit i { transition: transform 0.28s var(--ease-spring); }
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow: 0 10px 32px var(--primary-35);
-    }
-    .btn-submit:hover i { transform: translateX(5px); }
-    .btn-submit:active { transform: scale(0.97); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       AGENCY BANNER
-    ═══════════════════════════════════════════════════════════════ */
-    .agency-banner {
-      background: var(--surface-2, #f8fafc);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0;
-    }
-    .agency-banner-inner {
-      display: flex; align-items: center;
-      justify-content: center; gap: 12px; flex-wrap: wrap;
-    }
-    .agency-banner-text { font-size: 0.88rem; color: var(--mid); }
-    .agency-banner-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.88rem; font-weight: 700; color: var(--primary);
-      text-decoration: underline; text-underline-offset: 3px;
-      transition: color 0.2s;
-    }
-    .agency-banner-link:hover { color: var(--secondary); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════════════════════ */
-    .footer-divider {
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-    }
-    .footer {
+    @media (max-width: 900px) { .hero-wellness { grid-template-columns: 1fr; } }
+    .hero-wellness-left {
       background: var(--dark);
-      color: rgba(255,255,255,0.52);
-      padding: 72px 0 36px;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: clamp(48px,8vw,100px) clamp(24px,5vw,72px);
+      position: relative; overflow: hidden;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 56px; margin-bottom: 56px;
+    .hero-wellness-left::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, var(--primary-20) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .footer-brand {
-      font-family: var(--font-display);
-      font-weight: 800; font-size: 1.2rem; color: #fff;
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 14px; letter-spacing: -0.02em;
+    .hero-wellness-left > * { position: relative; z-index: 1; }
+    .hero-well-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 50px; margin-bottom: 24px; }
+    .hero-wellness h1 { font-size: var(--display-size); color: #fff; margin-bottom: 20px; }
+    .hero-wellness h1 em { font-style: italic; color: var(--primary); }
+    .hero-well-tagline { font-size: clamp(1rem, 1.8vw, 1.15rem); color: rgba(255,255,255,0.78); margin-bottom: 36px; line-height: 1.7; }
+    .hero-well-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .well-trust-chip { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); padding: 8px 14px; border-radius: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.78); }
+    .well-trust-chip i { color: var(--primary); }
+    .hero-wellness-right {
+      position: relative; overflow: hidden;
     }
-    .footer-brand-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 0.85rem; flex-shrink: 0;
-    }
-    .footer-tagline { font-size: 0.88rem; line-height: 1.7; margin-bottom: 22px; }
-    .footer-socials { display: flex; gap: 8px; }
-    .footer-social {
-      width: 34px; height: 34px; border-radius: 8px;
-      background: rgba(255,255,255,0.07);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.52); font-size: 0.88rem;
-      transition: var(--transition);
-    }
-    .footer-social:hover { background: var(--primary); color: #fff; }
-    .footer-col-title {
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.13em; text-transform: uppercase;
-      color: rgba(255,255,255,0.32); margin-bottom: 18px;
-    }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { font-size: 0.9rem; color: rgba(255,255,255,0.52); transition: color 0.2s; }
-    .footer-links a:hover { color: #fff; }
-    .footer-contact-items { display: flex; flex-direction: column; gap: 12px; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; }
-    .footer-contact-item i { color: var(--primary); margin-top: 2px; flex-shrink: 0; width: 14px; }
-    .footer-contact-item a { color: rgba(255,255,255,0.52); transition: color 0.2s; }
-    .footer-contact-item a:hover { color: #fff; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 28px;
-      display: flex; align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
-    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.26); }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { font-size: 0.8rem; color: rgba(255,255,255,0.26); transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: rgba(255,255,255,0.65); }
+    @media (max-width: 900px) { .hero-wellness-right { display: none; } }
+    .hero-wellness-right img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       MOBILE STICKY BAR
-    ═══════════════════════════════════════════════════════════════ */
-    .sticky-bar {
-      display: none;
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 990;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px) saturate(180%);
-      border-top: 1px solid var(--border);
-      padding: 12px 16px;
-      box-shadow: 0 -8px 32px rgba(0,0,0,0.1);
+    /* ── Booking strip ───────────────────────────────────────────── */
+    .booking-strip {
+      background: var(--primary); padding: 0;
     }
-    .sticky-bar-inner { display: flex; gap: 10px; }
-    .sticky-bar-call {
-      flex: 1; display: flex; align-items: center;
-      justify-content: center; gap: 8px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: #fff; font-weight: 700; font-size: 0.93rem;
-      padding: 13px 18px; border-radius: 10px;
-      box-shadow: 0 4px 16px var(--primary-35);
+    .booking-strip-inner {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 0;
     }
-    .sticky-bar-call i { animation: phonePulse 2.5s ease-in-out infinite; }
-    .sticky-bar-contact {
-      flex: 1; display: flex; align-items: center;
-      justify-content: center; gap: 8px;
-      background: var(--dark); color: #fff;
-      font-weight: 600; font-size: 0.88rem;
-      padding: 13px 18px; border-radius: 10px;
+    .booking-strip-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 28px; color: #fff;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      flex: 1; min-width: 160px;
     }
+    .booking-strip-item:last-child { border-right: none; }
+    .booking-strip-item i { font-size: 1.1rem; opacity: 0.85; flex-shrink: 0; }
+    .bsi-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.75; display: block; }
+    .bsi-value { font-size: 0.92rem; font-weight: 600; }
+    @media (max-width: 600px) { .booking-strip-item { min-width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); } }
 
-    /* ═══════════════════════════════════════════════════════════════
-       FAQ
-    ═══════════════════════════════════════════════════════════════ */
-    .section-faq { padding: var(--section-pad) 0; background: var(--surface, #fff); }
-    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q {
-      width: 100%; display: flex; align-items: center;
-      justify-content: space-between; gap: 16px;
-      padding: 22px 0;
-      background: none; border: none; cursor: pointer;
-      font-family: var(--font-display);
-      font-size: 1.02rem; font-weight: 600;
-      color: var(--dark); text-align: left;
-      transition: color 0.2s;
+    /* ═══ ACCREDITATION ══════════════════════════════════════════════ */
+    .accred-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 18px 28px; margin-bottom: 40px; box-shadow: var(--shadow-sm); opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .accred-strip.visible { opacity: 1; transform: none; }
+    .accred-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+    .accred-item { display: flex; align-items: center; gap: 8px; }
+    .accred-icon { font-size: 1rem; }
+    .accred-label { font-size: 0.82rem; font-weight: 600; color: var(--dark); }
+
+    /* ═══ PRICE LIST ═════════════════════════════════════════════════ */
+    .section-pricing { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .pricing-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .pricing-layout { grid-template-columns: 1fr; gap: 32px; } }
+    .price-list { display: flex; flex-direction: column; gap: 0; }
+    .price-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .price-row:last-child { border-bottom: none; }
+    .price-service { font-weight: 600; font-size: 0.95rem; flex: 1; }
+    .price-duration { font-size: 0.8rem; color: var(--mid); background: var(--light); padding: 3px 10px; border-radius: 50px; }
+    .price-amount { font-weight: 700; color: var(--primary); font-size: 0.95rem; white-space: nowrap; }
+    .pricing-note {
+      background: var(--primary-8); border-radius: var(--radius); border-left: 4px solid var(--primary);
+      padding: 20px 24px; margin-top: 20px; font-size: 0.9rem; color: var(--dark); line-height: 1.7;
     }
-    .faq-q:hover { color: var(--primary); }
-    .faq-icon {
-      flex-shrink: 0;
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem; color: var(--mid);
-      transition: transform 0.3s var(--ease-out), background 0.2s, border-color 0.2s, color 0.2s;
+    .pricing-note i { color: var(--primary); margin-right: 6px; }
+    .pricing-callout {
+      background: var(--dark); border-radius: var(--radius-lg); padding: 36px;
+      color: #fff;
     }
-    .faq-q:hover .faq-icon {
-      background: var(--primary-8);
-      border-color: var(--primary);
-      color: var(--primary);
-    }
+    .pricing-callout h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 14px; color: #fff; }
+    .pricing-callout p { color: rgba(255,255,255,0.72); font-size: 0.95rem; line-height: 1.75; margin-bottom: 24px; }
+
+    /* ═══ SERVICES ══════════════════════════════════════════════════ */
+    .section-services { padding: var(--section-pad) 0; background: var(--surface); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .service-card { background: var(--surface); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform 0.3s var(--ease-out), box-shadow 0.3s; position: relative; overflow: hidden; opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible { opacity: 1; transform: none; transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out), box-shadow 0.3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--primary-8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; margin-bottom: 16px; }
+    .service-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.65; }
+    .card-shimmer { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%); transform: translateX(-100%) skewX(-18deg); pointer-events: none; z-index: 0; }
+    @keyframes shimmerSweep { from { transform: translateX(-100%) skewX(-18deg); } to { transform: translateX(250%) skewX(-18deg); } }
+    .service-card:hover .card-shimmer { animation: shimmerSweep 0.6s var(--ease-out) forwards; }
+
+    /* ═══ GALLERY ═══════════════════════════════════════════════════ */
+    .section-gallery { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 260px); gap: 12px; }
+    .gallery-item { overflow: hidden; border-radius: var(--radius); }
+    .gallery-item:first-child { grid-column: 1 / 3; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
+    .gallery-item:hover img { transform: scale(1.04); }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } .gallery-item:first-child { grid-column: 1/-1; } }
+
+    /* ═══ ABOUT ══════════════════════════════════════════════════════ */
+    .section-about { padding: var(--section-pad) 0; background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-img { border-radius: var(--radius-lg); overflow: hidden; height: 460px; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); background: var(--primary-8); border: 1px solid var(--primary-20); padding: 5px 13px; border-radius: 50px; margin-bottom: 18px; }
+    .about-heading { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); color: var(--dark); margin-bottom: 20px; }
+    .about-heading em { font-style: italic; color: var(--primary); }
+    .about-body-text { font-size: 1.05rem; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+    .about-features { display: flex; flex-direction: column; gap: 14px; }
+    .af-item { display: flex; align-items: flex-start; gap: 12px; }
+    .af-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--primary-8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+    .af-text { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
+
+    /* ═══ REVIEWS ════════════════════════════════════════════════════ */
+    .section-testimonials { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .review-card { background: var(--surface); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: relative; opacity: 0; transform: translateY(24px); }
+    .review-card.visible { opacity: 1; transform: none; transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
+    .review-quote { font-size: 3rem; color: var(--primary); opacity: 0.3; line-height: 1; font-family: serif; margin-bottom: -8px; }
+    .review-text { font-size: 0.95rem; color: var(--mid); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 8px; }
+    .review-author { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .review-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+    .review-source { font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+
+    /* ═══ RATING ═════════════════════════════════════════════════════ */
+    .rating-card { background: var(--dark); border-radius: var(--radius-lg); padding: 32px 40px; text-align: center; box-shadow: var(--shadow-lg); display: inline-block; }
+    .rating-number { font-size: 3.5rem; font-weight: 800; color: #fff; font-family: var(--font-display); line-height: 1; }
+    .rating-stars { color: #f59e0b; font-size: 1.2rem; margin: 8px 0 4px; }
+    .rating-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
+    .rating-count { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .rating-bar-wrap { background: rgba(255,255,255,0.12); border-radius: 4px; height: 5px; margin-top: 14px; overflow: hidden; }
+    .rating-bar { height: 100%; width: 0; background: var(--primary); border-radius: 4px; transition: width 1.2s var(--ease-out); }
+    .rating-card.bar-animated .rating-bar { width: var(--rating-pct); }
+    .rating-bar-labels { display: flex; justify-content: space-between; font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
+
+    /* ═══ FAQ ════════════════════════════════════════════════════════ */
+    .section-faq { padding: var(--section-pad) 0; background: var(--surface); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--surface-2); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px; font-size: 0.95rem; font-weight: 600; color: var(--dark); background: none; border: none; cursor: pointer; text-align: left; }
+    .faq-icon { transition: transform 0.3s; flex-shrink: 0; color: var(--mid); }
     .faq-item.open .faq-icon { transform: rotate(180deg); }
-    .faq-a {
-      max-height: 0; overflow: hidden;
-      font-size: 0.95rem; color: var(--mid); line-height: 1.75;
-      transition: max-height 0.38s var(--ease-out), padding 0.38s;
-    }
-    .faq-item.open .faq-a { max-height: 500px; padding-bottom: 22px; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out), padding 0.3s; padding: 0 24px; font-size: 0.9rem; color: var(--mid); line-height: 1.75; }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       GENERAL
-    ═══════════════════════════════════════════════════════════════ */
-    .section-cat     { padding: var(--section-pad) 0; }
-    .section-services{ background: var(--light, #f9fafb); }
-    .section-about   { background: var(--surface, #fff); }
-    .section-cat     { background: var(--surface-2, #f8fafc); }
-    .section-reviews { background: var(--light, #f9fafb); }
-    .section-contact { background: var(--dark); }
+    /* ═══ CONTACT ════════════════════════════════════════════════════ */
+    .section-contact { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-left-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); background: var(--primary-8); border: 1px solid var(--primary-20); padding: 5px 13px; border-radius: 50px; margin-bottom: 18px; }
+    .contact-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: var(--heading-weight); margin-bottom: 16px; }
+    .contact-cta-line { color: var(--mid); font-size: 1.05rem; line-height: 1.75; margin-bottom: 32px; }
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-item-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--primary-8); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+    .contact-item-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
+    .contact-item-value { font-size: 0.95rem; font-weight: 500; color: var(--dark); }
+    .contact-form-card { background: var(--surface); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .form-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { position: relative; margin-bottom: 16px; }
+    .form-group input, .form-group textarea { width: 100%; padding: 16px 14px 8px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.92rem; background: var(--surface); color: var(--dark); outline: none; transition: border-color 0.2s; resize: none; font-family: inherit; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-group label { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 0.85rem; color: var(--text-muted); pointer-events: none; transition: 0.2s; }
+    .form-group textarea ~ label { top: 18px; transform: none; }
+    .form-group input:focus ~ label, .form-group input:not(:placeholder-shown) ~ label,
+    .form-group textarea:focus ~ label, .form-group textarea:not(:placeholder-shown) ~ label { top: 8px; font-size: 0.68rem; color: var(--primary); }
 
-    #home, #services, #about, #testimonials, #faq, #contact,
-    #menu, #emergency, #gallery, #schedule {
-      scroll-margin-top: calc(var(--nav-height) + 16px);
-    }
+    /* ═══ MAP ════════════════════════════════════════════════════════ */
+    .maps-embed-wrap { margin-top: 24px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+    .maps-embed-wrap iframe { display: block; width: 100%; height: 260px; border: none; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════════════════════════ */
-    @media (max-width: 1100px) {
-      .services-grid { grid-template-columns: repeat(4, 1fr); }
-      .service-card:first-child   { grid-column: span 4; }
-      .service-card:nth-child(2)  { grid-column: span 2; }
-      .service-card:nth-child(3)  { grid-column: span 2; }
-      .service-card:nth-child(4)  { grid-column: span 2; }
-      .service-card:nth-child(5)  { grid-column: span 2; }
-      .service-card:nth-child(6)  { grid-column: span 2; }
-      .service-card:nth-child(7)  { grid-column: span 2; }
-      .service-card:nth-child(n+8){ grid-column: span 2; }
-    }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-right, .hero-deco { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 40px; }
-    }
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .services-grid { grid-template-columns: 1fr !important; }
-      .service-card,
-      .service-card:first-child,
-      .service-card:nth-child(n) { grid-column: span 1 !important; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .strip-item { padding: 8px 28px; }
-      .hero-feat { padding: 6px 12px; }
-      .hero-feat + .hero-feat { border-left: none; border-top: 1px solid rgba(255,255,255,0.16); }
-      .hero-features-inner { flex-direction: column; }
-      .sticky-bar { display: flex; }
-      body { padding-bottom: 76px; }
-      .contact-form-card { padding: 28px 20px; }
-    }
+    /* ═══ AGENCY + FOOTER ════════════════════════════════════════════ */
+    .agency-banner { background: var(--dark); padding: 20px 0; }
+    .agency-banner-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .agency-banner-text { color: rgba(255,255,255,0.75); font-size: 0.88rem; }
+    .agency-banner-link { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; }
+    .footer { background: var(--dark); color: rgba(255,255,255,0.75); padding: var(--section-pad) 0 40px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .footer-brand-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.85rem; }
+    .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-social { width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.2s; }
+    .footer-social:hover { background: var(--primary); color: #fff; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-contact-items { display: flex; flex-direction: column; gap: 12px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .footer-contact-item i { color: var(--primary); flex-shrink: 0; margin-top: 3px; }
+    .footer-contact-item a { color: rgba(255,255,255,0.6); }
+    .footer-contact-item a:hover { color: var(--primary); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links a:hover { color: var(--primary); }
 
-    /* ── Persona overrides (injected per category) ─────────────── */
+    /* ═══ MOBILE STICKY BAR ═════════════════════════════════════════ */
+    .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 997; background: var(--surface); border-top: 1px solid var(--border); padding: 10px 16px; box-shadow: 0 -4px 24px rgba(0,0,0,0.12); }
+    @media (max-width: 768px) { .sticky-bar { display: block; } }
+    .sticky-bar-inner { display: flex; gap: 10px; }
+    .sticky-bar-call, .sticky-bar-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; }
+    .sticky-bar-call { background: var(--primary); color: #fff; }
+    .sticky-bar-contact { background: var(--dark); color: #fff; }
+
+    /* ── Scroll progress ─────────────────────────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; z-index: 9999; height: 2px; width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary))); transition: width 0.1s linear; pointer-events: none; }
+
+    /* ── Heading em gradient ─────────────────────────────────────── */
+    .hero-wellness h1 em, .about-heading em, .section-heading em { font-style: italic; background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* ── Persona base tokens (overridden by persona_css below) ──── */
+    :root { --heading-style: normal; --hero-bg: var(--dark-2); --hero-text: #ffffff; }
+    h1, h2 { font-style: var(--heading-style, normal); }
+
     
 /* ─ WELLNESS PERSONA ───────────────────────────────── */
 :root {
@@ -1350,18 +409,6 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   </style>
 
-  <!-- Open Graph -->
-  <meta property="og:title"       content="SALON atreve | Melbourne">
-  <meta property="og:description" content="Premium salon experiences designed for the daring.">
-  <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:type"        content="website">
-  
-  <!-- Twitter card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="SALON atreve | Melbourne">
-  <meta name="twitter:description" content="Premium salon experiences designed for the daring.">
-  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
-
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -1385,232 +432,186 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 }
   </script>
 </head>
-
 <body>
+<div id="scroll-progress"></div>
 
-  <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
-  <nav id="main-nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#" class="nav-brand">
-          <span class="nav-brand-icon" aria-hidden="true">
-            <i class="fa-solid fa-location-dot" style="font-size:0.85rem;"></i>
-          </span>
-          SALON atreve
-        </a>
-
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          
-          <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">Book Now</a>
-        </div>
-
-        <div class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
-          <span></span><span></span><span></span>
-        </div>
+<!-- ══ NAV ════════════════════════════════════════════════════════════════ -->
+<nav id="main-nav" role="navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#home">
+        <span class="nav-brand-icon" aria-hidden="true">✂️</span>
+        SALON atreve
+      </a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        
+        <a href="#contact" class="nav-cta">Book Now</a>
       </div>
-    </div>
-  </nav>
-
-  <!-- Mobile nav drawer -->
-  <div class="mobile-nav" id="mobile-nav">
-    <div class="mobile-nav-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+61396631473" style="color:var(--primary);font-weight:700;">+61 3 9663 1473</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+</nav>
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    
+    <a href="#contact">Book Now</a>
+  </div>
+</nav>
 
-  <!-- ══ HERO ═════════════════════════════════════════════════════════════ -->
-  <section class="hero" id="home">
-    <!-- Decorative ring -->
-    <div class="hero-deco" aria-hidden="true"></div>
+<!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
+<section class="hero-wellness" id="home">
+  <!-- Left: copy -->
+  <div class="hero-wellness-left">
+    <span class="hero-eyebrow hero-well-eyebrow">
+      <i class="fa-solid fa-location-dot"></i>
+      Melbourne &mdash; Your Wellness Destination
+    </span>
+    <h1 class="hero-headline">Premium Hair & Beauty in Melbourne</h1>
+    <p class="hero-well-tagline hero-tagline">Expert styling and treatments in the heart of Melbourne's vibrant salon scene</p>
+    <div class="hero-btns hero-actions">
+      <a href="#contact" class="btn-hero-primary">
+        <i class="fa-solid fa-calendar-check"></i>
+        Book Now
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="#services" class="btn-hero-secondary">
+        <i class="fa-solid fa-spa"></i>
+        View Services
+      </a>
+    </div>
+    <div class="hero-well-trust">
+      <span class="well-trust-chip"><i class="fa-solid fa-certificate"></i> Fully Qualified</span>
+      <span class="well-trust-chip"><i class="fa-solid fa-star"></i> 4.6★ Google Rated</span>
+      <span class="well-trust-chip"><i class="fa-solid fa-leaf"></i> Premium Products</span>
+    </div>
+  </div>
+  <!-- Right: hero image -->
+  <div class="hero-wellness-right">
+    
+    <img src="https://images.unsplash.com/photo-1560066984-138daaa3bb47?auto=format&fit=crop&w=1400&q=80" alt="SALON atreve — Melbourne" loading="eager">
+    
+  </div>
+</section>
 
-    <div class="hero-main">
-      <div class="container" style="width:100%;">
-        <div class="hero-grid">
-
-          <!-- Left column -->
-          <div class="hero-left">
-            <span class="hero-eyebrow">
-              <i class="fa-solid fa-location-dot"></i>
-              Melbourne &mdash; Your Wellness Destination
-            </span>
-            <h1 class="hero-headline">Bold Beauty Awaits in Melbourne</h1>
-            <p class="hero-tagline">Premium salon experiences designed for the daring.</p>
-
-            <div class="hero-actions hero-btns">
-              <a href="tel:+61396631473" class="btn-hero-primary">
-                <i class="fa-solid fa-phone"></i>
-                Call Now
-                <i class="fa-solid fa-arrow-right btn-arrow"></i>
-              </a>
-              <a href="#contact" class="btn-hero-secondary">
-                <i class="fa-solid fa-envelope"></i>
-                Book an Appointment
-              </a>
-            </div>
-
-            <div class="hero-stats-card">
-              
-            <div class="stat-item">
-              <span class="stat-value">4.6★</span>
-              <span class="stat-label">Google Rating</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">122</span>
-              <span class="stat-label">Client Reviews</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">15+</span>
-              <span class="stat-label">Years Excellence</span>
-            </div>
-            
-            </div>
-          </div>
-
-          <!-- Right column — floating proof panel -->
-          <div class="hero-right hero-proof-col fade-in" style="transition-delay:0.45s;">
-            <div class="hero-proof-panel">
-              <div class="proof-rating-row">
-                <span class="proof-stars">★★★★½</span>
-                <span class="proof-score">4.6</span>
-                <span class="proof-count">· 122 reviews</span>
-              </div>
-              <div class="proof-platform-row">
-                <span class="proof-platform"><i class="fa-brands fa-google"></i> Google</span>
-                <span class="proof-dot">·</span>
-                <span class="proof-platform">Melbourne, Australia</span>
-              </div>
-              <div class="proof-divider"></div>
-              <div class="proof-features">
-                <div class="proof-feat"><i class="fa-solid fa-certificate"></i> Fully qualified practitioners</div>
-<div class="proof-feat"><i class="fa-solid fa-spa"></i> Premium products &amp; treatments</div>
-<div class="proof-feat"><i class="fa-solid fa-lock"></i> Private, relaxing environment</div>
-<div class="proof-feat"><i class="fa-solid fa-heart"></i> Loved by our clients</div>
-              </div>
-              <div class="proof-cta-hint">
-                <i class="fa-solid fa-arrow-down"></i> Scroll to discover our treatments
-              </div>
-            </div>
-          </div>
-
+<!-- ── Booking strip ─────────────────────────────────────────────────── -->
+<div class="booking-strip">
+  <div class="container">
+    <div class="booking-strip-inner">
+      
+      <div class="booking-strip-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <span class="bsi-label">Book Now</span>
+          <span class="bsi-value"><a href="tel:+61396631473" style="color:#fff;">+61 3 9663 1473</a></span>
         </div>
       </div>
-    </div>
-
-    <!-- Features strip -->
-    <div class="hero-features">
-      <div class="container">
-        <div class="hero-features-inner">
-          <div class="hero-feat"><i class="fa-solid fa-certificate"></i> Fully Qualified</div>
-<div class="hero-feat"><i class="fa-solid fa-star"></i> 5-Star Rated</div>
-<div class="hero-feat"><i class="fa-solid fa-spa"></i> Premium Products</div>
-<div class="hero-feat"><i class="fa-solid fa-calendar"></i> By Appointment</div>
-<div class="hero-feat"><i class="fa-solid fa-circle-check"></i> All Welcome</div>
+      <div class="booking-strip-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <span class="bsi-label">Location</span>
+          <span class="bsi-value">Melbourne, Australia</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══ SERVICES ══════════════════════════════════════════════════════════ -->
-  <section class="section-services" id="services">
-    <div class="container">
-      <div class="section-label fade-in">
-        <span class="eyebrow"><i class="fa-solid fa-list-check"></i> What We Do</span>
+      
+      <div class="booking-strip-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <div>
+          <span class="bsi-label">Note</span>
+          <span class="bsi-value">Call +61 3 9663 1473 to book your appointment or visit us in Melbourne. We look forward to welcoming you to SALON atreve.</span>
+        </div>
       </div>
-      <h2 class="section-heading fade-in">Our Services</h2>
-      <p class="section-sub fade-in">Treatments and services designed to restore, relax, and renew.</p>
-      <div class="services-grid">
-        
+      
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACCREDITATION ══════════════════════════════════════════════════════ -->
+
+<section style="background:var(--surface-2); padding: 24px 0;">
+  <div class="container"><div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div></div>
+</section>
+
+
+<!-- ══ SERVICES ═══════════════════════════════════════════════════════════ -->
+<section class="section-services" id="services">
+  <div class="container">
+    <div style="text-align:center; max-width:640px; margin:0 auto 52px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-spa"></i> Services</span>
+      <h2 class="section-title fade-in">Treatments and services designed to restore, relax, and renew.</h2>
+    </div>
+    <div class="services-grid">
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Hair Cuts & Styling</h3>
-              <p class="service-desc">Precision cuts and contemporary styles tailored to your face shape and lifestyle. Our stylists stay current with the latest trends whilst honouring classic techniques.</p>
+              <h3 class="service-title">Hair Cutting & Styling</h3>
+              <p class="service-desc">From precision cuts to creative colour work, our stylists craft looks tailored to your face shape and lifestyle. We use premium products and techniques to ensure your hair looks and feels its absolute best.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-palette"></i>
+                <i class="fa-solid fa-spray-can"></i>
               </div>
               <h3 class="service-title">Colour & Highlights</h3>
-              <p class="service-desc">Vibrant colours and dimensional highlights using premium products that protect hair health. From subtle balayage to bold fashion shades, we deliver stunning results.</p>
+              <p class="service-desc">Whether you're after a subtle refresh or a bold transformation, our colour specialists blend expert technique with quality products. We specialise in balayage, highlights, tints and corrective colour services.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-spa"></i>
               </div>
-              <h3 class="service-title">Treatments & Wellness</h3>
-              <p class="service-desc">Nourishing treatments designed to restore shine, strength and vitality to damaged or tired hair. Relax whilst our therapists work their magic with our premium product range.</p>
+              <h3 class="service-title">Treatments & Care</h3>
+              <p class="service-desc">Restore shine and strength with our nourishing hair treatments and conditioning services. We recommend tailored solutions to address dryness, damage and scalp health for lasting results.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
-              <h3 class="service-title">Special Occasions</h3>
-              <p class="service-desc">Bridal and event styling services that ensure you look and feel extraordinary. We create lasting styles that photograph beautifully and last all day.</p>
-            </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TRUST STRIP ═══════════════════════════════════════════════════════ -->
-  <div class="section-trust-strip">
-    <div class="container">
-      <div class="trust-strip-inner">
-        
-            <div class="strip-item">
-              <div class="strip-value">4.6★</div>
-              <div class="strip-label">Google Rating</div>
-            </div>
-            <div class="strip-item">
-              <div class="strip-value">122</div>
-              <div class="strip-label">Client Reviews</div>
-            </div>
-            <div class="strip-item">
-              <div class="strip-value">15+</div>
-              <div class="strip-label">Years Excellence</div>
-            </div>
-      </div>
-    </div>
+              <h3 class="service-title">Beauty Services</h3>
+              <p class="service-desc">Complete your look with our range of beauty treatments including brows, lashes and makeup. Our beauty specialists create polished, natural results that enhance your unique features.</p>
+            </div></div>
   </div>
+</section>
 
-  <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
-  
+<!-- ══ PRICING ════════════════════════════════════════════════════════════ -->
 
-  <!-- ══ ABOUT ═════════════════════════════════════════════════════════════ -->
-  <section class="section-about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <!-- Left -->
-        <div class="fade-in">
-          <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
-          <h2 class="about-heading">About SALON atreve</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">SALON atreve is Melbourne's go-to destination for cutting-edge hair and beauty services, trusted by over 122 satisfied clients with a stellar 4.6-star rating. Our expert team specialises in transformative styles and treatments that celebrate individual boldness and creativity.</p>
-
-          <div class="about-features">
-            <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
-          </div>
-
-          
-          <a href="https://www.google.com/maps/search/Ground+1%2F44+Little+La+Trobe+St%2C+Melbourne+VIC+3000" target="_blank" rel="noopener" class="btn-maps">
-            <i class="fa-brands fa-google"></i>
-            Find Us on Google Maps
-          </a>
-          
+<section class="section-pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-layout">
+      <div class="fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-tag"></i> Pricing</span>
+        <h2 class="section-heading">Transparent Pricing</h2>
+        <p class="section-sub">No hidden fees — everything you need to know upfront.</p>
+        <div class="price-list"><div class="price-row"><span class="price-service">Women's Haircut</span><span class="price-amount">from $65</span></div><div class="price-row"><span class="price-service">Men's Haircut</span><span class="price-amount">from $45</span></div><div class="price-row"><span class="price-service">Colour & Highlights</span><span class="price-amount">from $95</span></div><div class="price-row"><span class="price-service">Hair Treatment & Conditioning</span><span class="price-amount">from $40</span></div></div>
+        
+        <div class="pricing-note">
+          <i class="fa-solid fa-circle-info"></i>Call +61 3 9663 1473 to book your appointment or visit us in Melbourne. We look forward to welcoming you to SALON atreve.
         </div>
-
-        <!-- Right -->
-        <div class="about-right fade-in" style="transition-delay:0.12s;">
-          
+        
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s;">
+        <div class="pricing-callout">
+          <h3>Ready to Book?</h3>
+          <p>Ready to refresh your look? Get in touch with SALON atreve today and discover the difference personalised care makes.</p>
+          <a href="#contact" class="btn-primary">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Now
+          </a>
+          <div style="margin-top:20px;">
             <div class="rating-card" style="--rating-pct:92%">
               <div class="rating-number">4.6</div>
               <div class="rating-stars">★★★★½</div>
@@ -1618,414 +619,285 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="rating-count">122 Google reviews</div>
               <div class="rating-bar-wrap"><div class="rating-bar"></div></div>
               <div class="rating-bar-labels"><span>0</span><span>out of 5</span></div>
-            </div>
-          
+            </div></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ TESTIMONIALS ═══════════════════════════════════════════════════════ -->
-  
 
-  <!-- ══ CATEGORY SECTION (non-food) ══════════════════════════════════════ -->
-  
-  
-  <!-- ═══ PRICE LIST ════════════════════════════════════════════════════════ -->
-  <section class="section-cat" id="pricing" style="background:#fff;padding:90px 0;">
-    <div class="container">
-      <h2 class="section-title">Services & Pricing</h2>
-      <div class="pl-wrap">
-        <div class="pl-list">
-            <div class="pl-row">
-              <span class="pl-service">Blowdry & Style</span>
-              
-              <span class="pl-price">from $45</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Hair Cut</span>
-              
-              <span class="pl-price">from $65</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Colour Service</span>
-              
-              <span class="pl-price">from $90</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Bridal Styling Package</span>
-              
-              <span class="pl-price">from $150</span>
-            </div>
-        </div>
-        <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to embrace your boldest look? Get in touch with the SALON atreve team today.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 3 9663 1473 or visit us to reserve your spot today.</p>
-          <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
-        </div>
+<!-- ══ GALLERY ════════════════════════════════════════════════════════════ -->
+
+<section class="section-gallery" id="gallery">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-images"></i> Gallery</span>
+      <h2 class="section-title fade-in">Our Environment &amp; Work</h2>
+    </div>
+    <div class="fade-in"><div class="gallery-grid"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360826-b9b9b6a6e6e6?auto=format&fit=crop&w=600&q=80" alt="Salon interior" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Hair color treatment" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80" alt="Nail salon service" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=600&q=80" alt="Relaxing spa treatment" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=600&q=80" alt="Beauty treatment" loading="lazy"></div></div></div>
+  </div>
+</section>
+
+
+<!-- ══ ABOUT ══════════════════════════════════════════════════════════════ -->
+<section class="section-about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      
+      <div class="about-img fade-in">
+        <img src="https://images.unsplash.com/photo-1560066984-138daaa3bb47?auto=format&fit=crop&w=1400&q=80" alt="SALON atreve" loading="lazy">
+      </div>
+      
+      <div class="fade-in" style="transition-delay:0.15s;">
+        <span class="about-eyebrow"><i class="fa-solid fa-heart"></i> Our Philosophy</span>
+        <h2 class="about-heading">About SALON atreve Melbourne</h2>
+        <p class="about-body-text">SALON atreve has become a trusted destination for Melbourne locals seeking exceptional hair and beauty services with a modern, welcoming approach. Our team of skilled stylists is dedicated to delivering personalised care and transformative results that keep our community coming back.</p>
+        <div class="about-features"><div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div></div>
       </div>
     </div>
-  </section>
-  <style>
-    .pl-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;}
-    @media(max-width:720px){.pl-wrap{grid-template-columns:1fr;}}
-    .pl-list{border:1px solid #efefef;border-radius:14px;overflow:hidden;}
-    .pl-row{display:flex;align-items:center;gap:12px;padding:16px 24px;
-      border-bottom:1px solid #f0f0f0;}
-    .pl-row:last-child{border-bottom:none;}
-    .pl-row:nth-child(even){background:#fafafa;}
-    .pl-service{flex:1;font-weight:600;font-size:0.97rem;color:#333;}
-    .pl-dur{font-size:0.83rem;color:#999;white-space:nowrap;}
-    .pl-price{font-family:var(--font-display);font-weight:700;color:#ad1457;white-space:nowrap;}
-    .pl-cta-block{background:#ad1457;color:#fff;border-radius:14px;padding:36px 32px;
-      display:flex;flex-direction:column;gap:20px;}
-    .pl-cta-text{font-size:1.05rem;line-height:1.7;opacity:0.92;}
-    .pl-note{font-size:0.88rem;opacity:0.78;}
-    .btn-pl-book{display:inline-block;background:#f48fb1;color:#fff;font-weight:700;
-      font-size:0.95rem;padding:14px 28px;border-radius:8px;text-align:center;
-      transition:filter 0.2s;}
-    .btn-pl-book:hover{filter:brightness(1.1);}
-  </style>
-  
+  </div>
+</section>
 
-  <!-- ══ FAQ ══════════════════════════════════════════════════════════════ -->
-  <section class="section-faq" id="faq">
-    <div class="container">
-      <div class="section-label fade-in">
-        <span class="eyebrow"><i class="fa-solid fa-circle-question"></i> FAQ</span>
-      </div>
+<!-- ══ TESTIMONIALS ═══════════════════════════════════════════════════════ -->
+
+
+<!-- ══ FAQ ════════════════════════════════════════════════════════════════ -->
+
+<section class="section-faq" id="faq">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-circle-question"></i> FAQ</span>
       <h2 class="section-title fade-in">Common Questions</h2>
-      <div class="faq-list fade-in">
-        
-      <div class="faq-item">
-        <button class="faq-q">
-          Do you offer online booking?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Yes, we offer convenient online booking through our website. You can also call us on +61 3 9663 1473 to discuss your needs with our team.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          What products do you use?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We use only premium, professional-grade products that are kind to your hair and deliver exceptional results. Ask our stylists about specific brands during your consultation.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          How long should I book for a colour service?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Most colour services take 90 minutes to 2.5 hours depending on length, current colour, and desired result. We'll confirm timing when you book.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Can you accommodate last-minute appointments?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We do our best to fit in walk-ins when our schedule allows, though booking ahead ensures we have your preferred stylist available. Call us to check availability.</div>
-      </div>
-      </div>
     </div>
-  </section>
-
-  <!-- ══ CONTACT ═══════════════════════════════════════════════════════════ -->
-  <section class="section-contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Left -->
-        <div class="fade-in">
-          <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Appointment Now</h2>
-          <p class="contact-cta-line">Ready to embrace your boldest look? Get in touch with the SALON atreve team today.</p>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <div class="contact-item-label">Phone</div>
-                <div class="contact-item-value"><a href="tel:+61396631473">+61 3 9663 1473</a></div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value"><a href="mailto:info@salon-atreve.com.au">info@salon-atreve.com.au</a></div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <div class="contact-item-label">Address</div>
-                <div class="contact-item-value">Ground 1/44 Little La Trobe St, Melbourne VIC 3000</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right — form -->
-        <div class="fade-in" style="transition-delay:0.12s;">
-          <div class="contact-form-card">
-            <div class="form-title">Send Us a Message</div>
-            <form onsubmit="return false;">
-              <div class="form-row">
-                <div class="form-group">
-                  <input type="text" id="f-name" placeholder=" " autocomplete="name">
-                  <label for="f-name">Your Name</label>
-                </div>
-                <div class="form-group">
-                  <input type="email" id="f-email" placeholder=" " autocomplete="email">
-                  <label for="f-email">Email Address</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="tel" id="f-phone" placeholder=" " autocomplete="tel">
-                <label for="f-phone">Phone Number</label>
-              </div>
-              <div class="form-group">
-                <textarea id="f-msg" rows="4" placeholder=" "></textarea>
-                <label for="f-msg">Your Message</label>
-              </div>
-              <button type="submit" class="btn-submit">
-                Send Message
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </form>
-          </div>
-        </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q">
+          How do I book an appointment at SALON atreve?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Simply call us on +61 3 9663 1473 to check availability and reserve your preferred time. We're happy to discuss your style goals and match you with the right stylist.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══ AGENCY BANNER ══════════════════════════════════════════════════════ -->
-  <div class="agency-banner">
-    <div class="container">
-      <div class="agency-banner-inner">
-        <span class="agency-banner-text">Want a professional website like this for your business?</span>
-        <a href="mailto:presencly@gmail.com" class="agency-banner-link">
-          <i class="fa-solid fa-rocket"></i>
-          Get started today
-        </a>
+      <div class="faq-item">
+        <button class="faq-q">
+          What should I do before my first visit?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Come with a clear idea of what you'd like, or bring inspiration photos to discuss with your stylist. We recommend booking a consultation if you're considering a major change.</div>
       </div>
-    </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you offer colour correction services?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, our experienced colour specialists offer corrective colour services for clients looking to fix previous results. We assess your hair's condition and create a personalised plan.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Are your products suitable for all hair types?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We use quality professional products and recommend treatments based on your individual hair type and needs. Our stylists will advise on the best options during your visit.</div>
+      </div></div>
   </div>
+</section>
 
-  <!-- ══ FOOTER ═════════════════════════════════════════════════════════════ -->
-  <div class="footer-divider"></div>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div>
-          <div class="footer-brand">
-            <span class="footer-brand-icon" aria-hidden="true">
-              <i class="fa-solid fa-location-dot" style="font-size:0.82rem;"></i>
-            </span>
-            SALON atreve
-          </div>
-          <p class="footer-tagline">Premium salon experiences designed for the daring.</p>
-          <div class="footer-socials">
-            <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="footer-social" aria-label="Google"><i class="fa-brands fa-google"></i></a>
-          </div>
-        </div>
 
-        <!-- Quick links -->
-        <div>
-          <div class="footer-col-title">Quick Links</div>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About Us</a>
-            
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <!-- Contact info -->
-        <div>
-          <div class="footer-col-title">Contact</div>
-          <div class="footer-contact-items">
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-phone"></i>
-              <a href="tel:+61396631473">+61 3 9663 1473</a>
+<!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
+<section class="section-contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <span class="contact-left-eyebrow"><i class="fa-solid fa-calendar-check"></i> Book an Appointment</span>
+        <h2 class="contact-title">Book Your Appointment Now</h2>
+        <p class="contact-cta-line">Ready to refresh your look? Get in touch with SALON atreve today and discover the difference personalised care makes.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value"><a href="tel:+61396631473">+61 3 9663 1473</a></div>
             </div>
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:info@salon-atreve.com.au">info@salon-atreve.com.au</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value"><a href="mailto:info@salon-atreve.com.au">info@salon-atreve.com.au</a></div>
             </div>
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Ground 1/44 Little La Trobe St, Melbourne VIC 3000</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-item-label">Address</div>
+              <div class="contact-item-value">Ground 1/44 Little La Trobe St, Melbourne VIC 3000</div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <span class="footer-copy">&copy; 2026 SALON atreve. All rights reserved. Melbourne, Australia.</span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
+      <div class="fade-in" style="transition-delay:0.12s;">
+        <div class="contact-form-card">
+          <div class="form-title">Book Your Appointment</div>
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="f-name" placeholder=" " autocomplete="name">
+                <label for="f-name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="f-email" placeholder=" " autocomplete="email">
+                <label for="f-email">Email Address</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="f-phone" placeholder=" " autocomplete="tel">
+              <label for="f-phone">Phone Number</label>
+            </div>
+            <div class="form-group">
+              <textarea id="f-msg" rows="4" placeholder=" "></textarea>
+              <label for="f-msg">Preferred service &amp; time</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              Book Now
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
         </div>
       </div>
     </div>
-  </footer>
+  
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=SALON+atreve+Ground+1%2F44+Little+La+Trobe+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find SALON atreve on Google Maps"></iframe></div>
+</div>
+</section>
 
-  <!-- ══ MOBILE STICKY BAR ══════════════════════════════════════════════════ -->
-  <div class="sticky-bar">
-    <div class="sticky-bar-inner">
-      <a href="tel:+61396631473" class="sticky-bar-call">
-        <i class="fa-solid fa-phone"></i>
-        Call Now
-      </a>
-      <a href="#contact" class="sticky-bar-contact">
-        <i class="fa-solid fa-envelope"></i>
-        Book Now
+<!-- ══ AGENCY BANNER ═════════════════════════════════════════════════════ -->
+<div class="agency-banner">
+  <div class="container">
+    <div class="agency-banner-inner">
+      <span class="agency-banner-text">Want a professional website like this for your business?</span>
+      <a href="mailto:presencly@gmail.com" class="agency-banner-link">
+        <i class="fa-solid fa-rocket"></i> Get started today
       </a>
     </div>
   </div>
+</div>
 
-  <!-- ══ JAVASCRIPT ══════════════════════════════════════════════════════════ -->
-  <script>
-    (function () {
-      'use strict';
+<!-- ══ FOOTER ════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="footer-brand-icon" aria-hidden="true">✂️</span>
+          SALON atreve
+        </div>
+        <p class="footer-tagline">Expert styling and treatments in the heart of Melbourne's vibrant salon scene</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-items">
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+61396631473">+61 3 9663 1473</a></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@salon-atreve.com.au">info@salon-atreve.com.au</a></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Ground 1/44 Little La Trobe St, Melbourne VIC 3000</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 SALON atreve. All rights reserved. Melbourne, Australia.</span>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
 
-      /* 1 — Nav scroll */
-      var nav = document.getElementById('main-nav');
-      window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 20);
-      }, { passive: true });
+<!-- ══ MOBILE STICKY BAR ═════════════════════════════════════════════════ -->
+<div class="sticky-bar">
+  <div class="sticky-bar-inner">
+    <a href="tel:+61396631473" class="sticky-bar-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="#contact" class="sticky-bar-contact"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+  </div>
+</div>
 
-      /* 2 — Mobile nav toggle */
-      var hamburger = document.getElementById('nav-hamburger');
-      var mobileNav = document.getElementById('mobile-nav');
-
-      function openMobileNav() {
-        mobileNav.classList.add('open');
-        hamburger.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
+<script>
+(function () {
+  'use strict';
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+  var hamburger = document.getElementById('nav-hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  function openMobileNav() { mobileNav.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
+  function closeMobileNav() { mobileNav.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+  hamburger.addEventListener('click', function () { mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav(); });
+  mobileNav.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMobileNav); });
+  var fadeObs = new IntersectionObserver(function (es) { es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible');fadeObs.unobserve(e.target);}});}, {threshold:0.08});
+  document.querySelectorAll('.fade-in').forEach(function(el){fadeObs.observe(el);});
+  var cardObs = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');cardObs.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.service-card, .review-card').forEach(function(el){cardObs.observe(el);});
+  var rc = document.querySelector('.rating-card');
+  if(rc){var ro=new IntersectionObserver(function(es){if(es[0].isIntersecting){rc.classList.add('bar-animated');ro.unobserve(rc);}},{threshold:0.4});ro.observe(rc);}
+  var as = document.querySelector('.accred-strip');
+  if(as){var ao=new IntersectionObserver(function(es){if(es[0].isIntersecting){as.classList.add('visible');ao.unobserve(as);}},{threshold:0.3});ao.observe(as);}
+  document.querySelectorAll('.faq-q').forEach(function(btn){btn.setAttribute('aria-expanded','false');btn.addEventListener('click',function(){var item=this.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');this.setAttribute('aria-expanded','true');}});});
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});closeMobileNav();}});});
+  var pb=document.getElementById('scroll-progress');
+  if(pb){window.addEventListener('scroll',function(){var s=window.scrollY,tot=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(tot>0?(s/tot)*100:0)+'%';},{passive:true});}
+})();
+</script>
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
       }
-      function closeMobileNav() {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
       }
-      hamburger.addEventListener('click', function () {
-        mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
-      });
-      mobileNav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeMobileNav);
-      });
-
-      /* 3 — Fade-in IntersectionObserver */
-      var fadeObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            fadeObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.fade-in').forEach(function (el) {
-        fadeObserver.observe(el);
-      });
-
-      /* 4 — Service card stagger */
-      var cardObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var cards = entry.target.querySelectorAll('.service-card');
-            cards.forEach(function (card, i) {
-              card.style.transitionDelay = (i * 0.07) + 's';
-              card.classList.add('visible');
-            });
-            cardObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.04 });
-
-      var svcGrid = document.querySelector('.services-grid');
-      if (svcGrid) {
-        svcGrid.querySelectorAll('.service-card').forEach(function (c) {
-          c.classList.add('fade-in');
-        });
-        cardObserver.observe(svcGrid);
-      }
-
-      /* 5 — Number counter animation */
-      function animateCounter(el) {
-        var raw    = el.textContent.trim();
-        var suffix = raw.replace(/[\d.]/g, '');
-        var num    = parseFloat(raw.replace(/[^\d.]/g, ''));
-        if (isNaN(num) || num === 0) return;
-        var isDecimal = raw.includes('.');
-        var start = 0, duration = 1400, startTime = null;
-
-        function step(ts) {
-          if (!startTime) startTime = ts;
-          var progress = Math.min((ts - startTime) / duration, 1);
-          var eased    = 1 - Math.pow(1 - progress, 3);
-          var current  = num * eased;
-          el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-
-      var counterObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.stat-value, .strip-value').forEach(animateCounter);
-            counterObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.3 });
-
-      document.querySelectorAll('.hero-stats-card, .trust-strip-inner').forEach(function (el) {
-        counterObserver.observe(el);
-      });
-
-      /* 5b — Rating bar animation */
-      var ratingCard = document.querySelector('.rating-card');
-      if (ratingCard) {
-        var ratingBarObserver = new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) {
-            ratingCard.classList.add('bar-animated');
-            ratingBarObserver.unobserve(ratingCard);
-          }
-        }, { threshold: 0.4 });
-        ratingBarObserver.observe(ratingCard);
-      }
-
-      /* 6 — FAQ accordion */
-      document.querySelectorAll('.faq-q').forEach(function (btn) {
-        btn.removeAttribute('onclick');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.addEventListener('click', function () {
-          var item   = this.parentElement;
-          var isOpen = item.classList.contains('open');
-          item.classList.toggle('open');
-          this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-        });
-      });
-
-      /* 7 — Smooth anchor scroll */
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-          var target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            closeMobileNav();
-          }
-        });
-      });
-
-    })();
-  </script>
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396631473?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396631473" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396631473?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

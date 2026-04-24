@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Figjam Plumbing | North Geelong</title>
-  <meta name="description" content="Fast, reliable plumbing solutions when you need them most">
+  <meta name="description" content="Fast, reliable plumbing solutions for your home and business">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1328,14 +1364,14 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Figjam Plumbing | North Geelong">
-  <meta property="og:description" content="Fast, reliable plumbing solutions when you need them most">
+  <meta property="og:description" content="Fast, reliable plumbing solutions for your home and business">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/figjam-plumbing/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Figjam Plumbing | North Geelong">
-  <meta name="twitter:description" content="Fast, reliable plumbing solutions when you need them most">
+  <meta name="twitter:description" content="Fast, reliable plumbing solutions for your home and business">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1412,7 +1448,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
               North Geelong &mdash; Trusted Local Tradies
             </span>
             <h1 class="hero-headline">North Geelong's trusted plumbing experts</h1>
-            <p class="hero-tagline">Fast, reliable plumbing solutions when you need them most</p>
+            <p class="hero-tagline">Fast, reliable plumbing solutions for your home and business</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61412104566" class="btn-hero-primary">
@@ -1430,7 +1466,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
               
             <div class="stat-item">
               <span class="stat-value">24/7</span>
-              <span class="stat-label">Emergency Availability</span>
+              <span class="stat-label">Emergency Callouts</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
@@ -1439,8 +1475,8 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+ Years</span>
-              <span class="stat-label">Local Experience</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
             
             </div>
@@ -1502,31 +1538,31 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-pipe"></i>
-              </div>
-              <h3 class="service-title">General Plumbing</h3>
-              <p class="service-desc">From leaky taps to burst pipes, we handle all general plumbing repairs and maintenance. Our experienced plumbers diagnose issues quickly and provide cost-effective solutions.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-shower"></i>
-              </div>
-              <h3 class="service-title">Hot Water Systems</h3>
-              <p class="service-desc">We install, repair, and service all types of hot water systems including gas, electric, and solar options. Fast troubleshooting means you're never without hot water for long.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
                 <i class="fa-solid fa-droplet"></i>
               </div>
-              <h3 class="service-title">Drain Cleaning</h3>
-              <p class="service-desc">Blocked drains solved with modern camera inspection and high-pressure jetting equipment. We identify the root cause to prevent future blockages.</p>
+              <h3 class="service-title">Leak Detection & Repair</h3>
+              <p class="service-desc">We quickly identify and fix water leaks in pipes, taps, and fixtures to prevent water waste and damage. Our advanced detection equipment finds hidden leaks without unnecessary excavation.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-hammer"></i>
+                <i class="fa-solid fa-toilet"></i>
               </div>
-              <h3 class="service-title">Bathroom Renovations</h3>
-              <p class="service-desc">Complete bathroom plumbing for renovations, from design consultation to final installation. We work with your builder or architect to bring your vision to life.</p>
+              <h3 class="service-title">Blocked Drains</h3>
+              <p class="service-desc">From kitchen sinks to main sewers, we clear blockages fast using modern techniques. We'll get your water flowing freely again with minimal disruption to your home.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-pipe"></i>
+              </div>
+              <h3 class="service-title">Hot Water Systems</h3>
+              <p class="service-desc">We install, service, and repair all types of hot water systems including gas, electric, and solar. Emergency repairs available 24/7 to restore your hot water supply quickly.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <h3 class="service-title">General Plumbing</h3>
+              <p class="service-desc">Our experienced plumbers handle renovations, new installations, and maintenance work with precision. Whether it's a simple tap replacement or complex bathroom setup, we've got you covered.</p>
             </div>
       </div>
     </div>
@@ -1539,19 +1575,28 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         
             <div class="strip-item">
               <div class="strip-value">24/7</div>
-              <div class="strip-label">Emergency Availability</div>
+              <div class="strip-label">Emergency Callouts</div>
             </div>
             <div class="strip-item">
               <div class="strip-value">4.8★</div>
               <div class="strip-label">Customer Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+ Years</div>
-              <div class="strip-label">Local Experience</div>
+              <div class="strip-value">15+</div>
+              <div class="strip-label">Years Experience</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#1565c0;"><i class="fa-solid fa-id-card"></i></div><span class="accred-label">VBA Licensed Plumber</span></div><div class="accred-item"><div class="accred-icon" style="color:#1565c0;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">Master Plumbers Member</span></div><div class="accred-item"><div class="accred-icon" style="color:#1565c0;"><i class="fa-solid fa-house-circle-check"></i></div><span class="accred-label">WorkSafe Accredited</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1564,7 +1609,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Team</span>
           <h2 class="about-heading">About Figjam Plumbing</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Figjam Plumbing has been serving North Geelong and surrounding suburbs with professional, honest plumbing services for over a decade. Our team specialises in residential and commercial plumbing, backed by extensive experience and a commitment to quality workmanship.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Figjam Plumbing has been serving North Geelong and surrounding suburbs with professional plumbing services for over 15 years. Our team is fully licensed, insured, and committed to delivering quality workmanship on every job.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-id-card"></i></span><span class="af-text">Fully licensed, insured &amp; certified — your peace of mind matters</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="af-text">Fast response times &amp; upfront pricing — no hidden surprises</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-users"></i></span><span class="af-text">Local crew — the same familiar faces on every job</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Hundreds of 5-star reviews from happy customers across the area</span></div>
@@ -1613,14 +1658,14 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
             </div>
             <div class="trade-badge">
               <div class="trade-badge-icon"><i class="fa-solid fa-id-card"></i></div>
-              <div class="trade-badge-text">Licensed & Insured — VIC Lic. No. PL21847 (Victoria Plumbing Registration)</div>
+              <div class="trade-badge-text">Licensed & Insured — VIC Lic. No. PL2847156</div>
             </div>
             <div class="trade-badge">
               <div class="trade-badge-icon"><i class="fa-solid fa-gauge-high"></i></div>
               <div class="trade-badge-text">We aim to be on-site within 60 minutes for emergencies</div>
             </div>
         </div>
-        <div class="areas-wrap"><div class="areas-label">Service Areas</div><div class="areas-tags"><span class="area-tag">North Geelong</span><span class="area-tag">Geelong</span><span class="area-tag">Bellerine</span><span class="area-tag">Newcomb</span><span class="area-tag">Manifold Heights</span></div></div>
+        <div class="areas-wrap"><div class="areas-label">Service Areas</div><div class="areas-tags"><span class="area-tag">North Geelong</span><span class="area-tag">Geelong</span><span class="area-tag">Newtown</span><span class="area-tag">Bellerine</span><span class="area-tag">Highton</span></div></div>
       </div>
     </div>
   </section>
@@ -1641,6 +1686,54 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
     .area-tag{background:rgba(255,255,255,0.18);color:#fff;border-radius:50px;
       padding:6px 14px;font-size:0.85rem;font-weight:500;}
   </style>
+  <!-- ═══ BEFORE / AFTER ═══════════════════════════════════════════════════ -->
+  <section class="section-before-after" style="background:#f8f9fa;padding:80px 0;">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;margin-bottom:48px;color:#111;">
+        What changes when you get a website?
+      </h2>
+      <div class="ba-grid">
+        <div class="ba-col ba-before">
+          <div class="ba-col-head"><i class="fa-solid fa-xmark"></i> Without a Website</div>
+          <ul class="ba-list">
+            <li>Only visible to people who already know you exist</li>
+            <li>Can't show reviews, photos or credentials</li>
+            <li>No way to capture enquiries after hours</li>
+            <li>Competitors with websites win the click</li>
+            <li>Looks less professional — people question legitimacy</li>
+          </ul>
+        </div>
+        <div class="ba-col ba-after">
+          <div class="ba-col-head" style="background:#1565c0;"><i class="fa-solid fa-check"></i> With Your New Site</div>
+          <ul class="ba-list">
+            <li>Found on Google when locals search for your service</li>
+            <li>Reviews, photos and licence info front and centre</li>
+            <li>Contact form captures leads 24 hours a day</li>
+            <li>Outrank competitors who are still invisible online</li>
+            <li>Instant trust — professional presence from day one</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:700px){.ba-grid{grid-template-columns:1fr;}}
+    .ba-col{border-radius:16px;overflow:hidden;}
+    .ba-col-head{padding:18px 24px;font-size:1rem;font-weight:700;
+      display:flex;align-items:center;gap:10px;color:#fff;}
+    .ba-before .ba-col-head{background:#374151;}
+    .ba-before .ba-col-head i{color:#f87171;}
+    .ba-after  .ba-col-head i{color:#fff;}
+    .ba-list{margin:0;padding:0 24px 24px;background:#fff;list-style:none;}
+    .ba-before .ba-list{border:2px solid #e5e7eb;border-top:none;border-radius:0 0 16px 16px;}
+    .ba-after  .ba-list{border:2px solid #1565c0;border-top:none;border-radius:0 0 16px 16px;}
+    .ba-list li{padding:14px 0;border-bottom:1px solid #f3f4f6;font-size:0.95rem;
+      color:#374151;line-height:1.5;}
+    .ba-list li:last-child{border-bottom:none;}
+    .ba-before .ba-list li::before{content:"✗ ";color:#f87171;font-weight:700;}
+    .ba-after  .ba-list li::before{content:"✓ ";color:#1565c0;font-weight:700;}
+  </style>
   
 
   <!-- ══ FAQ ══════════════════════════════════════════════════════════════ -->
@@ -1657,28 +1750,28 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
           Do you offer emergency plumbing services?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're available 24/7 for emergency plumbing calls. We aim to arrive on-site within 60 minutes for urgent issues.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          What areas do you service?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We primarily serve North Geelong and surrounding suburbs including Geelong, Bellerine, Newcomb, and Manifold Heights.</div>
+        <div class="faq-a">Yes, we're available 24/7 for plumbing emergencies including burst pipes and blocked drains. We aim to be on-site within 60 minutes for urgent callouts.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           Are you licensed and insured?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We're fully licensed and insured, holding all necessary Victorian plumbing credentials for residential and commercial work.</div>
+        <div class="faq-a">Absolutely. Figjam Plumbing is fully licensed and insured to work throughout North Geelong and surrounding areas. You can have confidence in our qualifications and workmanship.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How much do your services cost?
+          What areas do you service?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We offer transparent, upfront pricing with a free quote on most jobs. Emergency call-outs include a standard service fee plus labour and materials.</div>
+        <div class="faq-a">We primarily service North Geelong and nearby suburbs including Geelong, Newtown, Bellerine, and Highton. Contact us to confirm service availability for your location.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you provide upfront pricing?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we provide transparent quotes before starting any work so there are no surprises. Our friendly team will discuss options and pricing with you clearly.</div>
       </div>
       </div>
     </div>
@@ -1691,8 +1784,8 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get your plumbing sorted today</h2>
-          <p class="contact-cta-line">Don't let plumbing problems disrupt your home. Call Figjam Plumbing today and experience the difference professional service makes.</p>
+          <h2 class="contact-title">Ready to fix your plumbing problem?</h2>
+          <p class="contact-cta-line">Need a plumber you can trust? Call Figjam Plumbing today for fast, professional service.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1718,7 +1811,9 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Figjam+Plumbing+Slevin+St%2C+North+Geelong+VIC+3215+North+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Figjam Plumbing on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1781,7 +1876,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
             </span>
             Figjam Plumbing
           </div>
-          <p class="footer-tagline">Fast, reliable plumbing solutions when you need them most</p>
+          <p class="footer-tagline">Fast, reliable plumbing solutions for your home and business</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1984,6 +2079,47 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61412104566?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61412104566" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61412104566?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

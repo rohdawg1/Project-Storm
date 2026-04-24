@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hometown Asian Supermarket | Melbourne</title>
-  <meta name="description" content="Authentic ingredients and groceries from across Asia">
+  <meta name="description" content="Authentic Asian groceries and fresh produce for Melbourne families">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1341,18 +1377,172 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 .stat-divider { background: rgba(0,0,0,0.1) !important; }
 .section-sub { margin: 0 auto 56px; }
 
+
+    /* ── CLAUDE DESIGN ENHANCEMENTS ──────────────────────────────── */
+
+    /* 1 — Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary)));
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* 2 — Staggered service card entrance */
+    .service-card { opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s var(--ease-spring), border-color 0.32s;
+    }
+    .service-card:nth-child(1).visible { transition-delay: 0ms; }
+    .service-card:nth-child(2).visible { transition-delay: 60ms; }
+    .service-card:nth-child(3).visible { transition-delay: 120ms; }
+    .service-card:nth-child(4).visible { transition-delay: 180ms; }
+    .service-card:nth-child(5).visible { transition-delay: 240ms; }
+    .service-card:nth-child(6).visible { transition-delay: 300ms; }
+    .service-card:nth-child(7).visible { transition-delay: 360ms; }
+
+    /* 3 — Service card shimmer sweep on hover */
+    @keyframes shimmerSweep {
+      from { transform: translateX(-100%) skewX(-18deg); }
+      to   { transform: translateX(250%) skewX(-18deg); }
+    }
+    .service-card .card-shimmer {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-18deg);
+      pointer-events: none; z-index: 0;
+    }
+    .service-card:hover .card-shimmer {
+      animation: shimmerSweep 0.6s var(--ease-out) forwards;
+    }
+
+    /* 4 — Heading <em> gradient accent */
+    .hero-headline em,
+    .about-heading em,
+    .contact-title em,
+    .section-heading em,
+    .section-title em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5 — Diagonal cut between hero and services */
+    .hero { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); margin-bottom: -4vw; }
+    .section-services { padding-top: calc(var(--section-pad) + 4vw); }
+
+    /* 6 — Trust strip gradient numbers */
+    .strip-value {
+      background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 7 — Review card decorative quote gradient */
+    .review-quote {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.35;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    /* 8 — Review card staggered entrance */
+    .review-card { opacity: 0; transform: translateY(20px); }
+    .review-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s, border-color 0.32s;
+    }
+    .review-card:nth-child(1).visible { transition-delay: 0ms; }
+    .review-card:nth-child(2).visible { transition-delay: 80ms; }
+    .review-card:nth-child(3).visible { transition-delay: 160ms; }
+
+    /* 9 — Section heading animated underline */
+    .section-heading,
+    .about-heading,
+    .contact-title {
+      position: relative;
+    }
+
+    /* 10 — Contact item icon pulse on hover */
+    .contact-item-icon {
+      transition: background 0.25s, border-color 0.25s, color 0.25s,
+                  transform 0.28s var(--ease-spring), box-shadow 0.28s;
+    }
+    .contact-item:hover .contact-item-icon {
+      transform: scale(1.12) rotate(-6deg);
+      box-shadow: 0 6px 20px var(--primary-35);
+    }
+
+    /* 11 — Nav active link underline */
+    .nav-links a.active {
+      color: var(--dark) !important;
+      background: var(--primary-8) !important;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block; height: 2px;
+      background: var(--primary); border-radius: 2px;
+      margin-top: -2px;
+    }
+
+    /* 12 — Hero proof panel shimmer border */
+    @keyframes borderSpin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .hero-proof-panel {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    /* 13 — FAQ item open state left glow */
+    .faq-item.open {
+      box-shadow: inset 3px 0 0 var(--primary), 0 4px 24px var(--primary-8);
+    }
+
+    /* 14 — Submit button inner shimmer */
+    .btn-submit { position: relative; overflow: hidden; }
+    .btn-submit::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.45s ease;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* 15 — Accreditation items slide-in */
+    .accred-item {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+    }
+    .accred-strip.visible .accred-item { opacity: 1; transform: none; }
+    .accred-strip.visible .accred-item:nth-child(2) { transition-delay: 80ms; }
+    .accred-strip.visible .accred-item:nth-child(3) { transition-delay: 160ms; }
+    .accred-strip.visible .accred-item:nth-child(4) { transition-delay: 240ms; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Hometown Asian Supermarket | Melbourne">
-  <meta property="og:description" content="Authentic ingredients and groceries from across Asia">
+  <meta property="og:description" content="Authentic Asian groceries and fresh produce for Melbourne families">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
   
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Hometown Asian Supermarket | Melbourne">
-  <meta name="twitter:description" content="Authentic ingredients and groceries from across Asia">
+  <meta name="twitter:description" content="Authentic Asian groceries and fresh produce for Melbourne families">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1380,6 +1570,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 </head>
 
 <body>
+<div id="scroll-progress"></div>
 
   <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
@@ -1434,8 +1625,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Trusted Healthcare Professionals
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Asian Supermarket</h1>
-            <p class="hero-tagline">Authentic ingredients and groceries from across Asia</p>
+            <h1 class="hero-headline">Your Local Asian Supermarket in Melbourne</h1>
+            <p class="hero-tagline">Authentic Asian groceries and fresh produce for Melbourne families</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61396632603" class="btn-hero-primary">
@@ -1458,12 +1649,12 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">1065+</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-label">Happy customers</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">20+</span>
-              <span class="stat-label">Years Serving Melbourne</span>
+              <span class="stat-label">Years serving Melbourne</span>
             </div>
             
             </div>
@@ -1524,32 +1715,36 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="services-grid">
         
             <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-bag-shopping"></i>
-              </div>
-              <h3 class="service-title">Wide Product Range</h3>
-              <p class="service-desc">Browse an extensive selection of Asian groceries, fresh vegetables, frozen goods, and specialty ingredients from across the continent. We stock everything from everyday essentials to hard-to-find regional products.</p>
-            </div>
-            <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
               <h3 class="service-title">Fresh Produce</h3>
-              <p class="service-desc">Access fresh Asian vegetables, herbs, and fruits delivered regularly to ensure quality and authenticity. Our produce section features seasonal and year-round favourites.</p>
+              <p class="service-desc">We stock a wide range of fresh Asian vegetables, herbs, and fruits delivered regularly to ensure peak quality. From bok choy to lemongrass, find exactly what you need for authentic Asian cooking.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-box"></i>
+              </div>
+              <h3 class="service-title">Pantry Staples</h3>
+              <p class="service-desc">Our shelves are stocked with essential Asian condiments, sauces, oils, and spices from trusted brands. Browse everything from soy sauce to specialty rice varieties sourced from across Asia.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-fish"></i>
+              </div>
+              <h3 class="service-title">Fresh Seafood</h3>
+              <p class="service-desc">We offer fresh and frozen seafood selections perfect for traditional Asian recipes and family meals. Our quality standards ensure you get the best ingredients for your kitchen.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Specialty Ingredients</h3>
-              <p class="service-desc">Find authentic sauces, spices, noodles, and prepared items essential for traditional Asian cooking. We source premium brands trusted by home cooks and professional chefs alike.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-store"></i>
-              </div>
-              <h3 class="service-title">Community Hub</h3>
-              <p class="service-desc">Visit our welcoming supermarket where knowledgeable staff can help you find exactly what you need. We're proud to serve Melbourne's diverse communities with respect and expertise.</p>
+              <h3 class="service-title">Kitchenware & More</h3>
+              <p class="service-desc">Discover Asian cooking utensils, woks, steamers, and specialty kitchen tools to prepare authentic meals. We stock everything you need to cook like a pro at home.</p>
             </div>
       </div>
     </div>
@@ -1566,15 +1761,24 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             </div>
             <div class="strip-item">
               <div class="strip-value">1065+</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-label">Happy customers</div>
             </div>
             <div class="strip-item">
               <div class="strip-value">20+</div>
-              <div class="strip-label">Years Serving Melbourne</div>
+              <div class="strip-label">Years serving Melbourne</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Australian Made</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">Secure Payments</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-truck"></i></div><span class="accred-label">Fast Local Delivery</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1586,8 +1790,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <!-- Left -->
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Our Practice</span>
-          <h2 class="about-heading">About Hometown Asian Supermarket</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Hometown Asian Supermarket has been serving Melbourne's Asian communities and food enthusiasts since opening in the heart of the city. With a carefully curated selection of authentic ingredients, fresh produce, and specialty items, we're your trusted source for genuine Asian groceries and products.</p>
+          <h2 class="about-heading">About Hometown Asian Supermarket Melbourne</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Hometown Asian Supermarket has been serving Melbourne's diverse community with authentic Asian groceries, fresh produce, and specialty ingredients since opening in the heart of the city. We're committed to providing quality products and exceptional service to families across Melbourne who seek genuine Asian produce and pantry staples.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-user-doctor"></i></span><span class="af-text">Registered and accredited professionals — safe, trusted care</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-microscope"></i></span><span class="af-text">Modern technology and up-to-date clinical techniques</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-face-smile"></i></span><span class="af-text">Friendly, gentle approach — all ages and families welcome</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Trusted by families across the area — consistently 5-star rated</span></div>
@@ -1632,29 +1836,29 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="ret-grid">
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-box-open"></i></div>
-              <h3 class="ret-cat-name">Asian Groceries</h3>
-              <p class="ret-cat-desc">Essential pantry staples including rice, noodles, sauces, and condiments from across Asia.</p>
+              <h3 class="ret-cat-name">Fresh Vegetables</h3>
+              <p class="ret-cat-desc">Premium Asian vegetables including bok choy, gai lan, and specialty greens.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-tag"></i></div>
-              <h3 class="ret-cat-name">Fresh Produce</h3>
-              <p class="ret-cat-desc">Seasonal vegetables, herbs, and fruits sourced fresh for authentic Asian cooking.</p>
+              <h3 class="ret-cat-name">Asian Condiments</h3>
+              <p class="ret-cat-desc">Authentic sauces, pastes, and seasonings for traditional Asian cooking.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-store"></i></div>
-              <h3 class="ret-cat-name">Frozen Foods</h3>
-              <p class="ret-cat-desc">Convenient frozen dumplings, spring rolls, vegetables, and prepared Asian dishes.</p>
+              <h3 class="ret-cat-name">Rice & Noodles</h3>
+              <p class="ret-cat-desc">Quality rice varieties and noodle selections from across Asia.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-gift"></i></div>
-              <h3 class="ret-cat-name">Beverages & Snacks</h3>
-              <p class="ret-cat-desc">Traditional drinks, teas, and snacks that complement your Asian culinary experience.</p>
+              <h3 class="ret-cat-name">Frozen & Fresh Seafood</h3>
+              <p class="ret-cat-desc">Sustainable seafood options perfect for stir-fries, soups, and traditional dishes.</p>
             </div>
       </div>
       
           <div class="ret-hours">
             <div class="ret-hours-label"><i class="fa-solid fa-store"></i>&nbsp; Store Hours</div>
-            <div class="ret-hours-text">Mon–Fri 9am–5:30pm  |  Sat 9am–4pm  |  Sun 10am–3pm</div>
+            <div class="ret-hours-text">Mon–Fri 9am–5:30pm | Sat 9am–4pm | Sun 10am–3pm</div>
           </div>
     </div>
   </section>
@@ -1691,31 +1895,31 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         
       <div class="faq-item">
         <button class="faq-q">
-          What Asian cuisines do you cater for?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">We stock ingredients for Chinese, Japanese, Vietnamese, Thai, Korean, Malaysian, and Filipino cuisines, among others. Our range covers major Asian regions and growing communities.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Do you stock fresh produce daily?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Yes, we receive fresh deliveries regularly to ensure the best quality vegetables, herbs, and fruits. Stock varies seasonally, so it's worth checking in during peak seasons.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Can I find hard-to-find specialty items?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Absolutely—we pride ourselves on sourcing authentic and specialty ingredients that are difficult to find elsewhere. Ask our staff if you need help locating something specific.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 9am–5:30pm, Saturday 9am–4pm, and Sunday 10am–3pm. Contact us on +61 3 9663 2603 if you need further information.</div>
+        <div class="faq-a">We're open Monday to Friday 9am–5:30pm, Saturday 9am–4pm, and Sunday 10am–3pm. Visit us at your convenience!</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you stock halal or organic products?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we carry a selection of halal-certified and organic products. Contact us on +61 3 9663 2603 to enquire about specific items.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I order online or by phone?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Call us on +61 3 9663 2603 to check product availability and discuss special orders. We're happy to help source items for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you offer delivery to Melbourne suburbs?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Please contact us directly on +61 3 9663 2603 to enquire about delivery options to your area.</div>
       </div>
       </div>
     </div>
@@ -1728,8 +1932,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in Touch With Us</h2>
-          <p class="contact-cta-line">Visit Hometown Asian Supermarket today and discover authentic Asian groceries that bring your favourite recipes to life.</p>
+          <h2 class="contact-title">Get in Touch with Us Today</h2>
+          <p class="contact-cta-line">Visit Hometown Asian Supermarket today and discover authentic Asian groceries for your family. Call us on +61 3 9663 2603 if you have any questions.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1755,7 +1959,9 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Hometown+Asian+Supermarket+2%2F440+Elizabeth+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Hometown Asian Supermarket on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1815,7 +2021,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             </span>
             Hometown Asian Supermarket
           </div>
-          <p class="footer-tagline">Authentic ingredients and groceries from across Asia</p>
+          <p class="footer-tagline">Authentic Asian groceries and fresh produce for Melbourne families</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2017,7 +2223,100 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       });
 
     })();
+
+    /* ── Scroll progress bar ─────────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled = window.scrollY;
+        var total    = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    /* ── Staggered service card & review card reveal ─────────────── */
+    var cardRevealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardRevealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .review-card').forEach(function (el) {
+      cardRevealObs.observe(el);
+    });
+
+    /* ── Accreditation strip reveal ──────────────────────────────── */
+    var accredStrip = document.querySelector('.accred-strip');
+    if (accredStrip) {
+      var accredObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          accredStrip.classList.add('visible');
+          accredObs.unobserve(accredStrip);
+        }
+      }, { threshold: 0.3 });
+      accredObs.observe(accredStrip);
+    }
+
+    /* ── Nav active section highlight ───────────────────────────── */
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = Array.from(navLinks).map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 100;
+      var current = sections.reduce(function (acc, sec) {
+        return (sec && sec.offsetTop <= scrollY) ? sec : acc;
+      }, sections[0]);
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }, { passive: true });
+
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396632603?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396632603" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396632603?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

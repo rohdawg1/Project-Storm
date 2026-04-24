@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1355,7 +1391,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
   <meta property="og:description" content="Expert styling and beauty treatments you'll love">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/shemika-hair-beauty/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Shemika Hair & Beauty | Ballarat North">
@@ -1441,7 +1477,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat North &mdash; Your Wellness Destination
             </span>
-            <h1 class="hero-headline">Premium Hair & Beauty in Ballarat North</h1>
+            <h1 class="hero-headline">Premier Hair & Beauty in Ballarat North</h1>
             <p class="hero-tagline">Expert styling and beauty treatments you'll love</p>
 
             <div class="hero-actions hero-btns">
@@ -1465,12 +1501,12 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">39</span>
-              <span class="stat-label">5-Star Reviews</span>
+              <span class="stat-label">Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Since 2010</span>
-              <span class="stat-label">Serving Ballarat</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
             
             </div>
@@ -1535,28 +1571,28 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
                 <i class="fa-solid fa-scissors"></i>
               </div>
               <h3 class="service-title">Hair Cutting & Styling</h3>
-              <p class="service-desc">From classic cuts to contemporary styles, our skilled stylists create looks that suit your face shape and lifestyle. We offer precision cutting, layering, and styling expertise for all hair types.</p>
+              <p class="service-desc">Professional cuts and style consultations tailored to your hair type and face shape. From classic trims to contemporary styles, our experienced stylists deliver precision results every time.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-palette"></i>
               </div>
               <h3 class="service-title">Hair Colouring</h3>
-              <p class="service-desc">Transform your look with professional colour treatments, balayage, highlights, or full coverage. Our stylists use quality products to achieve vibrant, healthy-looking results that last.</p>
+              <p class="service-desc">Vibrant colour treatments using quality products that nourish your hair. Whether you're after a subtle refresh or a bold transformation, our colourists create beautiful, long-lasting results.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-sparkles"></i>
+                <i class="fa-solid fa-spa"></i>
               </div>
-              <h3 class="service-title">Beauty Services</h3>
-              <p class="service-desc">Enhance your natural features with our beauty treatments including brow design and tinting. We focus on bringing out your best features with personalised beauty solutions.</p>
+              <h3 class="service-title">Beauty Treatments</h3>
+              <p class="service-desc">Comprehensive beauty services including skincare, waxing, and makeup application. We use professional-grade products to enhance your natural beauty and boost your confidence.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-head-side-virus"></i>
+                <i class="fa-solid fa-hand-sparkles"></i>
               </div>
-              <h3 class="service-title">Hair Treatments & Care</h3>
-              <p class="service-desc">Restore shine and strength with professional treatments, keratin therapies, and deep conditioning. Our salon uses premium products to keep your hair healthy and radiant.</p>
+              <h3 class="service-title">Nail Services</h3>
+              <p class="service-desc">Beautiful manicures and pedicures with attention to detail and care. Choose from classic polish, gel, or specialised treatments for perfectly groomed nails.</p>
             </div>
       </div>
     </div>
@@ -1573,15 +1609,24 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </div>
             <div class="strip-item">
               <div class="strip-value">39</div>
-              <div class="strip-label">5-Star Reviews</div>
+              <div class="strip-label">Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Since 2010</div>
-              <div class="strip-label">Serving Ballarat</div>
+              <div class="strip-value">15+</div>
+              <div class="strip-label">Years Experience</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Shemika Hair & Beauty</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Shemika Hair & Beauty has been Ballarat North's trusted salon since establishing a loyal client base of over 39 five-star reviewers. Our experienced stylists specialise in precision cuts, colour treatments, and beauty services tailored to your unique style.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Shemika Hair & Beauty is Ballarat North's trusted salon, delivering exceptional styling and beauty services to the local community. With a 4.7-star rating from 39 satisfied Google reviews, we're committed to helping you look and feel your best.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,29 +1683,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Haircut & Style</span>
+              <span class="pl-service">Women's Hair Cut</span>
+              
+              <span class="pl-price">from $45</span>
+            </div>
+            <div class="pl-row">
+              <span class="pl-service">Men's Hair Cut</span>
+              
+              <span class="pl-price">from $35</span>
+            </div>
+            <div class="pl-row">
+              <span class="pl-service">Hair Colour</span>
               
               <span class="pl-price">from $55</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Hair Colouring</span>
+              <span class="pl-service">Beauty Treatments</span>
               
-              <span class="pl-price">from $85</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Highlights or Balayage</span>
-              
-              <span class="pl-price">from $95</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Beauty Services</span>
-              
-              <span class="pl-price">from $35</span>
+              <span class="pl-price">from $25</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to refresh your look? Get in touch with Shemika Hair & Beauty today.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 3 5332 3066 to book your appointment today</p>
+          <p class="pl-cta-text">Ready to refresh your look? Give us a call or visit Shemika Hair & Beauty in Ballarat North today.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 3 5332 3066 to secure your appointment with our team</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer online booking?
+          Do you take walk-in clients or appointments only?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, you can book online or call us directly at +61 3 5332 3066 to secure your preferred time slot.</div>
+        <div class="faq-a">We welcome both walk-ins and appointments. Booking ahead ensures minimal wait time and guarantees your preferred stylist availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How long does a colour treatment take?
+          What's the best way to book an appointment?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Colour treatments typically take 1.5 to 3 hours depending on the complexity and length of your hair. Our stylists will provide an accurate timeframe during your consultation.</div>
+        <div class="faq-a">Simply call us on +61 3 5332 3066 to schedule your visit. Our friendly team will find a time that suits you perfectly.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What products do you use?
+          Can you recommend a style for my hair type?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We use professional-quality products selected for their performance and results. Our stylists can recommend specific products suited to your hair type and treatment needs.</div>
+        <div class="faq-a">Absolutely! Our experienced stylists provide honest consultations and can suggest cuts and colours that complement your hair type and personal style.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I get a consultation before booking?
+          Are your products safe for sensitive skin?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We encourage consultations to discuss your desired look and ensure the best outcome. Simply call or visit us to chat with one of our stylists.</div>
+        <div class="faq-a">We use quality professional-grade products. If you have sensitivities or allergies, let us know when booking and we'll discuss suitable options.</div>
       </div>
       </div>
     </div>
@@ -1737,7 +1782,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Book Your Appointment Today</h2>
-          <p class="contact-cta-line">Ready to refresh your look? Get in touch with Shemika Hair & Beauty today.</p>
+          <p class="contact-cta-line">Ready to refresh your look? Give us a call or visit Shemika Hair & Beauty in Ballarat North today.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Shemika+Hair+%26+Beauty+Corner+Norman%26Doveton+Sts%2C+Doveton+St+N%2C+Ballarat+North+VIC+3350+Ballarat+North+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Shemika Hair & Beauty on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61353323066?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61353323066" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61353323066?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

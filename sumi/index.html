@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumi | Geelong</title>
-  <meta name="description" content="Premium sushi, ramen and izakaya dishes">
+  <meta name="description" content="Premium sushi, ramen, and izakaya classics await you">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Sumi | Geelong">
-  <meta property="og:description" content="Premium sushi, ramen and izakaya dishes">
+  <meta property="og:description" content="Premium sushi, ramen, and izakaya classics await you">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/sumi/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Sumi | Geelong">
-  <meta name="twitter:description" content="Premium sushi, ramen and izakaya dishes">
+  <meta name="twitter:description" content="Premium sushi, ramen, and izakaya classics await you">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Authentic Japanese cuisine in Geelong</h1>
-            <p class="hero-tagline">Premium sushi, ramen and izakaya dishes</p>
+            <h1 class="hero-headline">Authentic Japanese cuisine in Geelong's heart</h1>
+            <p class="hero-tagline">Premium sushi, ramen, and izakaya classics await you</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/47+Gheringhap+St%2C+Geelong+VIC+3220" class="btn-hero-primary">
@@ -1447,8 +1483,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">15+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Years Serving Geelong</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-utensils"></i>
               </div>
               <h3 class="service-title">Dine In</h3>
-              <p class="service-desc">Experience our intimate dining space with premium seating and an inviting atmosphere. Perfect for both casual meals and special occasions with friends and family.</p>
+              <p class="service-desc">Experience authentic Japanese cuisine in our welcoming dining room. Perfect for solo diners, couples, and groups seeking premium Japanese fare.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
               <h3 class="service-title">Takeaway</h3>
-              <p class="service-desc">Order your favourite dishes for convenient takeaway service. We ensure fresh, carefully packaged meals ready for quick collection.</p>
+              <p class="service-desc">Fresh sushi and hot dishes prepared to order for collection. Your favourite meals ready to enjoy at home or on the go.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-phone"></i>
               </div>
-              <h3 class="service-title">Phone Orders</h3>
-              <p class="service-desc">Call +61 492 413 307 to place your order ahead. Our friendly team will have your meal ready at your preferred time.</p>
+              <h3 class="service-title">Reservations</h3>
+              <p class="service-desc">Book your table in advance to secure your spot, especially on weekends. Call +61 492 413 307 to reserve now.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-wine-glass"></i>
+                <i class="fa-solid fa-champagne-glasses"></i>
               </div>
-              <h3 class="service-title">Beverages</h3>
-              <p class="service-desc">Enjoy Japanese beers, sake and soft drinks curated to complement your meal. We offer authentic pairings for every dish.</p>
+              <h3 class="service-title">Events & Groups</h3>
+              <p class="service-desc">Host your celebration or team gathering at Sumi with customised menus. We accommodate groups of all sizes in our private and semi-private spaces.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,24 +1605,24 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Salmon Nigiri</span>
-                  <span class="cat-menu-desc">Fresh premium salmon on perfectly seasoned sushi rice.</span>
+                  <span class="cat-menu-name">Omakase Experience</span>
+                  <span class="cat-menu-desc">Chef's selection of premium sushi and sashimi.</span>
+                </div>
+                <span class="cat-menu-price">$85</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Tonkotsu Ramen</span>
+                  <span class="cat-menu-desc">Rich pork bone broth with tender chashu pork and fresh noodles.</span>
                 </div>
                 <span class="cat-menu-price">$18</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Tonkotsu Ramen</span>
-                  <span class="cat-menu-desc">Rich pork bone broth with tender chashu and fresh noodles.</span>
+                  <span class="cat-menu-name">Dragon Roll</span>
+                  <span class="cat-menu-desc">Eel, cucumber, avocado with spicy mayo and sesame seeds.</span>
                 </div>
                 <span class="cat-menu-price">$16</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">California Roll</span>
-                  <span class="cat-menu-desc">Crab, avocado and cucumber in a classic combination.</span>
-                </div>
-                <span class="cat-menu-price">$14</span>
               </div>
           <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 492 413 307 or walk in welcome</p>
         </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Sumi</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Sumi brings exceptional Japanese culinary traditions to Geelong's dining scene with meticulously crafted sushi and authentic ramen prepared by experienced chefs. With a 4.8-star rating from over 230 Google reviews, we're recognised for our commitment to quality ingredients and genuine Japanese flavours.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Sumi brings award-winning Japanese dining to Geelong with traditional techniques and the finest ingredients sourced locally and from Japan. Our team of skilled chefs crafts each dish with precision, earning consistent 4.8-star ratings from over 230 satisfied diners.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer vegetarian options?
+          Do you offer vegetarian and vegan options?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we have a range of vegetarian sushi rolls, vegetable tempura and plant-based dishes. Please let our staff know your dietary preferences when ordering.</div>
+        <div class="faq-a">Yes, we have a dedicated vegetarian and vegan menu featuring fresh plant-based sushi, vegetable tempura, and tofu dishes. Please mention dietary preferences when ordering.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I make a reservation?
+          Can I make a reservation online?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely, we welcome bookings via phone on +61 492 413 307. Walk-ins are also welcome depending on availability.</div>
+        <div class="faq-a">We recommend calling us directly on +61 492 413 307 to book your table and discuss any special requests. Walk-ins are also welcome subject to availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          Do you cater for private events?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 11am–10pm and Saturday to Sunday 10am–11pm. Please call ahead for any public holiday variations.</div>
+        <div class="faq-a">Absolutely. We offer tailored catering packages and private dining options for birthdays, corporate events, and celebrations. Contact us to discuss your requirements.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you deliver?
+          What are your peak dining times?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We currently offer dine-in and takeaway services. Please contact us directly on +61 492 413 307 to discuss your specific requirements.</div>
+        <div class="faq-a">Fridays and Saturdays are busiest, particularly between 6pm and 8pm. We recommend booking ahead or arriving early to avoid long waits.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to book your table?</h2>
-          <p class="contact-cta-line">Join us at Sumi for an unforgettable Japanese dining experience. Ring us today to reserve your table.</p>
+          <h2 class="contact-title">Ready to dine with us?</h2>
+          <p class="contact-cta-line">Discover why Geelong loves Sumi—book your table or visit us today for an unforgettable Japanese dining experience.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Sumi+47+Gheringhap+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Sumi on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Sumi
           </div>
-          <p class="footer-tagline">Premium sushi, ramen and izakaya dishes</p>
+          <p class="footer-tagline">Premium sushi, ramen, and izakaya classics await you</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61492413307?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61492413307" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61492413307?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

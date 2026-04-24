@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bellucci Dessert Cafe | Sydney</title>
+  <meta name="description" content="Bellucci's finest café experience across greater Sydney">
+  <meta property="og:title" content="Bellucci Dessert Cafe — Sydney">
+  <meta property="og:description" content="Bellucci's finest café experience across greater Sydney">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1495474472-8093026271?auto=format&fit=crop&w=1400&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ── Design Tokens ──────────────────────────────────────────── */
+    :root {
+      --primary:      #6f4e37;
+      --secondary:    #c8a97e;
+      --bg:           #fdf6ec;
+      --text:         #2c1810;
+      --accent:       #e8c99a;
+      --primary-8:    color-mix(in srgb, var(--primary)  8%, transparent);
+      --primary-12:   color-mix(in srgb, var(--primary) 12%, transparent);
+      --primary-20:   color-mix(in srgb, var(--primary) 20%, transparent);
+      --primary-35:   color-mix(in srgb, var(--primary) 35%, transparent);
+      --white:        #ffffff;
+      --dark:         #0f1117;
+      --dark-2:       #1a1f2e;
+      --mid:          #6b7280;
+      --light:        #f9fafb;
+      --border:       #e5e7eb;
+      --text-muted:   #9ca3af;
+      --surface:      #ffffff;
+      --surface-2:    #f8fafc;
+      --radius:       14px;
+      --radius-sm:    8px;
+      --radius-lg:    22px;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg:    0 12px 40px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.07);
+      --transition:   all 0.28s cubic-bezier(0.4,0,0.2,1);
+      --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+      --max-w:        1200px;
+      --nav-height:   72px;
+      --section-pad:  clamp(72px, 9vw, 120px);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --heading-weight: 700;
+      --heading-tracking: -0.025em;
+      --display-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      --h2-size:      clamp(1.9rem, 4vw, 3.1rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.7; color: var(--dark); background: var(--surface-2); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+
+    /* ── Typography ─────────────────────────────────────────────── */
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); line-height: 1.1; }
+    h1 { line-height: 1.04; }
+    h2 { line-height: 1.12; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--primary); background: var(--primary-8); border: 1px solid var(--primary-20);
+      padding: 5px 13px; border-radius: 50px; margin-bottom: 18px;
+    }
+    .section-heading { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); color: var(--dark); margin-bottom: 14px; }
+    .section-title { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); color: var(--dark); text-align: center; margin-bottom: 48px; }
+    .section-sub { font-size: 1.05rem; color: var(--mid); line-height: 1.75; max-width: 580px; margin: 0 0 48px; }
+
+    /* ── Animations ─────────────────────────────────────────────── */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out); }
+    .fade-in.visible { opacity: 1; transform: none; }
+    @keyframes heroReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    .hero-eyebrow  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0s    forwards; }
+    .hero-headline { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.12s forwards; }
+    .hero-tagline  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.24s forwards; }
+    .hero-actions  { opacity: 0; animation: heroReveal 0.75s var(--ease-out) 0.36s forwards; }
+
+    /* ═══ NAV ═══════════════════════════════════════════════════════ */
+    #main-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      height: var(--nav-height);
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(18px) saturate(200%);
+      -webkit-backdrop-filter: blur(18px) saturate(200%);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #main-nav.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-height); }
+    .nav-brand { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--dark); letter-spacing: -0.02em; }
+    .nav-brand-icon { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.88rem; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--mid); padding: 7px 13px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--dark); background: var(--light); }
+    .nav-cta { background: var(--dark) !important; color: #fff !important; padding: 9px 20px !important; border-radius: 10px !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--primary) !important; transform: translateY(-1px) !important; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; cursor: pointer; padding: 8px; border-radius: 10px; }
+    .nav-hamburger span { display: block; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--transition); transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { position: fixed; top: var(--nav-height); left: 0; right: 0; z-index: 998; background: rgba(255,255,255,0.99); border-bottom: 1px solid var(--border); max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.38s var(--ease-out), opacity 0.28s ease; }
+    .mobile-nav.open { max-height: 400px; opacity: 1; }
+    .mobile-nav-links { display: flex; flex-direction: column; padding: 16px 20px 24px; gap: 4px; }
+    .mobile-nav-links a { font-size: 1rem; font-weight: 500; color: var(--dark); padding: 11px 16px; border-radius: 10px; }
+    .mobile-nav-links a:hover { background: var(--light); }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-hamburger { display: flex; } }
+
+    /* ═══ BUTTONS ════════════════════════════════════════════════════ */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--primary); color: #fff;
+      padding: 16px 32px; border-radius: var(--radius); font-weight: 700; font-size: 1rem;
+      box-shadow: 0 4px 20px var(--primary-35); transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--primary-35); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: transparent; color: var(--primary);
+      padding: 14px 28px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem;
+      border: 2px solid var(--primary-20);
+    }
+    .btn-secondary:hover { background: var(--primary-8); border-color: var(--primary-35); }
+    .btn-hero-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #fff;
+      padding: 18px 36px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem;
+      box-shadow: 0 6px 28px var(--primary-35);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px var(--primary-35); }
+    .btn-hero-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.12); color: #fff;
+      padding: 16px 28px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem;
+      border: 1.5px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);
+    }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.22); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* ═══ HERO — FOOD LAYOUT ════════════════════════════════════════ */
+    .hero-food {
+      position: relative; min-height: 100vh;
+      background: var(--dark-2);
+      display: flex; flex-direction: column;
+      padding-top: var(--nav-height);
+      overflow: hidden;
+    }
+    .hero-food-bg {
+      position: absolute; inset: 0; z-index: 0;
+      
+      background-image: url('https://images.unsplash.com/photo-1495474472-8093026271?auto=format&fit=crop&w=1400&q=80');
+      
+      background-size: cover; background-position: center;
+    }
+    .hero-food-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(10,10,15,0.85) 45%, rgba(10,10,15,0.35) 100%),
+                  linear-gradient(to top, rgba(10,10,15,0.9) 0%, transparent 60%);
+    }
+    .hero-food-content {
+      position: relative; z-index: 1;
+      flex: 1; display: flex; align-items: center;
+      padding: clamp(48px, 8vw, 96px) 0 clamp(24px, 4vw, 48px);
+    }
+    .hero-food-inner {
+      max-width: 680px;
+    }
+    .hero-food-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--primary); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .hero-food h1 {
+      font-size: var(--display-size); color: #fff; margin-bottom: 20px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .hero-food h1 em { font-style: italic; color: var(--primary); }
+    .hero-food-tagline { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.82); margin-bottom: 36px; line-height: 1.65; }
+    .hero-food-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Info bar below hero */
+    .hero-infobar {
+      position: relative; z-index: 2;
+      background: var(--primary);
+      padding: 0;
+    }
+    .hero-infobar-inner {
+      display: flex; flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .infobar-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 28px;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      flex: 1; min-width: 180px;
+    }
+    .infobar-item:last-child { border-right: none; }
+    .infobar-item i { font-size: 1.1rem; opacity: 0.85; flex-shrink: 0; }
+    .infobar-item-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.75; display: block; }
+    .infobar-item-value { font-size: 0.92rem; font-weight: 600; }
+    @media (max-width: 600px) { .infobar-item { min-width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); } }
+
+    /* ═══ ACCREDITATION ══════════════════════════════════════════════ */
+    .accred-strip {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 18px 28px; margin-bottom: 40px;
+      box-shadow: var(--shadow-sm);
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+    }
+    .accred-strip.visible { opacity: 1; transform: none; }
+    .accred-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+    .accred-item { display: flex; align-items: center; gap: 8px; }
+    .accred-icon { font-size: 1rem; }
+    .accred-label { font-size: 0.82rem; font-weight: 600; color: var(--dark); }
+
+    /* ═══ MENU SECTION ═══════════════════════════════════════════════ */
+    .section-menu {
+      padding: var(--section-pad) 0;
+      background: var(--surface);
+    }
+    .menu-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    @media (max-width: 768px) { .menu-layout { grid-template-columns: 1fr; gap: 32px; } }
+    .menu-list { display: flex; flex-direction: column; gap: 0; }
+    .menu-item {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-info { flex: 1; }
+    .menu-item-name { display: block; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+    .menu-item-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.5; }
+    .menu-item-price { font-size: 0.95rem; font-weight: 700; color: var(--primary); white-space: nowrap; flex-shrink: 0; }
+    .menu-hours-card {
+      background: var(--surface-2); border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 28px; margin-top: 24px;
+    }
+    .menu-hours-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .menu-hours-text { color: var(--mid); font-size: 0.92rem; line-height: 1.8; }
+    .menu-res-note {
+      margin-top: 16px; padding: 14px 18px;
+      background: var(--primary-8); border-radius: var(--radius-sm); border-left: 3px solid var(--primary);
+      font-size: 0.88rem; color: var(--dark); line-height: 1.6;
+    }
+
+    /* ═══ GALLERY ═══════════════════════════════════════════════════ */
+    .section-gallery {
+      padding: var(--section-pad) 0;
+      background: var(--surface-2);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 280px);
+      gap: 12px;
+    }
+    .gallery-item { overflow: hidden; border-radius: var(--radius); }
+    .gallery-item:first-child { grid-column: 1 / 3; grid-row: 1 / 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
+    .gallery-item:hover img { transform: scale(1.04); }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } .gallery-item:first-child { grid-column: 1/-1; } }
+
+    /* ═══ SERVICES ══════════════════════════════════════════════════ */
+    .section-services { padding: var(--section-pad) 0; background: var(--surface); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .service-card {
+      background: var(--surface); border-radius: var(--radius); padding: 28px;
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(24px) scale(0.98);
+    }
+    .service-card.visible { opacity: 1; transform: none; transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out), box-shadow 0.3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--primary-8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; margin-bottom: 16px; }
+    .service-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.65; }
+    .card-shimmer { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%); transform: translateX(-100%) skewX(-18deg); pointer-events: none; z-index: 0; }
+    @keyframes shimmerSweep { from { transform: translateX(-100%) skewX(-18deg); } to { transform: translateX(250%) skewX(-18deg); } }
+    .service-card:hover .card-shimmer { animation: shimmerSweep 0.6s var(--ease-out) forwards; }
+
+    /* ═══ ABOUT ══════════════════════════════════════════════════════ */
+    .section-about { padding: var(--section-pad) 0; background: var(--dark-2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); background: var(--primary-12); border: 1px solid var(--primary-20); padding: 5px 13px; border-radius: 50px; margin-bottom: 18px; }
+    .about-heading { font-family: var(--font-display); font-size: var(--h2-size); font-weight: var(--heading-weight); color: #fff; margin-bottom: 20px; }
+    .about-heading em { font-style: italic; color: var(--primary); }
+    .about-body-text { font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 28px; }
+    .about-features { display: flex; flex-direction: column; gap: 14px; }
+    .af-item { display: flex; align-items: flex-start; gap: 12px; }
+    .af-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--primary-12); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+    .af-text { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+    .about-img { border-radius: var(--radius-lg); overflow: hidden; height: 460px; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ═══ REVIEWS ════════════════════════════════════════════════════ */
+    .section-testimonials { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .review-card {
+      background: var(--surface); border-radius: var(--radius); padding: 28px;
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      position: relative; opacity: 0; transform: translateY(24px);
+    }
+    .review-card.visible { opacity: 1; transform: none; transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
+    .review-quote { font-size: 3rem; color: var(--primary); opacity: 0.3; line-height: 1; font-family: serif; margin-bottom: -8px; }
+    .review-text { font-size: 0.95rem; color: var(--mid); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 8px; }
+    .review-author { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .review-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+    .review-source { font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+
+    /* ═══ RATING CARD ════════════════════════════════════════════════ */
+    .rating-section { padding: var(--section-pad) 0; background: var(--surface); }
+    .rating-section-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .rating-card {
+      background: var(--dark); border-radius: var(--radius-lg); padding: 32px 40px;
+      text-align: center; min-width: 200px; box-shadow: var(--shadow-lg);
+    }
+    .rating-number { font-size: 3.5rem; font-weight: 800; color: #fff; font-family: var(--font-display); line-height: 1; }
+    .rating-stars { color: #f59e0b; font-size: 1.2rem; margin: 8px 0 4px; }
+    .rating-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
+    .rating-count { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .rating-bar-wrap { background: rgba(255,255,255,0.12); border-radius: 4px; height: 5px; margin-top: 14px; overflow: hidden; }
+    .rating-bar { height: 100%; width: 0; background: var(--primary); border-radius: 4px; transition: width 1.2s var(--ease-out); }
+    .rating-card.bar-animated .rating-bar { width: var(--rating-pct); }
+    .rating-bar-labels { display: flex; justify-content: space-between; font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
+    .rating-callout { max-width: 480px; }
+    .rating-callout h3 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 12px; }
+    .rating-callout p { color: var(--mid); line-height: 1.75; margin-bottom: 24px; }
+
+    /* ═══ FAQ ════════════════════════════════════════════════════════ */
+    .section-faq { padding: var(--section-pad) 0; background: var(--surface-2); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px; font-size: 0.95rem; font-weight: 600; color: var(--dark); background: none; border: none; cursor: pointer; text-align: left; }
+    .faq-icon { transition: transform 0.3s; flex-shrink: 0; color: var(--mid); }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out), padding 0.3s; padding: 0 24px; font-size: 0.9rem; color: var(--mid); line-height: 1.75; }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+
+    /* ═══ CONTACT ════════════════════════════════════════════════════ */
+    .section-contact { padding: var(--section-pad) 0; background: var(--surface); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-left-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); background: var(--primary-8); border: 1px solid var(--primary-20); padding: 5px 13px; border-radius: 50px; margin-bottom: 18px; }
+    .contact-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: var(--heading-weight); margin-bottom: 16px; }
+    .contact-cta-line { color: var(--mid); font-size: 1.05rem; line-height: 1.75; margin-bottom: 32px; }
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-item-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--primary-8); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+    .contact-item-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
+    .contact-item-value { font-size: 0.95rem; font-weight: 500; color: var(--dark); }
+    .contact-form-card { background: var(--surface-2); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .form-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { position: relative; margin-bottom: 16px; }
+    .form-group input, .form-group textarea { width: 100%; padding: 16px 14px 8px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.92rem; background: var(--surface); color: var(--dark); outline: none; transition: border-color 0.2s; resize: none; font-family: inherit; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-group label { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 0.85rem; color: var(--text-muted); pointer-events: none; transition: 0.2s; }
+    .form-group textarea ~ label { top: 18px; transform: none; }
+    .form-group input:focus ~ label, .form-group input:not(:placeholder-shown) ~ label,
+    .form-group textarea:focus ~ label, .form-group textarea:not(:placeholder-shown) ~ label { top: 8px; font-size: 0.68rem; color: var(--primary); }
+    .btn-submit { width: 100%; padding: 16px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius); font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--primary-35); }
+
+    /* ═══ MAP EMBED ══════════════════════════════════════════════════ */
+    .maps-embed-wrap { margin-top: 24px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+    .maps-embed-wrap iframe { display: block; width: 100%; height: 260px; border: none; }
+
+    /* ═══ AGENCY BANNER ══════════════════════════════════════════════ */
+    .agency-banner { background: var(--dark); padding: 20px 0; }
+    .agency-banner-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .agency-banner-text { color: rgba(255,255,255,0.75); font-size: 0.88rem; }
+    .agency-banner-link { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; }
+
+    /* ═══ FOOTER ═════════════════════════════════════════════════════ */
+    .footer { background: var(--dark); color: rgba(255,255,255,0.75); padding: var(--section-pad) 0 40px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .footer-brand-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.85rem; }
+    .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-social { width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.2s; }
+    .footer-social:hover { background: var(--primary); color: #fff; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-contact-items { display: flex; flex-direction: column; gap: 12px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .footer-contact-item i { color: var(--primary); flex-shrink: 0; margin-top: 3px; }
+    .footer-contact-item a { color: rgba(255,255,255,0.6); }
+    .footer-contact-item a:hover { color: var(--primary); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links a:hover { color: var(--primary); }
+
+    /* ═══ MOBILE STICKY BAR ═════════════════════════════════════════ */
+    .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 997; background: var(--surface); border-top: 1px solid var(--border); padding: 10px 16px; box-shadow: 0 -4px 24px rgba(0,0,0,0.12); }
+    @media (max-width: 768px) { .sticky-bar { display: block; } }
+    .sticky-bar-inner { display: flex; gap: 10px; }
+    .sticky-bar-call, .sticky-bar-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; }
+    .sticky-bar-call { background: var(--primary); color: #fff; }
+    .sticky-bar-contact { background: var(--dark); color: #fff; }
+
+    /* ── Scroll progress ─────────────────────────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; z-index: 9999; height: 2px; width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary))); transition: width 0.1s linear; pointer-events: none; }
+
+    /* ── Heading em gradient ─────────────────────────────────────── */
+    .hero-food h1 em, .section-heading em, .about-heading em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* ── Persona base tokens (overridden by persona_css below) ──── */
+    :root {
+      --heading-style:   normal;
+      --hero-bg:         var(--dark-2);
+      --hero-text:       #ffffff;
+    }
+    h1, h2 { font-style: var(--heading-style, normal); }
+
+    
+/* ─ EDITORIAL PERSONA ──────────────────────────────── */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
+body { font-family: 'DM Sans', system-ui, sans-serif; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
+.section-title::after {
+  content: ''; display: block; width: 40px; height: 1.5px;
+  background: var(--primary); margin: 14px 0 0; opacity: 0.5;
+}
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
+.service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
+.service-card::before { border-radius: 4px 4px 16px 16px !important; }
+.nav-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem; font-weight: 600; font-style: italic; letter-spacing: 0.03em;
+}
+/* editorial layout */
+.hero-inner { align-items: flex-start; }
+.hero-left { text-align: left; }
+.hero-actions { justify-content: flex-start; }
+.hero-stats-card { justify-content: flex-start; }
+.section-title { text-align: left; }
+.section-label { text-align: left; }
+.section-sub { margin: 0 0 56px; }
+.section-title::before {
+  content: '"';
+  display: block;
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--primary);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Bellucci Dessert Cafe",
+  "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "580 George St, Sydney NSW 2000",
+    "addressLocality": "Sydney",
+    "addressCountry": "AU"
+  },
+  "hasMap": "https://www.google.com/maps/place/Bellucci+Dessert+Cafe/@-33.874801,151.2068114,14z/data=!4m8!1m2!2m1!1sBellucci+Dessert+Cafe!3m4!1s0x6b12ae3c4ec5cbc1:0x73bb083fd61c5911!8m2!3d-33.874801!4d151.2068114",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.1",
+    "reviewCount": "1195",
+    "bestRating": "5"
+  }
+}
+  </script>
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<!-- ══ NAV ═══════════════════════════════════════════════════════════════ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#home" aria-label="Bellucci Dessert Cafe home">
+        <span class="nav-brand-icon" aria-hidden="true">☕</span>
+        Bellucci Dessert Cafe
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="#home" role="menuitem">Home</a>
+        <a href="#menu" role="menuitem">Menu</a>
+        <a href="#gallery" role="menuitem">Gallery</a>
+        <a href="#about" role="menuitem">About</a>
+        
+        <a href="#contact" role="menuitem" class="nav-cta">View Menu</a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <div class="mobile-nav-links">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    
+    <a href="#contact">View Menu</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section class="hero-food" id="home">
+  <div class="hero-food-bg" aria-hidden="true"></div>
+  <div class="hero-food-content">
+    <div class="container">
+      <div class="hero-food-inner">
+        <span class="hero-eyebrow hero-food-eyebrow">
+          <i class="fa-solid fa-location-dot"></i>
+          Sydney &mdash; Your Local Favourite
+        </span>
+        <h1 class="hero-headline">Premium Desserts & Coffee in Sydney</h1>
+        <p class="hero-food-tagline hero-tagline">Bellucci's finest café experience across greater Sydney</p>
+        <div class="hero-food-actions hero-actions">
+          <a href="https://www.google.com/maps/search/580+George+St%2C+Sydney+NSW+2000" target="_blank" rel="noopener" class="btn-hero-primary">
+            <i class="fa-solid fa-location-dot"></i>
+            Find Us
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#menu" class="btn-hero-secondary">
+            <i class="fa-solid fa-utensils"></i>
+            View Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Info bar -->
+  <div class="hero-infobar">
+    <div class="container">
+      <div class="hero-infobar-inner">
+        
+        <div class="infobar-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <span class="infobar-item-label">Hours</span>
+            <span class="infobar-item-value">Mon–Fri 7am–4pm  |  Sat–Sun 8am–3pm</span>
+          </div>
+        </div>
+        
+        
+        <div class="infobar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span class="infobar-item-label">Location</span>
+            <span class="infobar-item-value">580 George St, Sydney NSW 2000</span>
+          </div>
+        </div>
+        
+        
+        <div class="infobar-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <span class="infobar-item-label">Reservations</span>
+            <span class="infobar-item-value"><a href="#contact" style="color:#fff;">Call us today</a></span>
+          </div>
+        </div>
+        
+        <div class="infobar-item">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <span class="infobar-item-label">Rating</span>
+            <span class="infobar-item-value">4.1 ★ on Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACCREDITATION ══════════════════════════════════════════════════════ -->
+
+<section style="background:var(--surface-2); padding: 24px 0;">
+  <div class="container">
+    <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+  </div>
+</section>
+
+
+<!-- ══ MENU ═══════════════════════════════════════════════════════════════ -->
+<section class="section-menu" id="menu">
+  <div class="container">
+    <div class="menu-layout">
+      <div class="fade-in">
+        <span class="eyebrow"><i class="fa-solid fa-utensils"></i> Menu</span>
+        <h2 class="section-heading">Fresh, Local &amp; Delicious</h2>
+        
+        <div class="menu-list"><div class="menu-item"><div class="menu-item-info"><span class="menu-item-name">Classic Tiramisu</span><span class="menu-item-desc">Layers of espresso-soaked biscuits and creamy mascarpone.</span></div><span class="menu-item-price">$8.50</span></div><div class="menu-item"><div class="menu-item-info"><span class="menu-item-name">Sicilian Cannoli</span><span class="menu-item-desc">Crispy pastry tubes filled with sweet ricotta and chocolate chips.</span></div><span class="menu-item-price">$7.00</span></div><div class="menu-item"><div class="menu-item-info"><span class="menu-item-name">Flat White</span><span class="menu-item-desc">Expertly pulled espresso with steamed milk and a perfect microfoam.</span></div><span class="menu-item-price">$5.50</span></div></div>
+        
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s;">
+        
+        <div class="menu-hours-card">
+          <h3 class="menu-hours-title"><i class="fa-solid fa-clock" style="color:var(--primary);margin-right:8px;"></i>Opening Hours</h3>
+          <p class="menu-hours-text">Mon–Fri 7am–4pm  |  Sat–Sun 8am–3pm</p>
+          
+          <div class="menu-res-note">
+            <i class="fa-solid fa-circle-info" style="color:var(--primary);margin-right:6px;"></i>
+            No bookings needed — come in anytime and enjoy freshly made desserts
+          </div>
+          
+        </div>
+        
+        <!-- Rating card -->
+        
+            <div class="rating-card" style="--rating-pct:82%">
+              <div class="rating-number">4.1</div>
+              <div class="rating-stars">★★★★☆</div>
+              <div class="rating-label">on Google</div>
+              <div class="rating-count">1195 Google reviews</div>
+              <div class="rating-bar-wrap"><div class="rating-bar"></div></div>
+              <div class="rating-bar-labels"><span>0</span><span>out of 5</span></div>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ════════════════════════════════════════════════════════════ -->
+
+<section class="section-gallery" id="gallery">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-images"></i> Gallery</span>
+      <h2 class="section-title fade-in">A Taste of What We Offer</h2>
+    </div>
+    <div class="fade-in"><div class="gallery-grid"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Barista pouring coffee" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-55c26f9874b0?auto=format&fit=crop&w=600&q=80" alt="Cozy cafe interior" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=80" alt="Breakfast and brunch" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Flat white coffee" loading="lazy"></div><div class="gallery-item"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Espresso machine" loading="lazy"></div></div></div>
+  </div>
+</section>
+
+
+<!-- ══ ABOUT ══════════════════════════════════════════════════════════════ -->
+<section class="section-about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-in">
+        <span class="about-eyebrow"><i class="fa-solid fa-heart"></i> About Us</span>
+        <h2 class="about-heading">About Bellucci Dessert Cafe in Sydney</h2>
+        <p class="about-body-text">Since opening in Sydney, Bellucci has become the go-to destination for locals seeking exceptional Italian-inspired desserts and artisan coffee. Our passionate team sources premium ingredients to deliver an authentic café experience that reflects Sydney's vibrant culinary community.</p>
+        <div class="about-features"><div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div></div>
+      </div>
+      
+      <div class="about-img fade-in" style="transition-delay:0.2s;">
+        <img src="https://images.unsplash.com/photo-1495474472-8093026271?auto=format&fit=crop&w=1400&q=80" alt="Bellucci Dessert Cafe — Sydney" loading="lazy">
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ═══════════════════════════════════════════════════════════ -->
+<section class="section-services" id="services">
+  <div class="container">
+    <div style="text-align:center; max-width:640px; margin:0 auto 52px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-list-check"></i> What We Offer</span>
+      <h2 class="section-title fade-in">Crafted with care, made for you — discover what we have on offer.</h2>
+    </div>
+    <div class="services-grid">
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+              </div>
+              <h3 class="service-title">Handmade Desserts</h3>
+              <p class="service-desc">We craft fresh desserts daily using premium ingredients and traditional Italian recipes. From tiramisu to panna cotta, each treat is made with care in our Sydney kitchen.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-mug-hot"></i>
+              </div>
+              <h3 class="service-title">Specialty Coffee</h3>
+              <p class="service-desc">Our baristas prepare expertly pulled espresso and creamy cappuccinos using ethically sourced beans. We're committed to delivering café-quality coffee that keeps Sydney locals coming back.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <h3 class="service-title">Dine-In & Takeaway</h3>
+              <p class="service-desc">Enjoy your favourite dessert and coffee in our cosy Sydney café or grab it on the go. We welcome everyone from students to professionals looking for the perfect treat.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <h3 class="service-title">Custom Orders</h3>
+              <p class="service-desc">Celebrate special occasions with personalised desserts made to order for Sydney events. Contact us to discuss your next birthday cake or catering needs.</p>
+            </div></div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════════════════════════════ -->
+
+
+<!-- ══ FAQ ════════════════════════════════════════════════════════════════ -->
+
+<section class="section-faq" id="faq">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <span class="eyebrow fade-in"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+      <h2 class="section-title fade-in">Common Questions</h2>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q">
+          What are your opening hours?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We're open Monday to Friday from 7am to 4pm, and Saturday to Sunday from 8am to 3pm. Drop in anytime for fresh desserts and coffee.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do you offer vegan dessert options?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Yes, we have a selection of vegan-friendly desserts available daily. Ask our staff which options are currently available.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I order desserts for a special event?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Absolutely! We take custom orders for birthdays, weddings, and corporate events. Call us today to discuss your requirements.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Is there parking available near the café?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Street parking is available in the area, and we're easily accessible by public transport. Check Google Maps for exact directions.</div>
+      </div></div>
+  </div>
+</section>
+
+
+<!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
+<section class="section-contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <span class="contact-left-eyebrow"><i class="fa-solid fa-location-dot"></i> Visit Us</span>
+        <h2 class="contact-title">Get in Touch with Bellucci Today</h2>
+        <p class="contact-cta-line">Visit Bellucci Dessert Cafe today and discover why Sydney loves our desserts. Call us to learn more or simply drop by.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value"><a href="#contact">Call us today</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value"><a href="mailto:info@bellucci-dessert-cafe.com.au">info@bellucci-dessert-cafe.com.au</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-item-label">Address</div>
+              <div class="contact-item-value">580 George St, Sydney NSW 2000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.12s;">
+        <div class="contact-form-card">
+          <div class="form-title">Make a Reservation</div>
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="f-name" placeholder=" " autocomplete="name">
+                <label for="f-name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="f-email" placeholder=" " autocomplete="email">
+                <label for="f-email">Email Address</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="f-phone" placeholder=" " autocomplete="tel">
+              <label for="f-phone">Phone Number</label>
+            </div>
+            <div class="form-group">
+              <textarea id="f-msg" rows="4" placeholder=" "></textarea>
+              <label for="f-msg">Message or Special Requests</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              Send Message
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Bellucci+Dessert+Cafe+580+George+St%2C+Sydney+NSW+2000+Sydney+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Bellucci Dessert Cafe on Google Maps"></iframe></div>
+</div>
+</section>
+
+<!-- ══ AGENCY BANNER ═════════════════════════════════════════════════════ -->
+<div class="agency-banner">
+  <div class="container">
+    <div class="agency-banner-inner">
+      <span class="agency-banner-text">Want a professional website like this for your business?</span>
+      <a href="mailto:presencly@gmail.com" class="agency-banner-link">
+        <i class="fa-solid fa-rocket"></i>
+        Get started today
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="footer-brand-icon" aria-hidden="true">☕</span>
+          Bellucci Dessert Cafe
+        </div>
+        <p class="footer-tagline">Bellucci's finest café experience across greater Sydney</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-items">
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="#contact">Call us today</a></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@bellucci-dessert-cafe.com.au">info@bellucci-dessert-cafe.com.au</a></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>580 George St, Sydney NSW 2000</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Bellucci Dessert Cafe. All rights reserved. Sydney, Australia.</span>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ MOBILE STICKY BAR ═════════════════════════════════════════════════ -->
+<div class="sticky-bar">
+  <div class="sticky-bar-inner">
+    <a href="#contact" class="sticky-bar-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="#contact" class="sticky-bar-contact"><i class="fa-solid fa-envelope"></i> See Menu</a>
+  </div>
+</div>
+
+<!-- ══ JAVASCRIPT ═════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+
+  var hamburger = document.getElementById('nav-hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  function openMobileNav() { mobileNav.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
+  function closeMobileNav() { mobileNav.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+  hamburger.addEventListener('click', function () { mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav(); });
+  mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMobileNav); });
+
+  var fadeObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el); });
+
+  var cardRevealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); cardRevealObs.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .review-card').forEach(function (el) { cardRevealObs.observe(el); });
+
+  var ratingCard = document.querySelector('.rating-card');
+  if (ratingCard) {
+    var ratingObs = new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) { ratingCard.classList.add('bar-animated'); ratingObs.unobserve(ratingCard); } }, { threshold: 0.4 });
+    ratingObs.observe(ratingCard);
+  }
+
+  var accredStrip = document.querySelector('.accred-strip');
+  if (accredStrip) {
+    var accredObs = new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) { accredStrip.classList.add('visible'); accredObs.unobserve(accredStrip); } }, { threshold: 0.3 });
+    accredObs.observe(accredStrip);
+  }
+
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function () {
+      var item = this.parentElement; var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { item.classList.add('open'); this.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeMobileNav(); }
+    });
+  });
+
+  var progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', function () {
+      var scrolled = window.scrollY; var total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

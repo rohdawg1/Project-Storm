@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabrito Coffee Traders. | Sydney</title>
-  <meta name="description" content="Ethically sourced beans roasted fresh daily in Sydney">
+  <meta name="description" content="Ethically sourced beans, expertly roasted, expertly served daily">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cabrito Coffee Traders. | Sydney">
-  <meta property="og:description" content="Ethically sourced beans roasted fresh daily in Sydney">
+  <meta property="og:description" content="Ethically sourced beans, expertly roasted, expertly served daily">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cabrito-coffee-traders/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cabrito Coffee Traders. | Sydney">
-  <meta name="twitter:description" content="Ethically sourced beans roasted fresh daily in Sydney">
+  <meta name="twitter:description" content="Ethically sourced beans, expertly roasted, expertly served daily">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1418,8 +1454,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Sydney &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Sydney's finest specialty coffee destination</h1>
-            <p class="hero-tagline">Ethically sourced beans roasted fresh daily in Sydney</p>
+            <h1 class="hero-headline">Sydney's finest specialty coffee destination awaits</h1>
+            <p class="hero-tagline">Ethically sourced beans, expertly roasted, expertly served daily</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/10-14+Bulletin+Pl%2C+Sydney+NSW+2000" class="btn-hero-primary">
@@ -1442,12 +1478,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">15+</span>
-              <span class="stat-label">Years roasting in Sydney</span>
+              <span class="stat-label">Years of coffee expertise</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">50+</span>
-              <span class="stat-label">Single-origin coffees in stock</span>
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Ethically sourced beans</span>
             </div>
             
             </div>
@@ -1511,29 +1547,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
-              <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">Handcrafted espresso, pour-overs, and cold brew made from our signature roasts. Each cup is prepared by our skilled baristas using premium techniques and freshly roasted beans.</p>
+              <h3 class="service-title">Specialty Coffee Bar</h3>
+              <p class="service-desc">Expertly prepared espresso, pour-overs, and filter coffee using premium single-origin beans. Our trained baristas craft each cup to perfection with attention to flavour profile and technique.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
-              <h3 class="service-title">Retail Beans</h3>
-              <p class="service-desc">Take home our single-origin and blended coffees in whole bean or ground formats. We offer detailed tasting notes and brewing recommendations for every roast.</p>
+              <h3 class="service-title">Retail Coffee Beans</h3>
+              <p class="service-desc">Take home our curated selection of ethically sourced, freshly roasted beans in various grind sizes. We stock rotating seasonal blends and limited-edition single-origins from around the world.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
               <h3 class="service-title">Coffee Workshops</h3>
-              <p class="service-desc">Learn espresso techniques, cupping methods, and home brewing skills from our expert roasters. Perfect for coffee lovers wanting to deepen their knowledge and skills.</p>
+              <p class="service-desc">Learn the art of coffee appreciation through our barista training and tasting sessions. Perfect for enthusiasts looking to deepen their knowledge of origins, roasting, and brewing methods.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-building"></i>
+                <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Corporate Orders</h3>
-              <p class="service-desc">Customised coffee solutions for offices, cafés, and hospitality venues across Sydney. We provide wholesale pricing, delivery, and ongoing support for your business.</p>
+              <h3 class="service-title">Café Menu</h3>
+              <p class="service-desc">Pair your coffee with fresh pastries, light meals, and artisanal treats sourced from local Sydney suppliers. Our kitchen focuses on quality ingredients that complement our exceptional coffees.</p>
             </div>
       </div>
     </div>
@@ -1548,6 +1584,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1559,31 +1604,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Ethiopian Yirgacheffe Espresso</span>
-                  <span class="cat-menu-desc">Bright floral notes with hints of blueberry and jasmine.</span>
+                  <span class="cat-menu-name">Ethiopian Yirgacheffe</span>
+                  <span class="cat-menu-desc">Floral and fruity single-origin with bright acidity.</span>
+                </div>
+                <span class="cat-menu-price">$6.50</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">House Espresso Blend</span>
+                  <span class="cat-menu-desc">Balanced, full-bodied blend perfect for milk-based drinks.</span>
+                </div>
+                <span class="cat-menu-price">$5.00</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Flat White</span>
+                  <span class="cat-menu-desc">Creamy milk coffee with our signature espresso.</span>
                 </div>
                 <span class="cat-menu-price">$5.50</span>
               </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Single-Origin Pour-Over</span>
-                  <span class="cat-menu-desc">Choice of three rotating origins, brewed to order.</span>
-                </div>
-                <span class="cat-menu-price">$7.00</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Cold Brew Concentrate</span>
-                  <span class="cat-menu-desc">Smooth, low-acid concentrate perfect for home brewing.</span>
-                </div>
-                <span class="cat-menu-price">$12.00</span>
-              </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Walk-ins always welcome — call us to reserve for group visits or workshops</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Walk-ins always welcome — call ahead for group bookings and workshops</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 7am–6pm  |  Sat–Sun 8am–5pm</div>
+              <div class="cat-hours-text">Mon–Fri 7am–6pm | Sat–Sun 8am–5pm</div>
             </div>
       </div>
     </div>
@@ -1615,7 +1660,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Cabrito Coffee Traders</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cabrito Coffee Traders has been Sydney's trusted source for premium, ethically sourced coffee since establishing our roastery in the heart of the city. Our expert team curates single-origin beans from sustainable farms worldwide, roasting small batches to perfection for the most discerning coffee enthusiasts.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cabrito Coffee Traders has been Sydney's trusted source for premium, ethically sourced coffee since our founding, specialising in direct-trade relationships with small-batch roasters. Our passionate team curates exceptional single-origin and house-blend coffees, serving discerning coffee enthusiasts across Sydney with expert knowledge and meticulous preparation.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1663,31 +1708,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Where are your beans sourced from?
+          Do you offer single-origin coffee beans?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We partner directly with sustainable farms across Central America, Africa, and Asia-Pacific. Each origin is hand-selected for quality and ethical farming practices.</div>
+        <div class="faq-a">Yes, we specialise in single-origin, direct-trade coffees sourced from ethical producers worldwide. Our selection rotates seasonally, so visit regularly for new discoveries.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I buy beans online or do I need to visit?
+          Can I book a barista training session?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">You're welcome to visit our Sydney café, or contact us by phone to arrange purchases and delivery. We recommend calling ahead for bulk orders.</div>
+        <div class="faq-a">Absolutely! We offer group and private workshops for all skill levels. Contact us directly to arrange a date that suits your group.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer coffee training or workshops?
+          What brewing methods do you recommend?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we run regular cupping sessions and barista workshops for individuals and groups. Ring us today to book your spot or ask about upcoming dates.</div>
+        <div class="faq-a">We recommend pour-overs and espresso for most of our origins, though each bean has unique characteristics. Our baristas are happy to suggest the best method when you visit.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's the difference between your single-origin and blends?
+          Are your beans organic and sustainably sourced?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Single-origins showcase distinct regional characteristics and terroir, while our blends are crafted for balanced, approachable flavour profiles. Our team can recommend the perfect match for your taste.</div>
+        <div class="faq-a">We prioritise ethical and sustainable sourcing through direct trade partnerships. While not all are certified organic, we know every farmer and their practices personally.</div>
       </div>
       </div>
     </div>
@@ -1701,7 +1746,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in touch with our coffee experts</h2>
-          <p class="contact-cta-line">Discover why Sydney's coffee connoisseurs trust Cabrito — visit us today or ring to chat about your perfect brew.</p>
+          <p class="contact-cta-line">Visit Cabrito Coffee Traders today and discover why Sydney's coffee lovers choose us. Call us now to learn more.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1727,7 +1772,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cabrito+Coffee+Traders.+10-14+Bulletin+Pl%2C+Sydney+NSW+2000+Sydney+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cabrito Coffee Traders. on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1790,7 +1837,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Cabrito Coffee Traders.
           </div>
-          <p class="footer-tagline">Ethically sourced beans roasted fresh daily in Sydney</p>
+          <p class="footer-tagline">Ethically sourced beans, expertly roasted, expertly served daily</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

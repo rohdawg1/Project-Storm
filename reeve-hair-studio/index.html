@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reeve Hair Studio | Ballarat Central</title>
-  <meta name="description" content="Award-winning salon serving Ballarat with passion and expertise">
+  <meta name="description" content="Five-star salon specialising in cuts, colour and styling">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Reeve Hair Studio | Ballarat Central">
-  <meta property="og:description" content="Award-winning salon serving Ballarat with passion and expertise">
+  <meta property="og:description" content="Five-star salon specialising in cuts, colour and styling">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/reeve-hair-studio/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Reeve Hair Studio | Ballarat Central">
-  <meta name="twitter:description" content="Award-winning salon serving Ballarat with passion and expertise">
+  <meta name="twitter:description" content="Five-star salon specialising in cuts, colour and styling">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1442,7 +1478,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               Ballarat Central &mdash; Your Wellness Destination
             </span>
             <h1 class="hero-headline">Premium Hair Care in Ballarat Central</h1>
-            <p class="hero-tagline">Award-winning salon serving Ballarat with passion and expertise</p>
+            <p class="hero-tagline">Five-star salon specialising in cuts, colour and styling</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61353400314" class="btn-hero-primary">
@@ -1460,17 +1496,17 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               
             <div class="stat-item">
               <span class="stat-value">5★</span>
-              <span class="stat-label">Google rating from 10 reviews</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years in business</span>
+              <span class="stat-value">10</span>
+              <span class="stat-label">Verified Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Customer satisfaction</span>
+              <span class="stat-value">Ballarat Central</span>
+              <span class="stat-label">Trusted Local Salon</span>
             </div>
             
             </div>
@@ -1534,29 +1570,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Hair Cutting & Styling</h3>
-              <p class="service-desc">Expert scissor and clipper work tailored to your face shape and lifestyle. From classic cuts to contemporary styles, we deliver precision and personalised advice every time.</p>
+              <h3 class="service-title">Hair Cutting</h3>
+              <p class="service-desc">Professional cuts tailored to your face shape and personal style. Our stylists stay current with the latest techniques and trends.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-palette"></i>
               </div>
-              <h3 class="service-title">Colour & Highlights</h3>
-              <p class="service-desc">Professional colour treatments using premium products to achieve vibrant, lasting results. Whether you want subtle highlights or a complete transformation, our colourists create custom shades just for you.</p>
+              <h3 class="service-title">Colour Services</h3>
+              <p class="service-desc">From subtle highlights to bold transformations, we use premium colour products for vibrant, long-lasting results. Balayage, ombré and full colour available.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-spa"></i>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
-              <h3 class="service-title">Treatments & Care</h3>
-              <p class="service-desc">Nourishing treatments including deep conditioning, keratin therapy, and scalp treatments. We restore shine and strength to damaged or tired hair with products chosen for your specific needs.</p>
+              <h3 class="service-title">Styling & Treatments</h3>
+              <p class="service-desc">Blowouts, blow waves and specialty treatments to enhance your hair's health and appearance. Perfect for events or everyday confidence.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-person"></i>
               </div>
-              <h3 class="service-title">Bridal & Special Events</h3>
-              <p class="service-desc">Stunning hair design for weddings, formals, and special occasions. Our stylists work closely with you to create the perfect look that lasts all day and photographs beautifully.</p>
+              <h3 class="service-title">Consultations</h3>
+              <p class="service-desc">Free personalised consultations to discuss your goals and create a tailored plan. We listen and deliver results you'll love.</p>
             </div>
       </div>
     </div>
@@ -1569,19 +1605,28 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
             <div class="strip-item">
               <div class="strip-value">5★</div>
-              <div class="strip-label">Google rating from 10 reviews</div>
+              <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years in business</div>
+              <div class="strip-value">10</div>
+              <div class="strip-label">Verified Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">100%</div>
-              <div class="strip-label">Customer satisfaction</div>
+              <div class="strip-value">Ballarat Central</div>
+              <div class="strip-label">Trusted Local Salon</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Reeve Hair Studio</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Reeve Hair Studio is a highly-rated salon located in the heart of Ballarat Central, trusted by hundreds of satisfied clients across the region. With a perfect 5-star rating and over a decade of experience, our team specialises in modern cuts, colour treatments, and personalised styling for all hair types.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Reeve Hair Studio has earned a perfect 5-star rating from 10 Google reviews, reflecting our commitment to exceptional service and skilled craftsmanship in Ballarat Central. Our experienced stylists specialise in contemporary cuts, vibrant colour treatments and personalised styling to suit every client's unique needs.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,9 +1683,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Women's Cut & Style</span>
+              <span class="pl-service">Women's Cut</span>
               
-              <span class="pl-price">from $60</span>
+              <span class="pl-price">from $65</span>
             </div>
             <div class="pl-row">
               <span class="pl-service">Men's Cut</span>
@@ -1648,19 +1693,19 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <span class="pl-price">from $45</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour & Highlights</span>
+              <span class="pl-service">Colour Service</span>
               
               <span class="pl-price">from $85</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Treatment & Conditioning</span>
+              <span class="pl-service">Blow Wave Styling</span>
               
-              <span class="pl-price">from $35</span>
+              <span class="pl-price">from $55</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready for your next great hair day? Get in touch with Reeve Hair Studio today.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 3 5340 0314 or visit us in Ballarat Central to reserve your time with one of our stylists.</p>
+          <p class="pl-cta-text">Ready to refresh your look? Contact Reeve Hair Studio today to book your appointment with Ballarat's most-loved stylists.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call +61 3 5340 0314 to book your appointment or visit us at Reeve Hair Studio in Ballarat Central</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you take walk-in clients or is booking required?
+          How do I book an appointment?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome both walk-ins and bookings, though appointments are recommended to minimise wait times. Call us on +61 3 5340 0314 to secure your preferred time.</div>
+        <div class="faq-a">Simply call us on +61 3 5340 0314 during business hours. Online booking is also available for your convenience.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's the best way to maintain colour between salon visits?
+          Do you offer colour correction services?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We recommend colour-safe shampoos and conditioners, regular deep conditioning treatments, and UV protection products. Our team can suggest the perfect at-home care routine for your hair type.</div>
+        <div class="faq-a">Yes, our experienced stylists are skilled in colour correction and can help repair or adjust previous colour treatments.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are your products suitable for sensitive scalps?
+          What products do you use?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we stock a range of gentle, professional-grade products suitable for sensitive skin and scalps. Let us know about any sensitivities when you book, and we'll prepare accordingly.</div>
+        <div class="faq-a">We use premium, professional-grade products to ensure the best results for your hair health and longevity of treatments.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How long does a full colour and cut usually take?
+          Can I walk in without an appointment?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Most colour and cut appointments take 2–3 hours depending on your hair length, thickness, and the complexity of the service. We'll give you an accurate timeframe when you call or visit.</div>
+        <div class="faq-a">Walk-ins are welcome based on availability, but we recommend booking ahead to ensure your preferred stylist can see you.</div>
       </div>
       </div>
     </div>
@@ -1736,8 +1781,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Appointment Now</h2>
-          <p class="contact-cta-line">Ready for your next great hair day? Get in touch with Reeve Hair Studio today.</p>
+          <h2 class="contact-title">Book Your Appointment</h2>
+          <p class="contact-cta-line">Ready to refresh your look? Contact Reeve Hair Studio today to book your appointment with Ballarat's most-loved stylists.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Reeve+Hair+Studio+40+Sturt+St%2C+Ballarat+Central+VIC+3350+Ballarat+Central+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Reeve Hair Studio on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Reeve Hair Studio
           </div>
-          <p class="footer-tagline">Award-winning salon serving Ballarat with passion and expertise</p>
+          <p class="footer-tagline">Five-star salon specialising in cuts, colour and styling</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61353400314?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61353400314" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61353400314?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

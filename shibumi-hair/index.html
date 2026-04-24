@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shibumi hair | Geelong</title>
-  <meta name="description" content="Expert styling and colour treatments for modern Geelong">
+  <meta name="description" content="Expert cuts, colour, and styling for every look">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Shibumi hair | Geelong">
-  <meta property="og:description" content="Expert styling and colour treatments for modern Geelong">
+  <meta property="og:description" content="Expert cuts, colour, and styling for every look">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/shibumi-hair/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Shibumi hair | Geelong">
-  <meta name="twitter:description" content="Expert styling and colour treatments for modern Geelong">
+  <meta name="twitter:description" content="Expert cuts, colour, and styling for every look">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1441,8 +1477,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Wellness Destination
             </span>
-            <h1 class="hero-headline">Premium Hair Design in Geelong</h1>
-            <p class="hero-tagline">Expert styling and colour treatments for modern Geelong</p>
+            <h1 class="hero-headline">Premium Hair Salon in Geelong</h1>
+            <p class="hero-tagline">Expert cuts, colour, and styling for every look</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61420588009" class="btn-hero-primary">
@@ -1460,17 +1496,17 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               
             <div class="stat-item">
               <span class="stat-value">4.6★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google rating from 12 reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">12+</span>
-              <span class="stat-label">Happy Clients</span>
+              <span class="stat-label">Verified customer reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Expert</span>
-              <span class="stat-label">Stylists</span>
+              <span class="stat-value">Geelong</span>
+              <span class="stat-label">Local salon experts</span>
             </div>
             
             </div>
@@ -1534,29 +1570,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Hair Cutting & Styling</h3>
-              <p class="service-desc">Expert cuts tailored to your face shape and lifestyle. From classic bobs to modern fades, we create styles that suit you perfectly.</p>
+              <h3 class="service-title">Hair Cuts</h3>
+              <p class="service-desc">Precision cuts tailored to your face shape and lifestyle. From classic bobs to modern fades, our stylists create cuts that look great and grow well.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-palette"></i>
               </div>
-              <h3 class="service-title">Colour & Highlights</h3>
-              <p class="service-desc">Professional colour treatments using premium products for vibrant, long-lasting results. We specialise in balayage, highlights, and full colour services.</p>
+              <h3 class="service-title">Hair Colour</h3>
+              <p class="service-desc">Vibrant, lasting colour treatments using quality products. Whether you want subtle highlights or bold transformation, we deliver salon-quality results.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-spa"></i>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
-              <h3 class="service-title">Hair Treatments</h3>
-              <p class="service-desc">Nourishing treatments to restore shine and repair damaged hair. Our conditioning and keratin services leave your hair feeling silky and healthy.</p>
+              <h3 class="service-title">Styling & Treatments</h3>
+              <p class="service-desc">Professional styling for special occasions and everyday wear. We also offer conditioning treatments and keratin services for healthier, shinier hair.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-person"></i>
+                <i class="fa-solid fa-spray-can"></i>
               </div>
-              <h3 class="service-title">Blow Dry & Styling</h3>
-              <p class="service-desc">Professional blow-dry and styling services for special occasions or everyday glamour. We ensure your hair looks salon-perfect every time.</p>
+              <h3 class="service-title">Blowouts</h3>
+              <p class="service-desc">Expert blow-dry services that give your hair volume and shine. Perfect before an event or whenever you want to feel polished and confident.</p>
             </div>
       </div>
     </div>
@@ -1569,19 +1605,28 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
             <div class="strip-item">
               <div class="strip-value">4.6★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google rating from 12 reviews</div>
             </div>
             <div class="strip-item">
               <div class="strip-value">12+</div>
-              <div class="strip-label">Happy Clients</div>
+              <div class="strip-label">Verified customer reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Expert</div>
-              <div class="strip-label">Stylists</div>
+              <div class="strip-value">Geelong</div>
+              <div class="strip-label">Local salon experts</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Shibumi Hair</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Shibumi Hair is a trusted Geelong salon specialising in contemporary hair design, colour correction, and personalised styling for all hair types. With a 4.6-star rating from satisfied clients, we're committed to delivering exceptional service and transformative results.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Shibumi Hair is a trusted salon in Geelong dedicated to delivering exceptional hair care and personalised styling services. With a 4.6-star rating from satisfied clients, our experienced stylists combine technical skill with creative vision to transform your look.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,29 +1683,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Cut & Style</span>
+              <span class="pl-service">Women's Haircut</span>
               
               <span class="pl-price">from $65</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour Treatment</span>
+              <span class="pl-service">Men's Haircut</span>
               
-              <span class="pl-price">from $95</span>
+              <span class="pl-price">from $45</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Balayage Highlights</span>
+              <span class="pl-service">Hair Colour</span>
               
-              <span class="pl-price">from $120</span>
+              <span class="pl-price">from $85</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Blow Dry & Finish</span>
+              <span class="pl-service">Blowout</span>
               
-              <span class="pl-price">from $50</span>
+              <span class="pl-price">from $35</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to transform your look? Get in touch with Shibumi Hair today.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call us on +61 420 588 009 to book your appointment or discuss your hair goals with our experienced team</p>
+          <p class="pl-cta-text">Ready to refresh your look? Call us today and let's create something beautiful together.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Book your appointment by calling +61 420 588 009 or visit us in Geelong to get started</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          How do I book an appointment at Shibumi Hair?
+          Do I need to book an appointment in advance?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Simply call us on +61 420 588 009 to schedule your visit. We're happy to discuss your hair goals and find the perfect time for you.</div>
+        <div class="faq-a">Yes, we recommend booking ahead to secure your preferred time slot. Call us at +61 420 588 009 to check availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's your cancellation policy?
+          What should I expect during a colour treatment?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We ask for 24 hours' notice for cancellations to ensure we can offer your time to other clients. Contact us as soon as possible if your plans change.</div>
+        <div class="faq-a">Our stylists will consult on your desired shade, apply colour carefully, and use quality products to ensure vibrant, healthy-looking results. Most appointments take 2-3 hours.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer colour correction services?
+          Are your products suitable for sensitive scalps?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we specialise in colour correction and can help fix previous colour treatments. We recommend booking a consultation first to assess your hair.</div>
+        <div class="faq-a">We work with professional-grade products and can recommend options for sensitive skin. Let us know about any allergies when you book.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are your products suitable for all hair types?
+          Can you recommend a style for my hair type?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We use premium, professional-grade products suitable for all hair types and textures. Our stylists can recommend the best products for your specific needs.</div>
+        <div class="faq-a">Absolutely! Our stylists assess your hair texture, face shape, and lifestyle to suggest styles that work for you and are easy to maintain at home.</div>
       </div>
       </div>
     </div>
@@ -1736,8 +1781,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Appointment Now</h2>
-          <p class="contact-cta-line">Ready to transform your look? Get in touch with Shibumi Hair today.</p>
+          <h2 class="contact-title">Get in Touch with Shibumi Hair</h2>
+          <p class="contact-cta-line">Ready to refresh your look? Call us today and let's create something beautiful together.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Shibumi+hair+11+McLarty+Pl%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Shibumi hair on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Shibumi hair
           </div>
-          <p class="footer-tagline">Expert styling and colour treatments for modern Geelong</p>
+          <p class="footer-tagline">Expert cuts, colour, and styling for every look</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61420588009?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61420588009" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61420588009?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

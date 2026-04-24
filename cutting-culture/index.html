@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cutting Culture | Ballarat Central</title>
-  <meta name="description" content="Award-winning cuts and colour in the heart of Ballarat Central">
+  <meta name="description" content="Award-winning salon delivering exceptional cuts and colour">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cutting Culture | Ballarat Central">
-  <meta property="og:description" content="Award-winning cuts and colour in the heart of Ballarat Central">
+  <meta property="og:description" content="Award-winning salon delivering exceptional cuts and colour">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cutting-culture/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cutting Culture | Ballarat Central">
-  <meta name="twitter:description" content="Award-winning cuts and colour in the heart of Ballarat Central">
+  <meta name="twitter:description" content="Award-winning salon delivering exceptional cuts and colour">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1441,8 +1477,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat Central &mdash; Your Wellness Destination
             </span>
-            <h1 class="hero-headline">Cutting Culture Ballarat's Premier Salon</h1>
-            <p class="hero-tagline">Award-winning cuts and colour in the heart of Ballarat Central</p>
+            <h1 class="hero-headline">Cutting Culture Ballarat Central</h1>
+            <p class="hero-tagline">Award-winning salon delivering exceptional cuts and colour</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61480512177" class="btn-hero-primary">
@@ -1460,17 +1496,17 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               
             <div class="stat-item">
               <span class="stat-value">5★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">155 Google Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">155+</span>
-              <span class="stat-label">Happy Clients</span>
+              <span class="stat-value">Expert</span>
+              <span class="stat-label">Professional Stylists</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Ballarat Central</span>
-              <span class="stat-label">Prime Location</span>
+              <span class="stat-value">Premium</span>
+              <span class="stat-label">Quality Products</span>
             </div>
             
             </div>
@@ -1534,29 +1570,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Precision Hair Cutting</h3>
-              <p class="service-desc">From classic bobs to modern fades, our stylists deliver sharp, tailored cuts that suit your face shape and lifestyle. We use premium techniques to ensure every cut grows out beautifully.</p>
+              <h3 class="service-title">Precision Cutting</h3>
+              <p class="service-desc">Expert scissor and clipper work for all hair types and styles. We create sharp lines, textured layers, and flattering shapes customised to your face and lifestyle.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-droplet"></i>
               </div>
-              <h3 class="service-title">Expert Colour & Highlights</h3>
-              <p class="service-desc">Transform your look with vibrant permanent colour, subtle highlights, or balayage treatments. Our colour specialists use only quality products to protect your hair's health and shine.</p>
+              <h3 class="service-title">Colour Services</h3>
+              <p class="service-desc">Vibrant permanent colour, toning, highlights, and balayage using premium products. Our colourists blend artistry with chemistry to achieve stunning, long-lasting results.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
-              <h3 class="service-title">Hair Treatments & Care</h3>
-              <p class="service-desc">Restore moisture and strength with keratin treatments, deep conditioning, and damage repair therapies. We recommend personalised aftercare to keep your hair looking salon-fresh between visits.</p>
+              <h3 class="service-title">Styling & Treatments</h3>
+              <p class="service-desc">Blow-dry styling, keratin treatments, and conditioning care to enhance and protect your hair. Professional finishing touches for everyday wear or special occasions.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-person"></i>
               </div>
-              <h3 class="service-title">Styling & Blow-Dry</h3>
-              <p class="service-desc">Whether it's a special event or everyday glamour, we create polished styles that last. Our blow-dry experts use professional techniques and products for volume and longevity.</p>
+              <h3 class="service-title">Consultations</h3>
+              <p class="service-desc">Personalised one-on-one consultations to understand your vision and hair goals. We provide expert advice on cuts, colour, maintenance, and product recommendations.</p>
             </div>
       </div>
     </div>
@@ -1569,19 +1605,28 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
             <div class="strip-item">
               <div class="strip-value">5★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">155 Google Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">155+</div>
-              <div class="strip-label">Happy Clients</div>
+              <div class="strip-value">Expert</div>
+              <div class="strip-label">Professional Stylists</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Ballarat Central</div>
-              <div class="strip-label">Prime Location</div>
+              <div class="strip-value">Premium</div>
+              <div class="strip-label">Quality Products</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Cutting Culture</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cutting Culture is Ballarat's most trusted salon, trusted by over 155 satisfied clients with a perfect 5-star rating. Our experienced stylists specialise in contemporary cuts, vibrant colour work, and personalised styling that celebrates your unique look.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cutting Culture is Ballarat Central's premier salon, trusted by over 155 five-star reviewers for precision cuts, vibrant colour services, and personalised styling expertise. Our experienced stylists combine technical skill with creative vision to deliver transformative results tailored to each client's unique needs.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,29 +1683,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Haircut (Men's)</span>
-              
-              <span class="pl-price">from $35</span>
-            </div>
-            <div class="pl-row">
-              <span class="pl-service">Haircut (Women's)</span>
+              <span class="pl-service">Haircut</span>
               
               <span class="pl-price">from $55</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour or Highlights</span>
+              <span class="pl-service">Colour</span>
               
-              <span class="pl-price">from $80</span>
+              <span class="pl-price">from $85</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Blow-Dry & Styling</span>
+              <span class="pl-service">Highlights or Balayage</span>
+              
+              <span class="pl-price">from $120</span>
+            </div>
+            <div class="pl-row">
+              <span class="pl-service">Styling & Blow-Dry</span>
               
               <span class="pl-price">from $45</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to refresh your look? Call us today or book your appointment online—we'd love to see you soon.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 480 512 177 or reply to this email to get started</p>
+          <p class="pl-cta-text">Ready to transform your look? Contact Cutting Culture today and experience salon excellence in Ballarat Central.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Online booking available — call +61 480 512 177 or visit us in Ballarat Central to secure your appointment today</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          How do I book an appointment?
+          Do I need to book ahead or can I walk in?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Ring us on +61 480 512 177 or reply to book online. We'll find a time that works perfectly for you.</div>
+        <div class="faq-a">We welcome both bookings and walk-ins, though booking ensures your preferred time and stylist availability. Call +61 480 512 177 to reserve your slot.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's your cancellation policy?
+          How long does a colour service typically take?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We ask for 24 hours' notice for cancellations to allow other clients to book. Last-minute changes may incur a fee.</div>
+        <div class="faq-a">Colour services generally take 60–90 minutes depending on complexity, hair length, and desired results. Your stylist will provide an estimate during consultation.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer colour consultations?
+          What products do you use on my hair?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely—we recommend a free consultation before major colour changes to discuss options, maintenance, and aftercare.</div>
+        <div class="faq-a">We use premium professional-grade products chosen for quality and results. Your stylist can recommend home-care products tailored to your hair type and service.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are your products vegan or cruelty-free?
+          Can you help me if I've had a bad cut elsewhere?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We use high-quality professional brands. Ask our team about our specific product ranges and ethical sourcing when you visit.</div>
+        <div class="faq-a">Absolutely—our experienced stylists specialise in corrective cutting and colour correction. We'll assess your hair and create a plan to achieve your desired look.</div>
       </div>
       </div>
     </div>
@@ -1736,8 +1781,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Cutting Culture Experience</h2>
-          <p class="contact-cta-line">Ready to refresh your look? Call us today or book your appointment online—we'd love to see you soon.</p>
+          <h2 class="contact-title">Book Your Appointment</h2>
+          <p class="contact-cta-line">Ready to transform your look? Contact Cutting Culture today and experience salon excellence in Ballarat Central.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cutting+Culture+1+Creswick+Rd%2C+Ballarat+Central+VIC+3350+Ballarat+Central+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cutting Culture on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Cutting Culture
           </div>
-          <p class="footer-tagline">Award-winning cuts and colour in the heart of Ballarat Central</p>
+          <p class="footer-tagline">Award-winning salon delivering exceptional cuts and colour</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61480512177?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61480512177" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61480512177?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

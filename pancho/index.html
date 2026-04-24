@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pancho | Ballarat Central</title>
-  <meta name="description" content="Award-winning restaurant celebrating bold, vibrant Mexican cuisine">
+  <meta name="description" content="Award-winning Mexican restaurant loved by locals">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Pancho | Ballarat Central">
-  <meta property="og:description" content="Award-winning restaurant celebrating bold, vibrant Mexican cuisine">
+  <meta property="og:description" content="Award-winning Mexican restaurant loved by locals">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/pancho/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Pancho | Ballarat Central">
-  <meta name="twitter:description" content="Award-winning restaurant celebrating bold, vibrant Mexican cuisine">
+  <meta name="twitter:description" content="Award-winning Mexican restaurant loved by locals">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1420,7 +1456,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               Ballarat Central &mdash; Your Local Favourite
             </span>
             <h1 class="hero-headline">Authentic Mexican flavours in Ballarat Central</h1>
-            <p class="hero-tagline">Award-winning restaurant celebrating bold, vibrant Mexican cuisine</p>
+            <p class="hero-tagline">Award-winning Mexican restaurant loved by locals</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/213+Mair+St%2C+Ballarat+Central+VIC+3350" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">570+</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-label">customer reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Ballarat</span>
-              <span class="stat-label">Local Favourite</span>
+              <span class="stat-value">Ballarat favourite</span>
+              <span class="stat-label">since opening</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-utensils"></i>
               </div>
               <h3 class="service-title">Dine In</h3>
-              <p class="service-desc">Enjoy an immersive Mexican dining experience in our vibrant Ballarat Central restaurant. Our welcoming atmosphere and attentive service make every meal memorable.</p>
+              <p class="service-desc">Experience authentic Mexican cuisine in our welcoming Ballarat Central restaurant. Our vibrant dining space is perfect for families, friends, and celebrations alike.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
               <h3 class="service-title">Takeaway</h3>
-              <p class="service-desc">Take authentic Mexican flavours home with our convenient takeaway service. Order ahead by phone to minimise wait times during peak hours.</p>
+              <p class="service-desc">Enjoy Pancho's delicious Mexican dishes at home with our convenient takeaway service. Order ahead to minimise wait times during peak hours.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3 class="service-title">Phone Orders</h3>
+              <p class="service-desc">Call us on +61 3 5309 3070 to place your order or make a reservation. Our friendly team is ready to help with your dining needs.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-champagne-glasses"></i>
               </div>
-              <h3 class="service-title">Group Functions</h3>
-              <p class="service-desc">Host your celebration at Pancho with customised menu options for parties and special events. Contact us to discuss your group's requirements.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-fire"></i>
-              </div>
-              <h3 class="service-title">Signature Dishes</h3>
-              <p class="service-desc">Discover our chef-curated selection of traditional and contemporary Mexican favourites. Each dish is crafted to deliver authentic flavour and premium quality.</p>
+              <h3 class="service-title">Special Events</h3>
+              <p class="service-desc">Host your celebration at Pancho with our private event options and catering services. We create memorable experiences for birthdays, corporate gatherings, and more.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,22 +1605,22 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Chile Relleno</span>
-                  <span class="cat-menu-desc">Roasted poblano stuffed with cheese, topped with rich mole sauce.</span>
-                </div>
-                <span class="cat-menu-price">$18</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
                   <span class="cat-menu-name">Carne Asada Tacos</span>
-                  <span class="cat-menu-desc">Grilled marinated beef in soft tortillas with fresh cilantro and lime.</span>
+                  <span class="cat-menu-desc">Grilled marinated beef with fresh cilantro and lime.</span>
                 </div>
                 <span class="cat-menu-price">$16</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
+                  <span class="cat-menu-name">Chile Relleno</span>
+                  <span class="cat-menu-desc">Roasted poblano pepper stuffed with cheese and sauce.</span>
+                </div>
+                <span class="cat-menu-price">$18</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
                   <span class="cat-menu-name">Enchiladas Verdes</span>
-                  <span class="cat-menu-desc">Corn tortillas filled with chicken, bathed in tangy green salsa.</span>
+                  <span class="cat-menu-desc">Corn tortillas rolled with chicken and tangy green salsa.</span>
                 </div>
                 <span class="cat-menu-price">$17</span>
               </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Pancho</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Pancho is Ballarat Central's premier Mexican restaurant, earning a stellar 4.7-star rating from over 570 satisfied Google reviews. We specialise in authentic Mexican dishes prepared with fresh ingredients and traditional cooking methods that transport diners straight to Mexico.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Pancho is Ballarat Central's premier Mexican restaurant, celebrated for authentic cuisine and vibrant atmosphere. With a 4.7-star rating from over 570 Google reviews, we've built a loyal community of diners who return for our bold flavours and warm hospitality.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you accept reservations?
+          Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we welcome bookings and recommend reservations on weekends. You're also welcome to walk in during quieter periods.</div>
+        <div class="faq-a">Yes, we recommend booking ahead, especially on weekends. Call +61 3 5309 3070 to secure your table or walk-ins are always welcome.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 11am–10pm and Saturday to Sunday 10am–11pm. Contact us on +61 3 5309 3070 for specific availability.</div>
+        <div class="faq-a">We're open Mon–Fri 11am–10pm and Sat–Sun 10am–11pm. Come visit us whenever suits your schedule.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you cater for dietary requirements?
+          Do you offer takeaway?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We can accommodate vegetarian, vegan, and gluten-free diets. Please inform us when ordering so we can prepare your meal accordingly.</div>
+        <div class="faq-a">Absolutely! We offer convenient takeaway service. Call ahead to place your order and minimise your wait time.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can we order takeaway?
+          Are you suitable for dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, takeaway is available. Call +61 3 5309 3070 to place your order and minimise wait time when you collect.</div>
+        <div class="faq-a">We have vegetarian and vegan options available on our menu. Please call us on +61 3 5309 3070 to discuss any specific dietary needs.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to book your table?</h2>
-          <p class="contact-cta-line">Experience authentic Mexican cuisine at Pancho—call us today or visit Ballarat Central for an unforgettable meal.</p>
+          <h2 class="contact-title">Get in touch with Pancho today</h2>
+          <p class="contact-cta-line">Ready to experience authentic Mexican flavours? Call us today or visit Pancho in Ballarat Central.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Pancho+213+Mair+St%2C+Ballarat+Central+VIC+3350+Ballarat+Central+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Pancho on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Pancho
           </div>
-          <p class="footer-tagline">Award-winning restaurant celebrating bold, vibrant Mexican cuisine</p>
+          <p class="footer-tagline">Award-winning Mexican restaurant loved by locals</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61353093070?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61353093070" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61353093070?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

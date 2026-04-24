@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Short & Sharp | Geelong</title>
-  <meta name="description" content="Premium salon services for the modern Geelong client">
+  <meta name="description" content="Premium salon services that deliver results every time">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Short & Sharp | Geelong">
-  <meta property="og:description" content="Premium salon services for the modern Geelong client">
+  <meta property="og:description" content="Premium salon services that deliver results every time">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/short-sharp/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Short & Sharp | Geelong">
-  <meta name="twitter:description" content="Premium salon services for the modern Geelong client">
+  <meta name="twitter:description" content="Premium salon services that deliver results every time">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1442,7 +1478,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               Geelong &mdash; Your Wellness Destination
             </span>
             <h1 class="hero-headline">Sharp Cuts, Sharper Style in Geelong</h1>
-            <p class="hero-tagline">Premium salon services for the modern Geelong client</p>
+            <p class="hero-tagline">Premium salon services that deliver results every time</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61352226887" class="btn-hero-primary">
@@ -1465,12 +1501,12 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">75+</span>
-              <span class="stat-label">Client Reviews</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Expert</span>
-              <span class="stat-label">Stylists</span>
+              <span class="stat-value">Geelong</span>
+              <span class="stat-label">Local Experts</span>
             </div>
             
             </div>
@@ -1534,29 +1570,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Precision Haircuts</h3>
-              <p class="service-desc">Expert barber and salon cuts tailored to your style and face shape. Our skilled stylists stay current with the latest trends and techniques.</p>
+              <h3 class="service-title">Hair Cutting</h3>
+              <p class="service-desc">Expert precision cuts tailored to your face shape and style preferences. Our experienced stylists stay current with the latest trends and techniques.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-palette"></i>
+                <i class="fa-solid fa-spray-can"></i>
               </div>
-              <h3 class="service-title">Colour & Highlights</h3>
-              <p class="service-desc">Professional colour treatments using premium products for vibrant, long-lasting results. Whether subtle highlights or bold transformation, we create your perfect shade.</p>
+              <h3 class="service-title">Hair Colouring</h3>
+              <p class="service-desc">Vibrant colour treatments using quality products that enhance your natural features. From subtle highlights to bold transformations, we deliver stunning results.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-spa"></i>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
               <h3 class="service-title">Styling & Treatments</h3>
-              <p class="service-desc">Blow-dry styling and specialised hair treatments to restore shine and health. Perfect for special occasions or everyday polish.</p>
+              <p class="service-desc">Professional blow-dries and conditioning treatments to keep your hair healthy and looking its best. We offer solutions for all hair types and concerns.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-person"></i>
               </div>
-              <h3 class="service-title">Grooming Services</h3>
-              <p class="service-desc">Complete grooming packages including beard trims and facial treatments. We focus on attention to detail for a sharp, polished finish.</p>
+              <h3 class="service-title">Men's Grooming</h3>
+              <p class="service-desc">Sharp fades, beard trims, and classic cuts that define masculine style. Our barbers specialise in precision work and personalised grooming advice.</p>
             </div>
       </div>
     </div>
@@ -1573,15 +1609,24 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </div>
             <div class="strip-item">
               <div class="strip-value">75+</div>
-              <div class="strip-label">Client Reviews</div>
+              <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Expert</div>
-              <div class="strip-label">Stylists</div>
+              <div class="strip-value">Geelong</div>
+              <div class="strip-label">Local Experts</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Short & Sharp</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Short & Sharp is Geelong's trusted salon destination, delivering precision cuts and expert styling since establishing its reputation for quality. With a 4.9-star rating from 75 Google reviews, we're committed to exceptional service and client satisfaction.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Short & Sharp is Geelong's trusted salon destination, delivering precision cuts and professional styling since establishing itself as a local favourite. With a 4.9-star rating from 75 Google reviews, we're committed to exceeding expectations with every client visit.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1648,19 +1693,19 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <span class="pl-price">from $45</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour & Highlights</span>
+              <span class="pl-service">Hair Colouring</span>
               
               <span class="pl-price">from $65</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Blow-Dry & Styling</span>
+              <span class="pl-service">Styling & Blow-Dry</span>
               
-              <span class="pl-price">from $30</span>
+              <span class="pl-price">from $40</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to look sharp? Get in touch with our Geelong team today for your next appointment.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call +61 3 5222 6887 to book your appointment or pop in and see us at our Geelong salon</p>
+          <p class="pl-cta-text">Ready for a style transformation? Call Short & Sharp today and experience the difference professional care makes.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Phone +61 3 5222 6887 to book your appointment or visit us in Geelong today</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you accept walk-ins or is booking required?
+          Do you accept walk-in appointments?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome both walk-ins and bookings, though we recommend calling ahead to minimise wait times. Contact us at +61 3 5222 6887.</div>
+        <div class="faq-a">We welcome walk-ins during business hours, though booking ahead ensures minimal wait time and your preferred stylist availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What products do you use for colour treatments?
+          What's your cancellation policy?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We use premium, professional-grade colour products that deliver vibrant results while protecting hair health. Our stylists can recommend the best option for your hair type.</div>
+        <div class="faq-a">We ask for 24 hours' notice for cancellations to allow other clients to book your time slot.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How often should I get a haircut?
+          Are your products suitable for sensitive scalps?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Most clients benefit from cuts every 4–6 weeks to maintain shape and style. Your stylist can advise based on your hair growth and desired look.</div>
+        <div class="faq-a">Yes, we stock professional-grade products suitable for all scalp types and can recommend alternatives if you have specific sensitivities.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are gift vouchers available?
+          How long does a typical appointment take?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, gift vouchers are available and make perfect presents for any occasion. Call us to arrange yours today.</div>
+        <div class="faq-a">Most cuts take 30-45 minutes, while colour treatments and styling can range from 60-120 minutes depending on the service.</div>
       </div>
       </div>
     </div>
@@ -1736,8 +1781,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Appointment Today</h2>
-          <p class="contact-cta-line">Ready to look sharp? Get in touch with our Geelong team today for your next appointment.</p>
+          <h2 class="contact-title">Get in Touch with Short & Sharp</h2>
+          <p class="contact-cta-line">Ready for a style transformation? Call Short & Sharp today and experience the difference professional care makes.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Short+%26+Sharp+165+Ryrie+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Short & Sharp on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Short & Sharp
           </div>
-          <p class="footer-tagline">Premium salon services for the modern Geelong client</p>
+          <p class="footer-tagline">Premium salon services that deliver results every time</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61352226887?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61352226887" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61352226887?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>

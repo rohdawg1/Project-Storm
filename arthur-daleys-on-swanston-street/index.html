@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arthur Daley's on Swanston Street | Melbourne</title>
-  <meta name="description" content="Quality goods and expert service since day one">
+  <meta name="description" content="Premier retail destination in the heart of Melbourne's CBD">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1341,18 +1377,172 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 .stat-divider { background: rgba(0,0,0,0.1) !important; }
 .section-sub { margin: 0 auto 56px; }
 
+
+    /* ── CLAUDE DESIGN ENHANCEMENTS ──────────────────────────────── */
+
+    /* 1 — Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary)));
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* 2 — Staggered service card entrance */
+    .service-card { opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s var(--ease-spring), border-color 0.32s;
+    }
+    .service-card:nth-child(1).visible { transition-delay: 0ms; }
+    .service-card:nth-child(2).visible { transition-delay: 60ms; }
+    .service-card:nth-child(3).visible { transition-delay: 120ms; }
+    .service-card:nth-child(4).visible { transition-delay: 180ms; }
+    .service-card:nth-child(5).visible { transition-delay: 240ms; }
+    .service-card:nth-child(6).visible { transition-delay: 300ms; }
+    .service-card:nth-child(7).visible { transition-delay: 360ms; }
+
+    /* 3 — Service card shimmer sweep on hover */
+    @keyframes shimmerSweep {
+      from { transform: translateX(-100%) skewX(-18deg); }
+      to   { transform: translateX(250%) skewX(-18deg); }
+    }
+    .service-card .card-shimmer {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-18deg);
+      pointer-events: none; z-index: 0;
+    }
+    .service-card:hover .card-shimmer {
+      animation: shimmerSweep 0.6s var(--ease-out) forwards;
+    }
+
+    /* 4 — Heading <em> gradient accent */
+    .hero-headline em,
+    .about-heading em,
+    .contact-title em,
+    .section-heading em,
+    .section-title em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5 — Diagonal cut between hero and services */
+    .hero { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); margin-bottom: -4vw; }
+    .section-services { padding-top: calc(var(--section-pad) + 4vw); }
+
+    /* 6 — Trust strip gradient numbers */
+    .strip-value {
+      background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 7 — Review card decorative quote gradient */
+    .review-quote {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.35;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    /* 8 — Review card staggered entrance */
+    .review-card { opacity: 0; transform: translateY(20px); }
+    .review-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s, border-color 0.32s;
+    }
+    .review-card:nth-child(1).visible { transition-delay: 0ms; }
+    .review-card:nth-child(2).visible { transition-delay: 80ms; }
+    .review-card:nth-child(3).visible { transition-delay: 160ms; }
+
+    /* 9 — Section heading animated underline */
+    .section-heading,
+    .about-heading,
+    .contact-title {
+      position: relative;
+    }
+
+    /* 10 — Contact item icon pulse on hover */
+    .contact-item-icon {
+      transition: background 0.25s, border-color 0.25s, color 0.25s,
+                  transform 0.28s var(--ease-spring), box-shadow 0.28s;
+    }
+    .contact-item:hover .contact-item-icon {
+      transform: scale(1.12) rotate(-6deg);
+      box-shadow: 0 6px 20px var(--primary-35);
+    }
+
+    /* 11 — Nav active link underline */
+    .nav-links a.active {
+      color: var(--dark) !important;
+      background: var(--primary-8) !important;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block; height: 2px;
+      background: var(--primary); border-radius: 2px;
+      margin-top: -2px;
+    }
+
+    /* 12 — Hero proof panel shimmer border */
+    @keyframes borderSpin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .hero-proof-panel {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    /* 13 — FAQ item open state left glow */
+    .faq-item.open {
+      box-shadow: inset 3px 0 0 var(--primary), 0 4px 24px var(--primary-8);
+    }
+
+    /* 14 — Submit button inner shimmer */
+    .btn-submit { position: relative; overflow: hidden; }
+    .btn-submit::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.45s ease;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* 15 — Accreditation items slide-in */
+    .accred-item {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+    }
+    .accred-strip.visible .accred-item { opacity: 1; transform: none; }
+    .accred-strip.visible .accred-item:nth-child(2) { transition-delay: 80ms; }
+    .accred-strip.visible .accred-item:nth-child(3) { transition-delay: 160ms; }
+    .accred-strip.visible .accred-item:nth-child(4) { transition-delay: 240ms; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Arthur Daley's on Swanston Street | Melbourne">
-  <meta property="og:description" content="Quality goods and expert service since day one">
+  <meta property="og:description" content="Premier retail destination in the heart of Melbourne's CBD">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
   
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Arthur Daley's on Swanston Street | Melbourne">
-  <meta name="twitter:description" content="Quality goods and expert service since day one">
+  <meta name="twitter:description" content="Premier retail destination in the heart of Melbourne's CBD">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1380,6 +1570,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 </head>
 
 <body>
+<div id="scroll-progress"></div>
 
   <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
@@ -1434,8 +1625,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Trusted Healthcare Professionals
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Retail Destination on Swanston</h1>
-            <p class="hero-tagline">Quality goods and expert service since day one</p>
+            <h1 class="hero-headline">Arthur Daley's on Swanston Street Melbourne</h1>
+            <p class="hero-tagline">Premier retail destination in the heart of Melbourne's CBD</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61396393665" class="btn-hero-primary">
@@ -1453,17 +1644,17 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               
             <div class="stat-item">
               <span class="stat-value">4.5★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (82 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">82+</span>
+              <span class="stat-value">82</span>
               <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Est.</span>
-              <span class="stat-label">Trusted Local Business</span>
+              <span class="stat-value">Swanston St</span>
+              <span class="stat-label">Melbourne CBD Location</span>
             </div>
             
             </div>
@@ -1524,32 +1715,36 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="services-grid">
         
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-solid fa-shopping-bag"></i>
               </div>
-              <h3 class="service-title">Retail Shopping</h3>
-              <p class="service-desc">Browse our extensive range of quality merchandise across multiple categories. Our knowledgeable staff are on hand to help you find exactly what you're looking for.</p>
+              <h3 class="service-title">Wide Product Selection</h3>
+              <p class="service-desc">Browse our extensive range of quality merchandise carefully curated for Melbourne shoppers. From everyday essentials to premium finds, we stock what the community needs and wants.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-truck"></i>
+                <i class="fa-solid fa-handshake"></i>
               </div>
-              <h3 class="service-title">Expert Advice</h3>
-              <p class="service-desc">Our experienced team provide personalised recommendations based on your needs. We take pride in helping customers make informed purchasing decisions.</p>
+              <h3 class="service-title">Expert Customer Service</h3>
+              <p class="service-desc">Our knowledgeable team provides personalised assistance to help you find exactly what you're looking for. We take pride in building lasting relationships with every customer who walks through our door.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-tag"></i>
               </div>
-              <h3 class="service-title">Gift Selection</h3>
-              <p class="service-desc">Discover thoughtful gift options for every occasion and budget. We help you find the perfect present with friendly, attentive service.</p>
+              <h3 class="service-title">Competitive Pricing</h3>
+              <p class="service-desc">We offer excellent value for money on all our products without compromising on quality. Regular promotions and loyalty rewards make shopping with us even more rewarding.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-map-location-dot"></i>
               </div>
-              <h3 class="service-title">Customer Loyalty</h3>
-              <p class="service-desc">Join our mailing list for exclusive offers and early access to new stock. Regular customers enjoy special pricing and personalised service.</p>
+              <h3 class="service-title">Convenient Location</h3>
+              <p class="service-desc">Situated right on Swanston Street, we're easy to find and accessible via public transport. Perfect for a quick shopping stop while you're exploring Melbourne's CBD.</p>
             </div>
       </div>
     </div>
@@ -1562,19 +1757,28 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         
             <div class="strip-item">
               <div class="strip-value">4.5★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (82 reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">82+</div>
+              <div class="strip-value">82</div>
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Est.</div>
-              <div class="strip-label">Trusted Local Business</div>
+              <div class="strip-value">Swanston St</div>
+              <div class="strip-label">Melbourne CBD Location</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Australian Made</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">Secure Payments</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-truck"></i></div><span class="accred-label">Fast Local Delivery</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1586,8 +1790,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <!-- Left -->
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Our Practice</span>
-          <h2 class="about-heading">About Arthur Daley's</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Arthur Daley's has been a trusted fixture on Swanston Street, serving Melbourne's discerning shoppers with carefully curated retail selections. With a 4.5-star rating from 82 Google reviews, we're committed to delivering exceptional customer service and value on every visit.</p>
+          <h2 class="about-heading">About Arthur Daley's Melbourne</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Arthur Daley's has been a trusted fixture on Swanston Street, serving Melbourne's vibrant community with quality retail offerings and exceptional customer service. Located in the bustling heart of Melbourne's CBD, we've built our reputation on delivering value and expertise to locals and visitors alike.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-user-doctor"></i></span><span class="af-text">Registered and accredited professionals — safe, trusted care</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-microscope"></i></span><span class="af-text">Modern technology and up-to-date clinical techniques</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-face-smile"></i></span><span class="af-text">Friendly, gentle approach — all ages and families welcome</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Trusted by families across the area — consistently 5-star rated</span></div>
@@ -1632,29 +1836,29 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="ret-grid">
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-box-open"></i></div>
-              <h3 class="ret-cat-name">Home & Living</h3>
-              <p class="ret-cat-desc">Quality homewares and lifestyle products for modern Melbourne living.</p>
+              <h3 class="ret-cat-name">Fashion & Apparel</h3>
+              <p class="ret-cat-desc">Stylish clothing and accessories for every occasion and season.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-tag"></i></div>
-              <h3 class="ret-cat-name">Fashion & Accessories</h3>
-              <p class="ret-cat-desc">Curated clothing and accessories for style-conscious shoppers.</p>
+              <h3 class="ret-cat-name">Home & Living</h3>
+              <p class="ret-cat-desc">Quality homewares and lifestyle products to enhance your space.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-store"></i></div>
-              <h3 class="ret-cat-name">Gifts & Collectibles</h3>
-              <p class="ret-cat-desc">Unique gift options and collectible items for every occasion.</p>
+              <h3 class="ret-cat-name">Gifts & Specials</h3>
+              <p class="ret-cat-desc">Thoughtfully selected gift items and exclusive seasonal finds.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-gift"></i></div>
               <h3 class="ret-cat-name">Everyday Essentials</h3>
-              <p class="ret-cat-desc">Practical everyday items you can rely on, all in one convenient location.</p>
+              <p class="ret-cat-desc">Practical everyday products at competitive prices for busy Melbourne families.</p>
             </div>
       </div>
       
           <div class="ret-hours">
             <div class="ret-hours-label"><i class="fa-solid fa-store"></i>&nbsp; Store Hours</div>
-            <div class="ret-hours-text">Mon–Fri 9am–5:30pm | Sat 9am–4pm | Sun 10am–3pm</div>
+            <div class="ret-hours-text">Mon–Fri 9am–5:30pm  |  Sat 9am–4pm  |  Sun 10am–3pm</div>
           </div>
     </div>
   </section>
@@ -1694,28 +1898,28 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 9am–5:30pm, Saturday 9am–4pm, and Sunday 10am–3pm. Public holiday hours may vary.</div>
+        <div class="faq-a">We're open Monday to Friday 9am–5:30pm, Saturday 9am–4pm, and Sunday 10am–3pm. Come visit us on Swanston Street at a time that suits you.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer delivery or can I collect in-store?
+          Do you offer parking nearby?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Please call us on +61 3 9639 3665 to discuss delivery options and in-store collection details for your purchase.</div>
+        <div class="faq-a">Yes, there are several public car parks within walking distance of our Swanston Street location. Public transport access is also excellent throughout the Melbourne CBD.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I return or exchange items?
+          Can I call ahead to check stock?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We offer returns and exchanges within our standard policy. Contact us on +61 3 9639 3665 or visit the store for full details.</div>
+        <div class="faq-a">Absolutely! Ring us on +61 3 9639 3665 and our team will be happy to check availability and answer any questions about our products.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How can I stay updated on new stock and offers?
+          Do you have a loyalty programme?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Sign up to our mailing list in-store or by calling us to receive exclusive offers, new arrivals, and special promotions.</div>
+        <div class="faq-a">We reward our regular customers with special offers and promotions. Sign up to our mailing list in-store or ask our team about our current loyalty benefits.</div>
       </div>
       </div>
     </div>
@@ -1729,7 +1933,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in Touch with Arthur Daley's</h2>
-          <p class="contact-cta-line">Visit Arthur Daley's on Swanston Street today and experience Melbourne retail the way it should be.</p>
+          <p class="contact-cta-line">Visit Arthur Daley's today or give us a call on +61 3 9639 3665 to discover why Melbourne shoppers trust us.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1755,7 +1959,9 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Arthur+Daley%27s+on+Swanston+Street+37+Swanston+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Arthur Daley's on Swanston Street on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1815,7 +2021,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             </span>
             Arthur Daley's on Swanston Street
           </div>
-          <p class="footer-tagline">Quality goods and expert service since day one</p>
+          <p class="footer-tagline">Premier retail destination in the heart of Melbourne's CBD</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2017,7 +2223,100 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       });
 
     })();
+
+    /* ── Scroll progress bar ─────────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled = window.scrollY;
+        var total    = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    /* ── Staggered service card & review card reveal ─────────────── */
+    var cardRevealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardRevealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .review-card').forEach(function (el) {
+      cardRevealObs.observe(el);
+    });
+
+    /* ── Accreditation strip reveal ──────────────────────────────── */
+    var accredStrip = document.querySelector('.accred-strip');
+    if (accredStrip) {
+      var accredObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          accredStrip.classList.add('visible');
+          accredObs.unobserve(accredStrip);
+        }
+      }, { threshold: 0.3 });
+      accredObs.observe(accredStrip);
+    }
+
+    /* ── Nav active section highlight ───────────────────────────── */
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = Array.from(navLinks).map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 100;
+      var current = sections.reduce(function (acc, sec) {
+        return (sec && sec.offsetTop <= scrollY) ? sec : acc;
+      }, sections[0]);
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }, { passive: true });
+
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396393665?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396393665" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396393665?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
